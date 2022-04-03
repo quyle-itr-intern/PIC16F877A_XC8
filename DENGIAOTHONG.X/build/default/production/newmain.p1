@@ -1,0 +1,497 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"1438 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1438: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"1376
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1376: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"279
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 279: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"285
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 285:     struct {
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"284
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 284: typedef union {
+[u S9 `S10 1 ]
+[n S9 . . ]
+"296
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 296: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
+[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
+"217
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 217: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 D:\File Install MBLAB IDE\XC8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
+"12 newmain.c
+[p x FOSC  =  HS         ]
+"13
+[p x WDTE  =  OFF        ]
+"14
+[p x PWRTE  =  OFF       ]
+"15
+[p x BOREN  =  OFF       ]
+"16
+[p x LVP  =  OFF         ]
+"17
+[p x CPD  =  OFF         ]
+"18
+[p x WRT  =  OFF         ]
+"19
+[p x CP  =  OFF          ]
+"55 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"62
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 62: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"69
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 69: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"76
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 76: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"162
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 162: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"169
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 169: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"219
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 219: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"281
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 281: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"343
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 343: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"405
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 405: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"437
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 437: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"457
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 457: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"535
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 535: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"597
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 597: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"637
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 637: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"644
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 644: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"651
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 651: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"658
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 658: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"733
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 733: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"740
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 740: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"811
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 811: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"818
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 818: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"888
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 888: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"895
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 895: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"902
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 902: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"909
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 909: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"967
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 967: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1062
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1062: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1069
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1069: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1076
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1076: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1083
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1083: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1090
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1090: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1097
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1097: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1155
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1155: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1162
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1162: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1258
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1258: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1328
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1328: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1378
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1378: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1440
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1440: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1502
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1502: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1564
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1564: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1621
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1621: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1683
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1683: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1723
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1723: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1757
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1757: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1819
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1819: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1826
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1826: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1833
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1833: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2002
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2002: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2083
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2083: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2090
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2090: __asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+"2160
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2160: __asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+"2225
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2225: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2232
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2232: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2291
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2291: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"2298
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2298: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"2305
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2305: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"2312
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2312: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"2319
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2319: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"2364
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2364: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"26 newmain.c
+[; ;newmain.c: 26: unsigned char Number[] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0xFF, 0x6F};
+[v _Number `uc ~T0 @X0 -> 10 `i e ]
+[i _Number
+:U ..
+-> -> 63 `i `uc
+-> -> 6 `i `uc
+-> -> 91 `i `uc
+-> -> 79 `i `uc
+-> -> 102 `i `uc
+-> -> 109 `i `uc
+-> -> 125 `i `uc
+-> -> 7 `i `uc
+-> -> 255 `i `uc
+-> -> 111 `i `uc
+..
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"28
+[; ;newmain.c: 28: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"30
+[; ;newmain.c: 30:     signed char dem;
+[v _dem `c ~T0 @X0 1 a ]
+"31
+[; ;newmain.c: 31:     unsigned char LED_CHUC, LED_DVI;
+[v _LED_CHUC `uc ~T0 @X0 1 a ]
+[v _LED_DVI `uc ~T0 @X0 1 a ]
+"32
+[; ;newmain.c: 32:     unsigned int i;
+[v _i `ui ~T0 @X0 1 a ]
+"33
+[; ;newmain.c: 33:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"34
+[; ;newmain.c: 34:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"35
+[; ;newmain.c: 35:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"36
+[; ;newmain.c: 36:     while(1)
+[e :U 97 ]
+"37
+[; ;newmain.c: 37:     {
+{
+"38
+[; ;newmain.c: 38:         PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"39
+[; ;newmain.c: 39:         for(dem = 25; dem >= 0; dem--)
+{
+[e = _dem -> -> 25 `i `c ]
+[e $ >= -> _dem `i -> 0 `i 99  ]
+[e $U 100  ]
+[e :U 99 ]
+"40
+[; ;newmain.c: 40:   {
+{
+"41
+[; ;newmain.c: 41:    LED_CHUC = dem/10;
+[e = _LED_CHUC -> / -> _dem `i -> 10 `i `uc ]
+"42
+[; ;newmain.c: 42:    LED_DVI = dem%10;
+[e = _LED_DVI -> % -> _dem `i -> 10 `i `uc ]
+"43
+[; ;newmain.c: 43:    for(i = 0; i < 500; i++)
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 500 `i `ui 102  ]
+[e $U 103  ]
+[e :U 102 ]
+"44
+[; ;newmain.c: 44:    {
+{
+"46
+[; ;newmain.c: 46:     PORTB = Number[LED_CHUC];
+[e = _PORTB *U + &U _Number * -> _LED_CHUC `ux -> -> # *U &U _Number `ui `ux ]
+"47
+[; ;newmain.c: 47:     PORTCbits.RC3 = 1;
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"48
+[; ;newmain.c: 48:     _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"49
+[; ;newmain.c: 49:     PORTCbits.RC3 = 0;
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"52
+[; ;newmain.c: 52:     PORTB = Number[LED_DVI];
+[e = _PORTB *U + &U _Number * -> _LED_DVI `ux -> -> # *U &U _Number `ui `ux ]
+"53
+[; ;newmain.c: 53:     PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"54
+[; ;newmain.c: 54:     _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"55
+[; ;newmain.c: 55:     PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"56
+[; ;newmain.c: 56:    }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 500 `i `ui 102  ]
+[e :U 103 ]
+}
+"57
+[; ;newmain.c: 57:   }
+}
+[e -- _dem -> -> 1 `i `c ]
+[e $ >= -> _dem `i -> 0 `i 99  ]
+[e :U 100 ]
+}
+"58
+[; ;newmain.c: 58:         PORTCbits.RC0 = 0;
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+"60
+[; ;newmain.c: 60:         PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"61
+[; ;newmain.c: 61:         for(dem = 5; dem >= 0; dem--)
+{
+[e = _dem -> -> 5 `i `c ]
+[e $ >= -> _dem `i -> 0 `i 105  ]
+[e $U 106  ]
+[e :U 105 ]
+"62
+[; ;newmain.c: 62:   {
+{
+"63
+[; ;newmain.c: 63:    LED_CHUC = dem/10;
+[e = _LED_CHUC -> / -> _dem `i -> 10 `i `uc ]
+"64
+[; ;newmain.c: 64:    LED_DVI = dem%10;
+[e = _LED_DVI -> % -> _dem `i -> 10 `i `uc ]
+"65
+[; ;newmain.c: 65:    for(i = 0; i < 500; i++)
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 500 `i `ui 108  ]
+[e $U 109  ]
+[e :U 108 ]
+"66
+[; ;newmain.c: 66:    {
+{
+"68
+[; ;newmain.c: 68:     PORTB = Number[LED_CHUC];
+[e = _PORTB *U + &U _Number * -> _LED_CHUC `ux -> -> # *U &U _Number `ui `ux ]
+"69
+[; ;newmain.c: 69:     PORTCbits.RC3 = 1;
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"70
+[; ;newmain.c: 70:     _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"71
+[; ;newmain.c: 71:     PORTCbits.RC3 = 0;
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"74
+[; ;newmain.c: 74:     PORTB = Number[LED_DVI];
+[e = _PORTB *U + &U _Number * -> _LED_DVI `ux -> -> # *U &U _Number `ui `ux ]
+"75
+[; ;newmain.c: 75:     PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"76
+[; ;newmain.c: 76:     _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"77
+[; ;newmain.c: 77:     PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"78
+[; ;newmain.c: 78:    }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 500 `i `ui 108  ]
+[e :U 109 ]
+}
+"79
+[; ;newmain.c: 79:   }
+}
+[e -- _dem -> -> 1 `i `c ]
+[e $ >= -> _dem `i -> 0 `i 105  ]
+[e :U 106 ]
+}
+"80
+[; ;newmain.c: 80:         PORTCbits.RC1 = 0;
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+"82
+[; ;newmain.c: 82:         PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"83
+[; ;newmain.c: 83:         for(dem = 20; dem >= 0; dem--)
+{
+[e = _dem -> -> 20 `i `c ]
+[e $ >= -> _dem `i -> 0 `i 111  ]
+[e $U 112  ]
+[e :U 111 ]
+"84
+[; ;newmain.c: 84:   {
+{
+"85
+[; ;newmain.c: 85:    LED_CHUC = dem/10;
+[e = _LED_CHUC -> / -> _dem `i -> 10 `i `uc ]
+"86
+[; ;newmain.c: 86:    LED_DVI = dem%10;
+[e = _LED_DVI -> % -> _dem `i -> 10 `i `uc ]
+"87
+[; ;newmain.c: 87:    for(i = 0; i < 500; i++)
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 500 `i `ui 114  ]
+[e $U 115  ]
+[e :U 114 ]
+"88
+[; ;newmain.c: 88:    {
+{
+"90
+[; ;newmain.c: 90:     PORTB = Number[LED_CHUC];
+[e = _PORTB *U + &U _Number * -> _LED_CHUC `ux -> -> # *U &U _Number `ui `ux ]
+"91
+[; ;newmain.c: 91:     PORTCbits.RC3 = 1;
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+"92
+[; ;newmain.c: 92:     _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"93
+[; ;newmain.c: 93:     PORTCbits.RC3 = 0;
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+"96
+[; ;newmain.c: 96:     PORTB = Number[LED_DVI];
+[e = _PORTB *U + &U _Number * -> _LED_DVI `ux -> -> # *U &U _Number `ui `ux ]
+"97
+[; ;newmain.c: 97:     PORTCbits.RC4 = 1;
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+"98
+[; ;newmain.c: 98:     _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"99
+[; ;newmain.c: 99:     PORTCbits.RC4 = 0;
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+"100
+[; ;newmain.c: 100:    }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 500 `i `ui 114  ]
+[e :U 115 ]
+}
+"101
+[; ;newmain.c: 101:   }
+}
+[e -- _dem -> -> 1 `i `c ]
+[e $ >= -> _dem `i -> 0 `i 111  ]
+[e :U 112 ]
+}
+"102
+[; ;newmain.c: 102:         PORTCbits.RC2 = 0;
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"104
+[; ;newmain.c: 104:     }
+}
+[e :U 96 ]
+[e $U 97  ]
+[e :U 98 ]
+"105
+[; ;newmain.c: 105:     return;
+[e $UE 95  ]
+"106
+[; ;newmain.c: 106: }
+[e :UE 95 ]
+}

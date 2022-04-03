@@ -1,0 +1,117 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"10 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\File Install MBLAB IDE\XC8\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"17 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.50\LCD16x2.X\main.c
+[v _LCD_Cmd LCD_Cmd `(v  1 e 1 0 ]
+"35
+[v _LCD_Cmd_Init LCD_Cmd_Init `(v  1 e 1 0 ]
+"43
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"80
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+"91
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+"100
+[v _LCD_GotoCursor LCD_GotoCursor `(v  1 e 1 0 ]
+"121
+[v _main main `(v  1 e 1 0 ]
+[s S22 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233 D:/File Install MBLAB IDE/MPLAB_IDE/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
+[u S31 . 1 `S22 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES31  1 e 1 @6 ]
+"278
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S50 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1392
+[u S59 . 1 `S50 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES59  1 e 1 @134 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"121 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.50\LCD16x2.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"131
+} 0
+"91
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+{
+[v LCD_String@str str `*.24uc  1 a 1 wreg ]
+"93
+[v LCD_String@i i `uc  1 a 1 4 ]
+"91
+[v LCD_String@str str `*.24uc  1 a 1 wreg ]
+"93
+[v LCD_String@str str `*.24uc  1 a 1 5 ]
+"99
+} 0
+"80
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+{
+[v LCD_Char@c c `uc  1 a 1 wreg ]
+[v LCD_Char@c c `uc  1 a 1 wreg ]
+"82
+[v LCD_Char@c c `uc  1 a 1 2 ]
+"90
+} 0
+"43
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+{
+"79
+} 0
+"35
+[v _LCD_Cmd_Init LCD_Cmd_Init `(v  1 e 1 0 ]
+{
+[v LCD_Cmd_Init@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_Cmd_Init@cmd cmd `uc  1 a 1 wreg ]
+"37
+[v LCD_Cmd_Init@cmd cmd `uc  1 a 1 2 ]
+"42
+} 0
+"100
+[v _LCD_GotoCursor LCD_GotoCursor `(v  1 e 1 0 ]
+{
+[v LCD_GotoCursor@row row `uc  1 a 1 wreg ]
+"102
+[v LCD_GotoCursor@cmd cmd `uc  1 a 1 8 ]
+"100
+[v LCD_GotoCursor@row row `uc  1 a 1 wreg ]
+[v LCD_GotoCursor@col col `uc  1 p 1 3 ]
+"103
+[v LCD_GotoCursor@row row `uc  1 a 1 5 ]
+"105
+} 0
+"17
+[v _LCD_Cmd LCD_Cmd `(v  1 e 1 0 ]
+{
+[v LCD_Cmd@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_Cmd@cmd cmd `uc  1 a 1 wreg ]
+"19
+[v LCD_Cmd@cmd cmd `uc  1 a 1 2 ]
+"34
+} 0

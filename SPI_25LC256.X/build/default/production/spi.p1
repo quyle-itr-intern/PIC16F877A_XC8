@@ -1,0 +1,644 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"9 spi.c
+[; ;spi.c: 9: typedef struct {
+[s S96 `uc 1 `uc 1 `uc 1 ]
+[n S96 . CON STAT OPERATION ]
+"1444 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1444:     struct {
+[s S58 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S58 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1443
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1443: typedef union {
+[u S57 `S58 1 ]
+[n S57 . . ]
+"1455
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1455: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
+[v _TRISCbits `VS57 ~T0 @X0 0 e@135 ]
+"1837
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1837:     struct {
+[s S73 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S73 . BF UA R_nW S P D_nA CKE SMP ]
+"1847
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1847:     struct {
+[s S74 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S74 . . R . D ]
+"1853
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1853:     struct {
+[s S75 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S75 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+"1860
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1860:     struct {
+[s S76 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S76 . . nW . nA ]
+"1866
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1866:     struct {
+[s S77 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S77 . . nWRITE . nADDRESS ]
+"1872
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1872:     struct {
+[s S78 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S78 . . R_W . D_A ]
+"1878
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1878:     struct {
+[s S79 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S79 . . READ_WRITE . DATA_ADDRESS ]
+"1836
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1836: typedef union {
+[u S72 `S73 1 `S74 1 `S75 1 `S76 1 `S77 1 `S78 1 `S79 1 ]
+[n S72 . . . . . . . . ]
+"1885
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1885: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
+[v _SSPSTATbits `VS72 ~T0 @X0 0 e@148 ]
+"822
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 822:     struct {
+[s S32 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S32 . SSPM CKP SSPEN SSPOV WCOL ]
+"829
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 829:     struct {
+[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S33 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"821
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 821: typedef union {
+[u S31 `S32 1 `S33 1 ]
+[n S31 . . . ]
+"836
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 836: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
+[v _SSPCONbits `VS31 ~T0 @X0 0 e@20 ]
+"39 spi.c
+[; ;spi.c: 39: _Bool SPI_Open(spi_modes_t spi1UniqueConfiguration)
+[c E935 0 .. ]
+[n E935 . SPI_DEFAULT  ]
+"1831 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1831: extern volatile unsigned char SSPSTAT __attribute__((address(0x094)));
+[v _SSPSTAT `Vuc ~T0 @X0 0 e@148 ]
+"816
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 816: extern volatile unsigned char SSPCON __attribute__((address(0x014)));
+[v _SSPCON `Vuc ~T0 @X0 0 e@20 ]
+"1755
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1755: extern volatile unsigned char SSPCON2 __attribute__((address(0x091)));
+[v _SSPCON2 `Vuc ~T0 @X0 0 e@145 ]
+"1332
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1332:     struct {
+[s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S54 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 ]
+"1331
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1331: typedef union {
+[u S53 `S54 1 ]
+[n S53 . . ]
+"1341
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1341: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
+[v _TRISAbits `VS53 ~T0 @X0 0 e@133 ]
+"809
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 809: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"2414
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2414: extern volatile __bit BF __attribute__((address(0x4A0)));
+[v _BF `Vb ~T0 @X0 0 e@1184 ]
+"16 ./main.h
+[p x FOSC  =  HS         ]
+"17
+[p x WDTE  =  OFF        ]
+"18
+[p x PWRTE  =  OFF       ]
+"19
+[p x BOREN  =  OFF       ]
+"20
+[p x LVP  =  OFF         ]
+"21
+[p x CPD  =  OFF         ]
+"22
+[p x WRT  =  OFF         ]
+"23
+[p x CP  =  OFF          ]
+"55 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"62
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 62: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"69
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 69: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"76
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 76: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"162
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 162: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"169
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 169: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"219
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 219: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"281
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 281: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"343
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 343: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"405
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 405: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"437
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 437: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"457
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 457: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"535
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 535: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"597
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 597: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"637
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 637: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"644
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 644: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"651
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 651: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"658
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 658: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"733
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 733: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"740
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 740: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"811
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 811: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"818
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 818: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"888
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 888: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"895
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 895: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"902
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 902: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"909
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 909: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"967
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 967: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1062
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1062: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1069
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1069: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1076
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1076: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1083
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1083: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1090
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1090: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1097
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1097: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1155
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1155: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1162
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1162: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1258
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1258: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1328
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1328: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1378
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1378: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1440
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1440: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1502
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1502: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1564
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1564: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1621
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1621: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1683
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1683: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1723
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1723: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1757
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1757: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1819
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1819: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1826
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1826: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1833
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1833: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2002
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2002: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2083
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2083: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2090
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2090: __asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+"2160
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2160: __asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+"2225
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2225: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2232
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2232: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2291
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2291: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"2298
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2298: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"2305
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2305: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"2312
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2312: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"2319
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2319: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"2364
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2364: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"16 spi.c
+[; ;spi.c: 16: static const spi_configuration_t spi_configuration[] = {
+[v _spi_configuration `CS96 ~T0 @X0 -> -> 1 `i `ux s ]
+[i _spi_configuration
+:U ..
+:U ..
+-> -> 32 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+"20
+[; ;spi.c: 20: void SPI_Initialize(void)
+[v _SPI_Initialize `(v ~T0 @X0 1 ef ]
+"21
+[; ;spi.c: 21: {
+{
+[e :U _SPI_Initialize ]
+[f ]
+"22
+[; ;spi.c: 22:     TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"23
+[; ;spi.c: 23:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+"24
+[; ;spi.c: 24:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"26
+[; ;spi.c: 26:     SSPSTATbits.SMP = 0;
+[e = . . _SSPSTATbits 0 7 -> -> 0 `i `uc ]
+"27
+[; ;spi.c: 27:     SSPSTATbits.CKE = 0;
+[e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
+"29
+[; ;spi.c: 29:     SSPCONbits.WCOL = 0;
+[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+"30
+[; ;spi.c: 30:     SSPCONbits.SSPOV = 0;
+[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
+"31
+[; ;spi.c: 31:     SSPCONbits.SSPEN = 1;
+[e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
+"32
+[; ;spi.c: 32:     SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"33
+[; ;spi.c: 33:     SSPCONbits.SSPM3 = 0;
+[e = . . _SSPCONbits 1 3 -> -> 0 `i `uc ]
+"34
+[; ;spi.c: 34:     SSPCONbits.SSPM2 = 0;
+[e = . . _SSPCONbits 1 2 -> -> 0 `i `uc ]
+"35
+[; ;spi.c: 35:     SSPCONbits.SSPM1 = 1;
+[e = . . _SSPCONbits 1 1 -> -> 1 `i `uc ]
+"36
+[; ;spi.c: 36:     SSPCONbits.SSPM0 = 0;
+[e = . . _SSPCONbits 1 0 -> -> 0 `i `uc ]
+"37
+[; ;spi.c: 37: }
+[e :UE 97 ]
+}
+"39
+[; ;spi.c: 39: _Bool SPI_Open(spi_modes_t spi1UniqueConfiguration)
+[v _SPI_Open `(a ~T0 @X0 1 ef1`E935 ]
+"40
+[; ;spi.c: 40: {
+{
+[e :U _SPI_Open ]
+"39
+[; ;spi.c: 39: _Bool SPI_Open(spi_modes_t spi1UniqueConfiguration)
+[v _spi1UniqueConfiguration `E935 ~T0 @X0 1 r1 ]
+"40
+[; ;spi.c: 40: {
+[f ]
+"41
+[; ;spi.c: 41:     if(!SSPCONbits.SSPEN)
+[e $ ! ! != -> . . _SSPCONbits 0 2 `i -> 0 `i 99  ]
+"42
+[; ;spi.c: 42:     {
+{
+"43
+[; ;spi.c: 43:         SSPSTAT = spi_configuration[spi1UniqueConfiguration].STAT;
+[e = _SSPSTAT . *U + &U _spi_configuration * -> _spi1UniqueConfiguration `ux -> -> # *U &U _spi_configuration `ui `ux 1 ]
+"44
+[; ;spi.c: 44:         SSPCON = spi_configuration[spi1UniqueConfiguration].CON;
+[e = _SSPCON . *U + &U _spi_configuration * -> _spi1UniqueConfiguration `ux -> -> # *U &U _spi_configuration `ui `ux 0 ]
+"45
+[; ;spi.c: 45:         SSPCON2 = 0x00;
+[e = _SSPCON2 -> -> 0 `i `uc ]
+"46
+[; ;spi.c: 46:         TRISAbits.TRISA5 = spi_configuration[spi1UniqueConfiguration].OPERATION;
+[e = . . _TRISAbits 0 5 . *U + &U _spi_configuration * -> _spi1UniqueConfiguration `ux -> -> # *U &U _spi_configuration `ui `ux 2 ]
+"47
+[; ;spi.c: 47:         SSPCONbits.SSPEN = 1;
+[e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
+"48
+[; ;spi.c: 48:         return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 98  ]
+"49
+[; ;spi.c: 49:     }
+}
+[e :U 99 ]
+"50
+[; ;spi.c: 50:     return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 98  ]
+"51
+[; ;spi.c: 51: }
+[e :UE 98 ]
+}
+"53
+[; ;spi.c: 53: void SPI_Close(void)
+[v _SPI_Close `(v ~T0 @X0 1 ef ]
+"54
+[; ;spi.c: 54: {
+{
+[e :U _SPI_Close ]
+[f ]
+"55
+[; ;spi.c: 55:     SSPCONbits.SSPEN = 0;
+[e = . . _SSPCONbits 0 2 -> -> 0 `i `uc ]
+"56
+[; ;spi.c: 56: }
+[e :UE 100 ]
+}
+"58
+[; ;spi.c: 58: uint8_t SPI_ExchangeByte(uint8_t data)
+[v _SPI_ExchangeByte `(uc ~T0 @X0 1 ef1`uc ]
+"59
+[; ;spi.c: 59: {
+{
+[e :U _SPI_ExchangeByte ]
+"58
+[; ;spi.c: 58: uint8_t SPI_ExchangeByte(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"59
+[; ;spi.c: 59: {
+[f ]
+"60
+[; ;spi.c: 60:     SSPBUF = data;
+[e = _SSPBUF _data ]
+"61
+[; ;spi.c: 61:     while(BF == 0);
+[e $U 102  ]
+[e :U 103 ]
+[e :U 102 ]
+[e $ == -> _BF `i -> 0 `i 103  ]
+[e :U 104 ]
+"62
+[; ;spi.c: 62:     return SSPBUF;
+[e ) _SSPBUF ]
+[e $UE 101  ]
+"63
+[; ;spi.c: 63: }
+[e :UE 101 ]
+}
+"65
+[; ;spi.c: 65: void SPI_ExchangeBlock(void *block, size_t blockSize)
+[v _SPI_ExchangeBlock `(v ~T0 @X0 1 ef2`*v`ui ]
+"66
+[; ;spi.c: 66: {
+{
+[e :U _SPI_ExchangeBlock ]
+"65
+[; ;spi.c: 65: void SPI_ExchangeBlock(void *block, size_t blockSize)
+[v _block `*v ~T0 @X0 1 r1 ]
+[v _blockSize `ui ~T0 @X0 1 r2 ]
+"66
+[; ;spi.c: 66: {
+[f ]
+"67
+[; ;spi.c: 67:     uint8_t *data = block;
+[v _data `*uc ~T0 @X0 1 a ]
+[e = _data -> _block `*uc ]
+"68
+[; ;spi.c: 68:     while(blockSize--)
+[e $U 106  ]
+[e :U 107 ]
+"69
+[; ;spi.c: 69:     {
+{
+"70
+[; ;spi.c: 70:         SSPBUF = *data;
+[e = _SSPBUF *U _data ]
+"71
+[; ;spi.c: 71:         while(BF == 0);
+[e $U 109  ]
+[e :U 110 ]
+[e :U 109 ]
+[e $ == -> _BF `i -> 0 `i 110  ]
+[e :U 111 ]
+"72
+[; ;spi.c: 72:         *data++ = SSPBUF;
+[e = *U ++ _data * -> -> 1 `i `x -> -> # *U _data `i `x _SSPBUF ]
+"73
+[; ;spi.c: 73:     }
+}
+[e :U 106 ]
+"68
+[; ;spi.c: 68:     while(blockSize--)
+[e $ != -- _blockSize -> -> 1 `i `ui -> -> 0 `i `ui 107  ]
+[e :U 108 ]
+"74
+[; ;spi.c: 74: }
+[e :UE 105 ]
+}
+"76
+[; ;spi.c: 76: void SPI_WriteBlock(void *block, size_t blockSize)
+[v _SPI_WriteBlock `(v ~T0 @X0 1 ef2`*v`ui ]
+"77
+[; ;spi.c: 77: {
+{
+[e :U _SPI_WriteBlock ]
+"76
+[; ;spi.c: 76: void SPI_WriteBlock(void *block, size_t blockSize)
+[v _block `*v ~T0 @X0 1 r1 ]
+[v _blockSize `ui ~T0 @X0 1 r2 ]
+"77
+[; ;spi.c: 77: {
+[f ]
+"78
+[; ;spi.c: 78:     uint8_t *data = block;
+[v _data `*uc ~T0 @X0 1 a ]
+[e = _data -> _block `*uc ]
+"79
+[; ;spi.c: 79:     while(blockSize--)
+[e $U 113  ]
+[e :U 114 ]
+"80
+[; ;spi.c: 80:     {
+{
+"81
+[; ;spi.c: 81:         SPI_ExchangeByte(*data++);
+[e ( _SPI_ExchangeByte (1 *U ++ _data * -> -> 1 `i `x -> -> # *U _data `i `x ]
+"82
+[; ;spi.c: 82:     }
+}
+[e :U 113 ]
+"79
+[; ;spi.c: 79:     while(blockSize--)
+[e $ != -- _blockSize -> -> 1 `i `ui -> -> 0 `i `ui 114  ]
+[e :U 115 ]
+"83
+[; ;spi.c: 83: }
+[e :UE 112 ]
+}
+"85
+[; ;spi.c: 85: void SPI_ReadBlock(void *block, size_t blockSize)
+[v _SPI_ReadBlock `(v ~T0 @X0 1 ef2`*v`ui ]
+"86
+[; ;spi.c: 86: {
+{
+[e :U _SPI_ReadBlock ]
+"85
+[; ;spi.c: 85: void SPI_ReadBlock(void *block, size_t blockSize)
+[v _block `*v ~T0 @X0 1 r1 ]
+[v _blockSize `ui ~T0 @X0 1 r2 ]
+"86
+[; ;spi.c: 86: {
+[f ]
+"87
+[; ;spi.c: 87:     uint8_t *data = block;
+[v _data `*uc ~T0 @X0 1 a ]
+[e = _data -> _block `*uc ]
+"88
+[; ;spi.c: 88:     while(blockSize--)
+[e $U 117  ]
+[e :U 118 ]
+"89
+[; ;spi.c: 89:     {
+{
+"90
+[; ;spi.c: 90:         *data++ = SPI_ExchangeByte(0);
+[e = *U ++ _data * -> -> 1 `i `x -> -> # *U _data `i `x ( _SPI_ExchangeByte (1 -> -> 0 `i `uc ]
+"91
+[; ;spi.c: 91:     }
+}
+[e :U 117 ]
+"88
+[; ;spi.c: 88:     while(blockSize--)
+[e $ != -- _blockSize -> -> 1 `i `ui -> -> 0 `i `ui 118  ]
+[e :U 119 ]
+"92
+[; ;spi.c: 92: }
+[e :UE 116 ]
+}
+"94
+[; ;spi.c: 94: void SPI_WriteByte(uint8_t byte)
+[v _SPI_WriteByte `(v ~T0 @X0 1 ef1`uc ]
+"95
+[; ;spi.c: 95: {
+{
+[e :U _SPI_WriteByte ]
+"94
+[; ;spi.c: 94: void SPI_WriteByte(uint8_t byte)
+[v _byte `uc ~T0 @X0 1 r1 ]
+"95
+[; ;spi.c: 95: {
+[f ]
+"96
+[; ;spi.c: 96:     unsigned char xoaBF;
+[v _xoaBF `uc ~T0 @X0 1 a ]
+"97
+[; ;spi.c: 97:     if(SSPSTATbits.BF == 1)
+[e $ ! == -> . . _SSPSTATbits 0 0 `i -> 1 `i 121  ]
+"98
+[; ;spi.c: 98:         xoaBF = SSPBUF;
+[e = _xoaBF _SSPBUF ]
+[e :U 121 ]
+"99
+[; ;spi.c: 99:     SSPBUF = byte;
+[e = _SSPBUF _byte ]
+"100
+[; ;spi.c: 100:     while(BF == 0);
+[e $U 122  ]
+[e :U 123 ]
+[e :U 122 ]
+[e $ == -> _BF `i -> 0 `i 123  ]
+[e :U 124 ]
+"101
+[; ;spi.c: 101: }
+[e :UE 120 ]
+}
+"103
+[; ;spi.c: 103: uint8_t SPI_ReadByte(void)
+[v _SPI_ReadByte `(uc ~T0 @X0 1 ef ]
+"104
+[; ;spi.c: 104: {
+{
+[e :U _SPI_ReadByte ]
+[f ]
+"105
+[; ;spi.c: 105:     SSPBUF = 0x00;
+[e = _SSPBUF -> -> 0 `i `uc ]
+"106
+[; ;spi.c: 106:     while(BF == 0);
+[e $U 126  ]
+[e :U 127 ]
+[e :U 126 ]
+[e $ == -> _BF `i -> 0 `i 127  ]
+[e :U 128 ]
+"107
+[; ;spi.c: 107:     return SSPBUF;
+[e ) _SSPBUF ]
+[e $UE 125  ]
+"108
+[; ;spi.c: 108: }
+[e :UE 125 ]
+}

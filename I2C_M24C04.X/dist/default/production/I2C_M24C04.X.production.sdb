@@ -1,0 +1,365 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"505 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\File Install MBLAB IDE\XC8\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"38 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\I2C_M24C04.X\newmain.c
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+"52
+[v _I2C_Idle I2C_Idle `(v  1 e 1 0 ]
+"61
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+"68
+[v _I2C_Restart I2C_Restart `(v  1 e 1 0 ]
+"75
+[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
+"82
+[v _I2C_Read I2C_Read `(v  1 e 1 0 ]
+"110
+[v _I2C_Write I2C_Write `(v  1 e 1 0 ]
+"129
+[v _LCD_Cmd LCD_Cmd `(v  1 e 1 0 ]
+"147
+[v _LCD_Cmd_Init LCD_Cmd_Init `(v  1 e 1 0 ]
+"155
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"190
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+"201
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+"210
+[v _LCD_GotoCursor LCD_GotoCursor `(v  1 e 1 0 ]
+"231
+[v _I2C_Write24C04 I2C_Write24C04 `(v  1 e 1 0 ]
+"239
+[v _I2C_Read24C04 I2C_Read24C04 `(v  1 e 1 0 ]
+"253
+[v _main main `(v  1 e 1 0 ]
+"217 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S204 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"234
+[u S213 . 1 `S204 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES213  1 e 1 @6 ]
+[s S254 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"358
+[u S263 . 1 `S254 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES263  1 e 1 @8 ]
+[s S182 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"550
+[u S191 . 1 `S182 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES191  1 e 1 @12 ]
+"809
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"816
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+[s S156 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"836
+[s S162 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S167 . 1 `S156 1 . 1 0 `S162 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES167  1 e 1 @20 ]
+"1376
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S22 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1455
+[u S31 . 1 `S22 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES31  1 e 1 @135 ]
+[s S233 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"1517
+[u S242 . 1 `S233 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES242  1 e 1 @136 ]
+"1755
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+[s S135 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"1772
+[u S144 . 1 `S135 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES144  1 e 1 @145 ]
+"1824
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+[s S45 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"1885
+[s S54 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S59 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S65 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S70 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S75 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S80 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S85 . 1 `S45 1 . 1 0 `S54 1 . 1 0 `S59 1 . 1 0 `S65 1 . 1 0 `S70 1 . 1 0 `S75 1 . 1 0 `S80 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES85  1 e 1 @148 ]
+"358 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"34 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\I2C_M24C04.X\newmain.c
+[v _Rvalue Rvalue `uc  1 e 1 0 ]
+"35
+[v _DATA DATA `uc  1 e 1 0 ]
+"253
+[v _main main `(v  1 e 1 0 ]
+{
+"258
+[v main@EE EE `[5]uc  1 a 5 16 ]
+"277
+} 0
+"505 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"545
+[v sprintf@val val `ui  1 a 2 9 ]
+"512
+[v sprintf@c c `uc  1 a 1 12 ]
+"521
+[v sprintf@prec prec `c  1 a 1 8 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 7 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 6 ]
+"505
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 0 ]
+"550
+[v sprintf@sp sp `*.4uc  1 a 1 11 ]
+"1567
+} 0
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"201 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\I2C_M24C04.X\newmain.c
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+{
+"203
+[v LCD_String@i i `uc  1 a 1 6 ]
+"201
+[v LCD_String@str str `*.26uc  1 p 2 3 ]
+"209
+} 0
+"190
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+{
+[v LCD_Char@c c `uc  1 a 1 wreg ]
+[v LCD_Char@c c `uc  1 a 1 wreg ]
+"192
+[v LCD_Char@c c `uc  1 a 1 2 ]
+"200
+} 0
+"155
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+{
+"189
+} 0
+"147
+[v _LCD_Cmd_Init LCD_Cmd_Init `(v  1 e 1 0 ]
+{
+[v LCD_Cmd_Init@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_Cmd_Init@cmd cmd `uc  1 a 1 wreg ]
+"149
+[v LCD_Cmd_Init@cmd cmd `uc  1 a 1 1 ]
+"154
+} 0
+"210
+[v _LCD_GotoCursor LCD_GotoCursor `(v  1 e 1 0 ]
+{
+[v LCD_GotoCursor@row row `uc  1 a 1 wreg ]
+"212
+[v LCD_GotoCursor@cmd cmd `uc  1 a 1 8 ]
+"210
+[v LCD_GotoCursor@row row `uc  1 a 1 wreg ]
+[v LCD_GotoCursor@col col `uc  1 p 1 3 ]
+"213
+[v LCD_GotoCursor@row row `uc  1 a 1 5 ]
+"215
+} 0
+"129
+[v _LCD_Cmd LCD_Cmd `(v  1 e 1 0 ]
+{
+[v LCD_Cmd@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_Cmd@cmd cmd `uc  1 a 1 wreg ]
+"131
+[v LCD_Cmd@cmd cmd `uc  1 a 1 2 ]
+"146
+} 0
+"231
+[v _I2C_Write24C04 I2C_Write24C04 `(v  1 e 1 0 ]
+{
+[v I2C_Write24C04@StartAddress StartAddress `uc  1 a 1 wreg ]
+[v I2C_Write24C04@StartAddress StartAddress `uc  1 a 1 wreg ]
+[v I2C_Write24C04@Data Data `uc  1 p 1 4 ]
+"233
+[v I2C_Write24C04@StartAddress StartAddress `uc  1 a 1 5 ]
+"238
+} 0
+"239
+[v _I2C_Read24C04 I2C_Read24C04 `(v  1 e 1 0 ]
+{
+[v I2C_Read24C04@ReadAddress ReadAddress `uc  1 a 1 wreg ]
+[v I2C_Read24C04@ReadAddress ReadAddress `uc  1 a 1 wreg ]
+"241
+[v I2C_Read24C04@ReadAddress ReadAddress `uc  1 a 1 8 ]
+"250
+} 0
+"110
+[v _I2C_Write I2C_Write `(v  1 e 1 0 ]
+{
+[v I2C_Write@Tvalue Tvalue `uc  1 a 1 wreg ]
+[v I2C_Write@Tvalue Tvalue `uc  1 a 1 wreg ]
+"113
+[v I2C_Write@Tvalue Tvalue `uc  1 a 1 3 ]
+"127
+} 0
+"75
+[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
+{
+"80
+} 0
+"61
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+{
+"66
+} 0
+"68
+[v _I2C_Restart I2C_Restart `(v  1 e 1 0 ]
+{
+"73
+} 0
+"82
+[v _I2C_Read I2C_Read `(v  1 e 1 0 ]
+{
+[v I2C_Read@Rvalue Rvalue `*.4uc  1 a 1 wreg ]
+[v I2C_Read@Rvalue Rvalue `*.4uc  1 a 1 wreg ]
+[v I2C_Read@ACK ACK `uc  1 p 1 3 ]
+"85
+[v I2C_Read@Rvalue Rvalue `*.4uc  1 a 1 5 ]
+"108
+} 0
+"52
+[v _I2C_Idle I2C_Idle `(v  1 e 1 0 ]
+{
+"59
+} 0
+"38
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+{
+"50
+} 0

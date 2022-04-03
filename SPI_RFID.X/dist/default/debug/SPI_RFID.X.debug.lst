@@ -1,0 +1,3659 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Tue Feb 08 08:56:47 2022
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F877A
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	strings,global,class=STRING,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     7                           	psect	bssBANK1,global,class=BANK1,space=1,delta=1,noexec
+     8                           	psect	clrtext,global,class=CODE,delta=2
+     9                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+    10                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+    11                           	psect	maintext,global,class=CODE,split=1,delta=2
+    12                           	psect	text1,local,class=CODE,merge=1,delta=2
+    13                           	psect	text2,local,class=CODE,merge=1,delta=2
+    14                           	psect	text3,local,class=CODE,merge=1,delta=2
+    15                           	psect	text4,local,class=CODE,merge=1,delta=2
+    16                           	psect	text5,local,class=CODE,merge=1,delta=2
+    17                           	psect	text6,local,class=CODE,merge=1,delta=2
+    18                           	psect	text7,local,class=CODE,merge=1,delta=2
+    19                           	psect	text8,local,class=CODE,merge=1,delta=2
+    20                           	psect	text9,local,class=CODE,merge=1,delta=2
+    21                           	psect	text10,local,class=CODE,merge=1,delta=2
+    22                           	psect	text11,local,class=CODE,merge=1,delta=2
+    23                           	psect	text12,local,class=CODE,merge=1,delta=2
+    24                           	psect	text13,local,class=CODE,merge=1,delta=2
+    25                           	psect	text14,local,class=CODE,merge=1,delta=2
+    26                           	psect	text15,local,class=CODE,merge=1,delta=2
+    27                           	psect	text16,local,class=CODE,merge=1,delta=2
+    28                           	psect	text17,local,class=CODE,merge=1,delta=2
+    29                           	psect	text18,local,class=CODE,merge=1,delta=2
+    30                           	psect	text19,local,class=CODE,merge=1,delta=2
+    31                           	psect	text20,local,class=CODE,merge=1,delta=2
+    32                           	psect	text21,local,class=CODE,merge=1,delta=2
+    33                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    34                           	dabs	1,0x7E,2
+    35  0000                     
+    36                           ; Version 2.32
+    37                           ; Generated 02/02/2021 GMT
+    38                           ; 
+    39                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    40                           ; All rights reserved.
+    41                           ; 
+    42                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    43                           ; 
+    44                           ; Redistribution and use in source and binary forms, with or without modification, are
+    45                           ; permitted provided that the following conditions are met:
+    46                           ; 
+    47                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    48                           ;        conditions and the following disclaimer.
+    49                           ; 
+    50                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    51                           ;        of conditions and the following disclaimer in the documentation and/or other
+    52                           ;        materials provided with the distribution. Publication is not required when
+    53                           ;        this file is used in an embedded application.
+    54                           ; 
+    55                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    56                           ;        software without specific prior written permission.
+    57                           ; 
+    58                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    59                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    60                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    61                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    62                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    63                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    64                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    65                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    66                           ; 
+    67                           ; 
+    68                           ; Code-generator required, PIC16F877A Definitions
+    69                           ; 
+    70                           ; SFR Addresses
+    71  0000                     	;# 
+    72  0001                     	;# 
+    73  0002                     	;# 
+    74  0003                     	;# 
+    75  0004                     	;# 
+    76  0005                     	;# 
+    77  0006                     	;# 
+    78  0007                     	;# 
+    79  0008                     	;# 
+    80  0009                     	;# 
+    81  000A                     	;# 
+    82  000B                     	;# 
+    83  000C                     	;# 
+    84  000D                     	;# 
+    85  000E                     	;# 
+    86  000E                     	;# 
+    87  000F                     	;# 
+    88  0010                     	;# 
+    89  0011                     	;# 
+    90  0012                     	;# 
+    91  0013                     	;# 
+    92  0014                     	;# 
+    93  0015                     	;# 
+    94  0015                     	;# 
+    95  0016                     	;# 
+    96  0017                     	;# 
+    97  0018                     	;# 
+    98  0019                     	;# 
+    99  001A                     	;# 
+   100  001B                     	;# 
+   101  001B                     	;# 
+   102  001C                     	;# 
+   103  001D                     	;# 
+   104  001E                     	;# 
+   105  001F                     	;# 
+   106  0081                     	;# 
+   107  0085                     	;# 
+   108  0086                     	;# 
+   109  0087                     	;# 
+   110  0088                     	;# 
+   111  0089                     	;# 
+   112  008C                     	;# 
+   113  008D                     	;# 
+   114  008E                     	;# 
+   115  0091                     	;# 
+   116  0092                     	;# 
+   117  0093                     	;# 
+   118  0094                     	;# 
+   119  0098                     	;# 
+   120  0099                     	;# 
+   121  009C                     	;# 
+   122  009D                     	;# 
+   123  009E                     	;# 
+   124  009F                     	;# 
+   125  010C                     	;# 
+   126  010D                     	;# 
+   127  010E                     	;# 
+   128  010F                     	;# 
+   129  018C                     	;# 
+   130  018D                     	;# 
+   131  0000                     	;# 
+   132  0001                     	;# 
+   133  0002                     	;# 
+   134  0003                     	;# 
+   135  0004                     	;# 
+   136  0005                     	;# 
+   137  0006                     	;# 
+   138  0007                     	;# 
+   139  0008                     	;# 
+   140  0009                     	;# 
+   141  000A                     	;# 
+   142  000B                     	;# 
+   143  000C                     	;# 
+   144  000D                     	;# 
+   145  000E                     	;# 
+   146  000E                     	;# 
+   147  000F                     	;# 
+   148  0010                     	;# 
+   149  0011                     	;# 
+   150  0012                     	;# 
+   151  0013                     	;# 
+   152  0014                     	;# 
+   153  0015                     	;# 
+   154  0015                     	;# 
+   155  0016                     	;# 
+   156  0017                     	;# 
+   157  0018                     	;# 
+   158  0019                     	;# 
+   159  001A                     	;# 
+   160  001B                     	;# 
+   161  001B                     	;# 
+   162  001C                     	;# 
+   163  001D                     	;# 
+   164  001E                     	;# 
+   165  001F                     	;# 
+   166  0081                     	;# 
+   167  0085                     	;# 
+   168  0086                     	;# 
+   169  0087                     	;# 
+   170  0088                     	;# 
+   171  0089                     	;# 
+   172  008C                     	;# 
+   173  008D                     	;# 
+   174  008E                     	;# 
+   175  0091                     	;# 
+   176  0092                     	;# 
+   177  0093                     	;# 
+   178  0094                     	;# 
+   179  0098                     	;# 
+   180  0099                     	;# 
+   181  009C                     	;# 
+   182  009D                     	;# 
+   183  009E                     	;# 
+   184  009F                     	;# 
+   185  010C                     	;# 
+   186  010D                     	;# 
+   187  010E                     	;# 
+   188  010F                     	;# 
+   189  018C                     	;# 
+   190  018D                     	;# 
+   191  001A                     _RCREG	set	26
+   192  0019                     _TXREG	set	25
+   193  000B                     _INTCONbits	set	11
+   194  0006                     _PORTB	set	6
+   195  0013                     _SSPBUF	set	19
+   196  0014                     _SSPCONbits	set	20
+   197  0008                     _PORTDbits	set	8
+   198  0065                     _RCIF	set	101
+   199  00C4                     _CREN	set	196
+   200  00C7                     _SPEN	set	199
+   201  0099                     _SPBRG	set	153
+   202  0086                     _TRISB	set	134
+   203  0094                     _SSPSTATbits	set	148
+   204  0087                     _TRISCbits	set	135
+   205  0088                     _TRISDbits	set	136
+   206  04C1                     _TRMT	set	1217
+   207  0465                     _RCIE	set	1125
+   208  04C5                     _TXEN	set	1221
+   209  04A0                     _BF	set	1184
+   210                           
+   211                           	psect	strings
+   212  0004                     __pstrings:
+   213  0004                     stringtab:
+   214  0004                     __stringtab:
+   215                           
+   216                           ;	String table - string pointers are 1 byte each
+   217  0004  1BFF               	btfsc	btemp+1,7
+   218  0005  280E               	ljmp	stringcode
+   219  0006  1383               	bcf	3,7
+   220  0007  187F               	btfsc	btemp+1,0
+   221  0008  1783               	bsf	3,7
+   222  0009  0800               	movf	0,w
+   223  000A  0A84               	incf	4,f
+   224  000B  1903               	skipnz
+   225  000C  0AFF               	incf	btemp+1,f
+   226  000D  0008               	return
+   227  000E                     stringcode:
+   228  000E                     stringdir:
+   229  000E  3000               	movlw	high stringdir
+   230  000F  008A               	movwf	10
+   231  0010  0804               	movf	4,w
+   232  0011  0A84               	incf	4,f
+   233  0012  0782               	addwf	2,f
+   234  0013                     __stringbase:
+   235  0013  3400               	retlw	0
+   236  0014                     __end_of__stringtab:
+   237  0014                     STR_1:
+   238  0014  3448               	retlw	72	;'H'
+   239  0015  3465               	retlw	101	;'e'
+   240  0016  346C               	retlw	108	;'l'
+   241  0017  346C               	retlw	108	;'l'
+   242  0018  346F               	retlw	111	;'o'
+   243  0019  340A               	retlw	10
+   244  001A  3400               	retlw	0
+   245                           
+   246                           	psect	cinit
+   247  07F0                     start_initialization:	
+   248                           ; #config settings
+   249                           
+   250  07F0                     __initialization:
+   251                           
+   252                           ; Clear objects allocated to BANK0
+   253  07F0  1283               	bcf	3,5	;RP0=0, select bank0
+   254  07F1  1303               	bcf	3,6	;RP1=0, select bank0
+   255  07F2  01CA               	clrf	__pbssBANK0& (0+127)
+   256                           
+   257                           ; Clear objects allocated to BANK1
+   258  07F3  1383               	bcf	3,7	;select IRP bank0
+   259  07F4  30A0               	movlw	low __pbssBANK1
+   260  07F5  0084               	movwf	4
+   261  07F6  30D2               	movlw	low (__pbssBANK1+50)
+   262  07F7  120A  118A  2311  120A  118A  	fcall	clear_ram0
+   263  07FC                     end_of_initialization:	
+   264                           ;End of C runtime variable initialization code
+   265                           
+   266  07FC                     __end_of__initialization:
+   267  07FC  0183               	clrf	3
+   268  07FD  120A  118A  2D12   	ljmp	_main	;jump to C main() function
+   269                           
+   270                           	psect	bssBANK0
+   271  004A                     __pbssBANK0:
+   272  004A                     _rx_index:
+   273  004A                     	ds	1
+   274                           
+   275                           	psect	bssBANK1
+   276  00A0                     __pbssBANK1:
+   277  00A0                     _RX_Buffer:
+   278  00A0                     	ds	50
+   279                           
+   280                           	psect	clrtext
+   281  0311                     clear_ram0:	
+   282                           ;	Called with FSR containing the base address, and
+   283                           ;	W with the last address+1
+   284                           
+   285  0311  0064               	clrwdt	;clear the watchdog before getting into this loop
+   286  0312                     clrloop0:
+   287  0312  0180               	clrf	0	;clear RAM location pointed to by FSR
+   288  0313  0A84               	incf	4,f	;increment pointer
+   289  0314  0604               	xorwf	4,w	;XOR with final address
+   290  0315  1903               	btfsc	3,2	;have we reached the end yet?
+   291  0316  3400               	retlw	0	;all done for this memory range, return
+   292  0317  0604               	xorwf	4,w	;XOR again to restore value
+   293  0318  2B12               	goto	clrloop0	;do the next byte
+   294                           
+   295                           	psect	cstackCOMMON
+   296  0071                     __pcstackCOMMON:
+   297  0071                     ?_SPI_Init:
+   298  0071                     ??_SPI_Init:	
+   299                           ; 1 bytes @ 0x0
+   300                           
+   301  0071                     ?_SPI_Write:	
+   302                           ; 1 bytes @ 0x0
+   303                           
+   304  0071                     ??_SPI_Write:	
+   305                           ; 1 bytes @ 0x0
+   306                           
+   307  0071                     ?_SPI_Read:	
+   308                           ; 1 bytes @ 0x0
+   309                           
+   310  0071                     ??_SPI_Read:	
+   311                           ; 1 bytes @ 0x0
+   312                           
+   313  0071                     ?_MFRC522_Rd:	
+   314                           ; 1 bytes @ 0x0
+   315                           
+   316  0071                     ?_MFRC522_Reset:	
+   317                           ; 1 bytes @ 0x0
+   318                           
+   319  0071                     ?_MFRC522_AntennaOn:	
+   320                           ; 1 bytes @ 0x0
+   321                           
+   322  0071                     ?_MFRC522_Init:	
+   323                           ; 1 bytes @ 0x0
+   324                           
+   325  0071                     ?_MFRC522_Halt:	
+   326                           ; 1 bytes @ 0x0
+   327                           
+   328  0071                     ?_MFRC522_AntiColl:	
+   329                           ; 1 bytes @ 0x0
+   330                           
+   331  0071                     ?_MFRC522_isCard:	
+   332                           ; 1 bytes @ 0x0
+   333                           
+   334  0071                     ?_MFRC522_ReadCardSerial:	
+   335                           ; 1 bytes @ 0x0
+   336                           
+   337  0071                     ?_IO_Init:	
+   338                           ; 1 bytes @ 0x0
+   339                           
+   340  0071                     ??_IO_Init:	
+   341                           ; 1 bytes @ 0x0
+   342                           
+   343  0071                     ?_UART_Init:	
+   344                           ; 1 bytes @ 0x0
+   345                           
+   346  0071                     ??_UART_Init:	
+   347                           ; 1 bytes @ 0x0
+   348                           
+   349  0071                     ?_UART_Transmit:	
+   350                           ; 1 bytes @ 0x0
+   351                           
+   352  0071                     ??_UART_Transmit:	
+   353                           ; 1 bytes @ 0x0
+   354                           
+   355  0071                     ?_main:	
+   356                           ; 1 bytes @ 0x0
+   357                           
+   358  0071                     SPI_Write@Tvalue:	
+   359                           ; 1 bytes @ 0x0
+   360                           
+   361  0071                     UART_Transmit@c:	
+   362                           ; 1 bytes @ 0x0
+   363                           
+   364                           
+   365                           ; 1 bytes @ 0x0
+   366  0071                     	ds	1
+   367  0072                     ??_MFRC522_Rd:
+   368  0072                     ?_UART_Transmit_Text:	
+   369                           ; 1 bytes @ 0x1
+   370                           
+   371  0072                     UART_Transmit_Text@str:	
+   372                           ; 1 bytes @ 0x1
+   373                           
+   374                           
+   375                           ; 2 bytes @ 0x1
+   376  0072                     	ds	1
+   377  0073                     MFRC522_Rd@addr:
+   378                           
+   379                           ; 1 bytes @ 0x2
+   380  0073                     	ds	1
+   381  0074                     ??_UART_Transmit_Text:
+   382  0074                     MFRC522_Rd@value:	
+   383                           ; 1 bytes @ 0x3
+   384                           
+   385                           
+   386                           ; 1 bytes @ 0x3
+   387  0074                     	ds	1
+   388  0075                     ?_MFRC522_Wr:
+   389  0075                     MFRC522_Wr@value:	
+   390                           ; 1 bytes @ 0x4
+   391                           
+   392  0075                     UART_Transmit_Text@i:	
+   393                           ; 1 bytes @ 0x4
+   394                           
+   395                           
+   396                           ; 1 bytes @ 0x4
+   397  0075                     	ds	1
+   398  0076                     ??_MFRC522_Wr:
+   399                           
+   400                           ; 1 bytes @ 0x5
+   401  0076                     	ds	1
+   402  0077                     MFRC522_Wr@addr:
+   403                           
+   404                           ; 1 bytes @ 0x6
+   405  0077                     	ds	1
+   406  0078                     ?_MFRC522_Clear_Bit:
+   407  0078                     ?_MFRC522_Set_Bit:	
+   408                           ; 1 bytes @ 0x7
+   409                           
+   410  0078                     ??_MFRC522_Reset:	
+   411                           ; 1 bytes @ 0x7
+   412                           
+   413  0078                     MFRC522_Clear_Bit@mask:	
+   414                           ; 1 bytes @ 0x7
+   415                           
+   416  0078                     MFRC522_Set_Bit@mask:	
+   417                           ; 1 bytes @ 0x7
+   418                           
+   419                           
+   420                           ; 1 bytes @ 0x7
+   421  0078                     	ds	1
+   422  0079                     ??_MFRC522_Clear_Bit:
+   423  0079                     ??_MFRC522_Set_Bit:	
+   424                           ; 1 bytes @ 0x8
+   425                           
+   426                           
+   427                           ; 1 bytes @ 0x8
+   428  0079                     	ds	1
+   429  007A                     MFRC522_Set_Bit@addr:
+   430                           
+   431                           ; 1 bytes @ 0x9
+   432  007A                     	ds	1
+   433  007B                     ??_MFRC522_AntennaOn:
+   434  007B                     MFRC522_Clear_Bit@addr:	
+   435                           ; 1 bytes @ 0xA
+   436                           
+   437                           
+   438                           ; 1 bytes @ 0xA
+   439  007B                     	ds	1
+   440  007C                     ??_MFRC522_Init:
+   441  007C                     ?_MFRC522_Request:	
+   442                           ; 1 bytes @ 0xB
+   443                           
+   444  007C                     ?_MFRC522_CRC:	
+   445                           ; 1 bytes @ 0xB
+   446                           
+   447  007C                     ??_MFRC522_ReadCardSerial:	
+   448                           ; 1 bytes @ 0xB
+   449                           
+   450  007C                     MFRC522_Request@TagType:	
+   451                           ; 1 bytes @ 0xB
+   452                           
+   453  007C                     MFRC522_CRC@length:	
+   454                           ; 1 bytes @ 0xB
+   455                           
+   456                           
+   457                           ; 1 bytes @ 0xB
+   458  007C                     	ds	1
+   459  007D                     ??_MFRC522_isCard:
+   460  007D                     MFRC522_CRC@dataOut:	
+   461                           ; 1 bytes @ 0xC
+   462                           
+   463                           
+   464                           ; 1 bytes @ 0xC
+   465  007D                     	ds	1
+   466                           
+   467                           	psect	cstackBANK0
+   468  0020                     __pcstackBANK0:
+   469  0020                     ?_MFRC522_ToCard:
+   470  0020                     ??_MFRC522_CRC:	
+   471                           ; 1 bytes @ 0x0
+   472                           
+   473  0020                     MFRC522_ToCard@sendData:	
+   474                           ; 1 bytes @ 0x0
+   475                           
+   476                           
+   477                           ; 1 bytes @ 0x0
+   478  0020                     	ds	1
+   479  0021                     MFRC522_ToCard@sendLen:
+   480  0021                     MFRC522_CRC@n:	
+   481                           ; 1 bytes @ 0x1
+   482                           
+   483                           
+   484                           ; 1 bytes @ 0x1
+   485  0021                     	ds	1
+   486  0022                     MFRC522_ToCard@backData:
+   487  0022                     MFRC522_CRC@i:	
+   488                           ; 1 bytes @ 0x2
+   489                           
+   490                           
+   491                           ; 1 bytes @ 0x2
+   492  0022                     	ds	1
+   493  0023                     MFRC522_ToCard@backLen:
+   494  0023                     MFRC522_CRC@dataIn:	
+   495                           ; 1 bytes @ 0x3
+   496                           
+   497                           
+   498                           ; 1 bytes @ 0x3
+   499  0023                     	ds	1
+   500  0024                     ??_MFRC522_ToCard:
+   501                           
+   502                           ; 1 bytes @ 0x4
+   503  0024                     	ds	6
+   504  002A                     MFRC522_ToCard@waitIRq:
+   505                           
+   506                           ; 1 bytes @ 0xA
+   507  002A                     	ds	1
+   508  002B                     MFRC522_ToCard@_status:
+   509                           
+   510                           ; 1 bytes @ 0xB
+   511  002B                     	ds	1
+   512  002C                     MFRC522_ToCard@lastBits:
+   513                           
+   514                           ; 1 bytes @ 0xC
+   515  002C                     	ds	1
+   516  002D                     MFRC522_ToCard@irqEn:
+   517                           
+   518                           ; 1 bytes @ 0xD
+   519  002D                     	ds	1
+   520  002E                     MFRC522_ToCard@command:
+   521                           
+   522                           ; 1 bytes @ 0xE
+   523  002E                     	ds	1
+   524  002F                     MFRC522_ToCard@i:
+   525                           
+   526                           ; 2 bytes @ 0xF
+   527  002F                     	ds	2
+   528  0031                     MFRC522_ToCard@n:
+   529                           
+   530                           ; 1 bytes @ 0x11
+   531  0031                     	ds	1
+   532  0032                     ??_MFRC522_Request:
+   533  0032                     ??_MFRC522_Halt:	
+   534                           ; 1 bytes @ 0x12
+   535                           
+   536  0032                     ??_MFRC522_AntiColl:	
+   537                           ; 1 bytes @ 0x12
+   538                           
+   539                           
+   540                           ; 1 bytes @ 0x12
+   541  0032                     	ds	4
+   542  0036                     MFRC522_Request@reqMode:
+   543  0036                     MFRC522_Halt@buff:	
+   544                           ; 1 bytes @ 0x16
+   545                           
+   546                           
+   547                           ; 4 bytes @ 0x16
+   548  0036                     	ds	1
+   549  0037                     MFRC522_Request@_status:
+   550  0037                     MFRC522_AntiColl@serNumCheck:	
+   551                           ; 1 bytes @ 0x17
+   552                           
+   553                           
+   554                           ; 1 bytes @ 0x17
+   555  0037                     	ds	1
+   556  0038                     MFRC522_Request@backBits:
+   557  0038                     MFRC522_AntiColl@unLen:	
+   558                           ; 2 bytes @ 0x18
+   559                           
+   560                           
+   561                           ; 2 bytes @ 0x18
+   562  0038                     	ds	2
+   563  003A                     MFRC522_AntiColl@_status:
+   564  003A                     MFRC522_isCard@TagType:	
+   565                           ; 1 bytes @ 0x1A
+   566                           
+   567  003A                     MFRC522_Halt@unLen:	
+   568                           ; 1 bytes @ 0x1A
+   569                           
+   570                           
+   571                           ; 2 bytes @ 0x1A
+   572  003A                     	ds	1
+   573  003B                     MFRC522_AntiColl@i:
+   574                           
+   575                           ; 1 bytes @ 0x1B
+   576  003B                     	ds	1
+   577  003C                     MFRC522_AntiColl@serNum:
+   578                           
+   579                           ; 1 bytes @ 0x1C
+   580  003C                     	ds	1
+   581  003D                     MFRC522_ReadCardSerial@_status:
+   582                           
+   583                           ; 1 bytes @ 0x1D
+   584  003D                     	ds	1
+   585  003E                     MFRC522_ReadCardSerial@str:
+   586                           
+   587                           ; 1 bytes @ 0x1E
+   588  003E                     	ds	1
+   589  003F                     ??_main:
+   590                           
+   591                           ; 1 bytes @ 0x1F
+   592  003F                     	ds	3
+   593  0042                     main@UID:
+   594                           
+   595                           ; 6 bytes @ 0x22
+   596  0042                     	ds	6
+   597  0048                     main@TagType:
+   598                           
+   599                           ; 1 bytes @ 0x28
+   600  0048                     	ds	1
+   601  0049                     main@i:
+   602                           
+   603                           ; 1 bytes @ 0x29
+   604  0049                     	ds	1
+   605                           
+   606                           	psect	maintext
+   607  0512                     __pmaintext:	
+   608 ;;
+   609 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   610 ;;
+   611 ;; *************** function _main *****************
+   612 ;; Defined at:
+   613 ;;		line 107 in file "newmain.c"
+   614 ;; Parameters:    Size  Location     Type
+   615 ;;		None
+   616 ;; Auto vars:     Size  Location     Type
+   617 ;;  UID             6   34[BANK0 ] unsigned char [6]
+   618 ;;  i               1   41[BANK0 ] unsigned char 
+   619 ;;  TagType         1   40[BANK0 ] unsigned char 
+   620 ;; Return value:  Size  Location     Type
+   621 ;;                  1    wreg      void 
+   622 ;; Registers used:
+   623 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   624 ;; Tracked objects:
+   625 ;;		On entry : B00/0
+   626 ;;		On exit  : 0/0
+   627 ;;		Unchanged: 0/0
+   628 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   629 ;;      Params:         0       0       0       0       0
+   630 ;;      Locals:         0       8       0       0       0
+   631 ;;      Temps:          0       3       0       0       0
+   632 ;;      Totals:         0      11       0       0       0
+   633 ;;Total ram usage:       11 bytes
+   634 ;; Hardware stack levels required when called: 6
+   635 ;; This function calls:
+   636 ;;		_IO_Init
+   637 ;;		_MFRC522_Halt
+   638 ;;		_MFRC522_Init
+   639 ;;		_MFRC522_ReadCardSerial
+   640 ;;		_MFRC522_isCard
+   641 ;;		_SPI_Init
+   642 ;;		_UART_Init
+   643 ;;		_UART_Transmit
+   644 ;;		_UART_Transmit_Text
+   645 ;; This function is called by:
+   646 ;;		Startup code after reset
+   647 ;; This function uses a non-reentrant model
+   648 ;;
+   649                           
+   650                           
+   651                           ;psect for function _main
+   652  0512                     _main:
+   653  0512                     l1683:	
+   654                           ;incstack = 0
+   655                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   656                           
+   657                           
+   658                           ;newmain.c: 109:     char UID[6];;newmain.c: 110:     unsigned char TagType;;newmain.c: 
+      +                          111:     char i;;newmain.c: 113:     IO_Init();
+   659  0512  120A  118A  2319  120A  118A  	fcall	_IO_Init
+   660  0517                     l1685:
+   661                           
+   662                           ;newmain.c: 114:     UART_Init();
+   663  0517  120A  118A  2363  120A  118A  	fcall	_UART_Init
+   664  051C                     l1687:
+   665                           
+   666                           ;newmain.c: 115:     SPI_Init();
+   667  051C  120A  118A  23CB  120A  118A  	fcall	_SPI_Init
+   668                           
+   669                           ;newmain.c: 117:     MFRC522_Init();
+   670  0521  120A  118A  2488  120A  118A  	fcall	_MFRC522_Init
+   671  0526                     l1689:
+   672                           
+   673                           ;newmain.c: 120:      {;newmain.c: 121:          UART_Transmit_Text("Hello\n");
+   674  0526  3001               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
+   675  0527  00F2               	movwf	UART_Transmit_Text@str
+   676  0528  3080               	movlw	128
+   677  0529  00F3               	movwf	UART_Transmit_Text@str+1
+   678  052A  120A  118A  241C  120A  118A  	fcall	_UART_Transmit_Text
+   679  052F                     l1691:
+   680                           
+   681                           ;newmain.c: 122:          if( MFRC522_isCard( &TagType ) )
+   682  052F  3048               	movlw	(low (main@TagType| 0))& (0+255)
+   683  0530  120A  118A  239E  120A  118A  	fcall	_MFRC522_isCard
+   684  0535  3A00               	xorlw	0
+   685  0536  1903               	skipnz
+   686  0537  2D39               	goto	u1001
+   687  0538  2D3A               	goto	u1000
+   688  0539                     u1001:
+   689  0539  2D26               	goto	l1689
+   690  053A                     u1000:
+   691  053A                     l1693:
+   692                           
+   693                           ;newmain.c: 123:          {;newmain.c: 124:             if( MFRC522_ReadCardSerial( &UID
+      +                           ) )
+   694  053A  3042               	movlw	(low (main@UID| 0))& (0+255)
+   695  053B  120A  118A  2400  120A  118A  	fcall	_MFRC522_ReadCardSerial
+   696  0540  3A00               	xorlw	0
+   697  0541  1903               	skipnz
+   698  0542  2D44               	goto	u1011
+   699  0543  2D45               	goto	u1010
+   700  0544                     u1011:
+   701  0544  2D64               	goto	l1709
+   702  0545                     u1010:
+   703  0545                     l1695:
+   704                           
+   705                           ;newmain.c: 125:             {;newmain.c: 126:                 for( i=0; i < 5; i++)
+   706  0545  1283               	bcf	3,5	;RP0=0, select bank0
+   707  0546  1303               	bcf	3,6	;RP1=0, select bank0
+   708  0547  01C9               	clrf	main@i
+   709  0548                     l1701:
+   710                           
+   711                           ;newmain.c: 127:                 {;newmain.c: 128:                     UART_Transmit(UID
+      +                          [i]);
+   712  0548  0849               	movf	main@i,w
+   713  0549  3E42               	addlw	(low (main@UID| 0))& (0+255)
+   714  054A  0084               	movwf	4
+   715  054B  1383               	bcf	3,7	;select IRP bank0
+   716  054C  0800               	movf	0,w
+   717  054D  120A  118A  2338  120A  118A  	fcall	_UART_Transmit
+   718  0552                     l1703:
+   719                           
+   720                           ;newmain.c: 129:                 }
+   721  0552  3001               	movlw	1
+   722  0553  1283               	bcf	3,5	;RP0=0, select bank0
+   723  0554  1303               	bcf	3,6	;RP1=0, select bank0
+   724  0555  00BF               	movwf	??_main
+   725  0556  083F               	movf	??_main,w
+   726  0557  07C9               	addwf	main@i,f
+   727  0558                     l1705:
+   728  0558  3005               	movlw	5
+   729  0559  0249               	subwf	main@i,w
+   730  055A  1C03               	skipc
+   731  055B  2D5D               	goto	u1021
+   732  055C  2D5E               	goto	u1020
+   733  055D                     u1021:
+   734  055D  2D48               	goto	l1701
+   735  055E                     u1020:
+   736  055E                     l1707:
+   737                           
+   738                           ;newmain.c: 130:                 UART_Transmit('\n');
+   739  055E  300A               	movlw	10
+   740  055F  120A  118A  2338  120A  118A  	fcall	_UART_Transmit
+   741  0564                     l1709:
+   742                           
+   743                           ;newmain.c: 132:             MFRC522_Halt();
+   744  0564  120A  118A  24CC  120A  118A  	fcall	_MFRC522_Halt
+   745  0569                     l1711:
+   746                           
+   747                           ;newmain.c: 134:         _delay((unsigned long)((100)*(20000000/4000.0)));
+   748  0569  3003               	movlw	3
+   749  056A  1283               	bcf	3,5	;RP0=0, select bank0
+   750  056B  1303               	bcf	3,6	;RP1=0, select bank0
+   751  056C  00C1               	movwf	??_main+2
+   752  056D  308A               	movlw	138
+   753  056E  00C0               	movwf	??_main+1
+   754  056F  3055               	movlw	85
+   755  0570  00BF               	movwf	??_main
+   756  0571                     u1037:
+   757  0571  0BBF               	decfsz	??_main,f
+   758  0572  2D71               	goto	u1037
+   759  0573  0BC0               	decfsz	??_main+1,f
+   760  0574  2D71               	goto	u1037
+   761  0575  0BC1               	decfsz	??_main+2,f
+   762  0576  2D71               	goto	u1037
+   763  0577  2D26               	goto	l1689
+   764  0578  120A  118A  2801   	ljmp	start
+   765  057B                     __end_of_main:
+   766                           
+   767                           	psect	text1
+   768  041C                     __ptext1:	
+   769 ;; *************** function _UART_Transmit_Text *****************
+   770 ;; Defined at:
+   771 ;;		line 67 in file "newmain.c"
+   772 ;; Parameters:    Size  Location     Type
+   773 ;;  str             2    1[COMMON] PTR unsigned char 
+   774 ;;		 -> STR_1(7), RX_Buffer(50), 
+   775 ;; Auto vars:     Size  Location     Type
+   776 ;;  i               1    4[COMMON] unsigned char 
+   777 ;; Return value:  Size  Location     Type
+   778 ;;                  1    wreg      void 
+   779 ;; Registers used:
+   780 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   781 ;; Tracked objects:
+   782 ;;		On entry : 0/0
+   783 ;;		On exit  : 0/0
+   784 ;;		Unchanged: 0/0
+   785 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   786 ;;      Params:         2       0       0       0       0
+   787 ;;      Locals:         1       0       0       0       0
+   788 ;;      Temps:          1       0       0       0       0
+   789 ;;      Totals:         4       0       0       0       0
+   790 ;;Total ram usage:        4 bytes
+   791 ;; Hardware stack levels used: 1
+   792 ;; Hardware stack levels required when called: 1
+   793 ;; This function calls:
+   794 ;;		_UART_Transmit
+   795 ;; This function is called by:
+   796 ;;		_main
+   797 ;;		_HandleData
+   798 ;; This function uses a non-reentrant model
+   799 ;;
+   800                           
+   801                           
+   802                           ;psect for function _UART_Transmit_Text
+   803  041C                     _UART_Transmit_Text:
+   804  041C                     l1539:	
+   805                           ;incstack = 0
+   806                           ; Regs used in _UART_Transmit_Text: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   807                           
+   808                           
+   809                           ;newmain.c: 67: void UART_Transmit_Text(char *str);newmain.c: 68: {;newmain.c: 69:     u
+      +                          nsigned char i=0;
+   810  041C  01F5               	clrf	UART_Transmit_Text@i
+   811                           
+   812                           ;newmain.c: 70:     while(str[i] != 0)
+   813  041D  2C33               	goto	l1545
+   814  041E                     l1541:
+   815                           
+   816                           ;newmain.c: 71:     {;newmain.c: 72:         UART_Transmit(str[i]);
+   817  041E  0875               	movf	UART_Transmit_Text@i,w
+   818  041F  0772               	addwf	UART_Transmit_Text@str,w
+   819  0420  0084               	movwf	4
+   820  0421  0873               	movf	UART_Transmit_Text@str+1,w
+   821  0422  1803               	skipnc
+   822  0423  0A73               	incf	UART_Transmit_Text@str+1,w
+   823  0424  00FF               	movwf	btemp+1
+   824  0425  120A  118A  2004  120A  118A  	fcall	stringtab
+   825  042A  120A  118A  2338  120A  118A  	fcall	_UART_Transmit
+   826  042F                     l1543:
+   827                           
+   828                           ;newmain.c: 73:         i++;
+   829  042F  3001               	movlw	1
+   830  0430  00F4               	movwf	??_UART_Transmit_Text
+   831  0431  0874               	movf	??_UART_Transmit_Text,w
+   832  0432  07F5               	addwf	UART_Transmit_Text@i,f
+   833  0433                     l1545:
+   834                           
+   835                           ;newmain.c: 70:     while(str[i] != 0)
+   836  0433  0875               	movf	UART_Transmit_Text@i,w
+   837  0434  0772               	addwf	UART_Transmit_Text@str,w
+   838  0435  0084               	movwf	4
+   839  0436  0873               	movf	UART_Transmit_Text@str+1,w
+   840  0437  1803               	skipnc
+   841  0438  0A73               	incf	UART_Transmit_Text@str+1,w
+   842  0439  1283               	bcf	3,5	;RP0=0, select bank0
+   843  043A  1303               	bcf	3,6	;RP1=0, select bank0
+   844  043B  00FF               	movwf	btemp+1
+   845  043C  120A  118A  2004  120A  118A  	fcall	stringtab
+   846  0441  3A00               	xorlw	0
+   847  0442  1D03               	skipz
+   848  0443  2C45               	goto	u791
+   849  0444  2C46               	goto	u790
+   850  0445                     u791:
+   851  0445  2C1E               	goto	l1541
+   852  0446                     u790:
+   853  0446                     l205:
+   854  0446  0008               	return
+   855  0447                     __end_of_UART_Transmit_Text:
+   856                           
+   857                           	psect	text2
+   858  0338                     __ptext2:	
+   859 ;; *************** function _UART_Transmit *****************
+   860 ;; Defined at:
+   861 ;;		line 62 in file "newmain.c"
+   862 ;; Parameters:    Size  Location     Type
+   863 ;;  c               1    wreg     unsigned char 
+   864 ;; Auto vars:     Size  Location     Type
+   865 ;;  c               1    0[COMMON] unsigned char 
+   866 ;; Return value:  Size  Location     Type
+   867 ;;                  1    wreg      void 
+   868 ;; Registers used:
+   869 ;;		wreg
+   870 ;; Tracked objects:
+   871 ;;		On entry : 0/0
+   872 ;;		On exit  : 0/0
+   873 ;;		Unchanged: 0/0
+   874 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   875 ;;      Params:         0       0       0       0       0
+   876 ;;      Locals:         1       0       0       0       0
+   877 ;;      Temps:          0       0       0       0       0
+   878 ;;      Totals:         1       0       0       0       0
+   879 ;;Total ram usage:        1 bytes
+   880 ;; Hardware stack levels used: 1
+   881 ;; This function calls:
+   882 ;;		Nothing
+   883 ;; This function is called by:
+   884 ;;		_UART_Transmit_Text
+   885 ;;		_main
+   886 ;; This function uses a non-reentrant model
+   887 ;;
+   888                           
+   889                           
+   890                           ;psect for function _UART_Transmit
+   891  0338                     _UART_Transmit:
+   892                           
+   893                           ;incstack = 0
+   894                           ; Regs used in _UART_Transmit: [wreg]
+   895                           ;UART_Transmit@c stored from wreg
+   896  0338  00F1               	movwf	UART_Transmit@c
+   897  0339                     l1473:
+   898  0339                     l196:	
+   899                           ;newmain.c: 62: void UART_Transmit(char c);newmain.c: 63: {;newmain.c: 64:     while(!TR
+      +                          MT);
+   900                           
+   901  0339  1683               	bsf	3,5	;RP0=1, select bank1
+   902  033A  1303               	bcf	3,6	;RP1=0, select bank1
+   903  033B  1C98               	btfss	24,1	;volatile
+   904  033C  2B3E               	goto	u761
+   905  033D  2B3F               	goto	u760
+   906  033E                     u761:
+   907  033E  2B39               	goto	l196
+   908  033F                     u760:
+   909  033F                     l1475:
+   910                           
+   911                           ;newmain.c: 65:     TXREG = c;
+   912  033F  0871               	movf	UART_Transmit@c,w
+   913  0340  1283               	bcf	3,5	;RP0=0, select bank0
+   914  0341  1303               	bcf	3,6	;RP1=0, select bank0
+   915  0342  0099               	movwf	25	;volatile
+   916  0343                     l199:
+   917  0343  0008               	return
+   918  0344                     __end_of_UART_Transmit:
+   919                           
+   920                           	psect	text3
+   921  0363                     __ptext3:	
+   922 ;; *************** function _UART_Init *****************
+   923 ;; Defined at:
+   924 ;;		line 51 in file "newmain.c"
+   925 ;; Parameters:    Size  Location     Type
+   926 ;;		None
+   927 ;; Auto vars:     Size  Location     Type
+   928 ;;		None
+   929 ;; Return value:  Size  Location     Type
+   930 ;;                  1    wreg      void 
+   931 ;; Registers used:
+   932 ;;		wreg
+   933 ;; Tracked objects:
+   934 ;;		On entry : 0/0
+   935 ;;		On exit  : 0/0
+   936 ;;		Unchanged: 0/0
+   937 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   938 ;;      Params:         0       0       0       0       0
+   939 ;;      Locals:         0       0       0       0       0
+   940 ;;      Temps:          0       0       0       0       0
+   941 ;;      Totals:         0       0       0       0       0
+   942 ;;Total ram usage:        0 bytes
+   943 ;; Hardware stack levels used: 1
+   944 ;; This function calls:
+   945 ;;		Nothing
+   946 ;; This function is called by:
+   947 ;;		_main
+   948 ;; This function uses a non-reentrant model
+   949 ;;
+   950                           
+   951                           
+   952                           ;psect for function _UART_Init
+   953  0363                     _UART_Init:
+   954  0363                     l1525:	
+   955                           ;incstack = 0
+   956                           ; Regs used in _UART_Init: [wreg]
+   957                           
+   958                           
+   959                           ;newmain.c: 54:     SPBRG = 32;
+   960  0363  3020               	movlw	32
+   961  0364  1683               	bsf	3,5	;RP0=1, select bank1
+   962  0365  1303               	bcf	3,6	;RP1=0, select bank1
+   963  0366  0099               	movwf	25	;volatile
+   964  0367                     l1527:
+   965                           
+   966                           ;newmain.c: 55:     SPEN = 1;
+   967  0367  1283               	bcf	3,5	;RP0=0, select bank0
+   968  0368  1303               	bcf	3,6	;RP1=0, select bank0
+   969  0369  1798               	bsf	24,7	;volatile
+   970  036A                     l1529:
+   971                           
+   972                           ;newmain.c: 56:     TXEN = 1;
+   973  036A  1683               	bsf	3,5	;RP0=1, select bank1
+   974  036B  1303               	bcf	3,6	;RP1=0, select bank1
+   975  036C  1698               	bsf	24,5	;volatile
+   976  036D                     l1531:
+   977                           
+   978                           ;newmain.c: 57:     CREN = 1;
+   979  036D  1283               	bcf	3,5	;RP0=0, select bank0
+   980  036E  1303               	bcf	3,6	;RP1=0, select bank0
+   981  036F  1618               	bsf	24,4	;volatile
+   982  0370                     l1533:
+   983                           
+   984                           ;newmain.c: 58:     RCIE = 1;
+   985  0370  1683               	bsf	3,5	;RP0=1, select bank1
+   986  0371  1303               	bcf	3,6	;RP1=0, select bank1
+   987  0372  168C               	bsf	12,5	;volatile
+   988  0373                     l1535:
+   989                           
+   990                           ;newmain.c: 59:     INTCONbits.GIE = 1;
+   991  0373  178B               	bsf	11,7	;volatile
+   992  0374                     l1537:
+   993                           
+   994                           ;newmain.c: 60:     INTCONbits.PEIE = 1;
+   995  0374  170B               	bsf	11,6	;volatile
+   996  0375                     l193:
+   997  0375  0008               	return
+   998  0376                     __end_of_UART_Init:
+   999                           
+  1000                           	psect	text4
+  1001  03CB                     __ptext4:	
+  1002 ;; *************** function _SPI_Init *****************
+  1003 ;; Defined at:
+  1004 ;;		line 121 in file "./rfid.h"
+  1005 ;; Parameters:    Size  Location     Type
+  1006 ;;		None
+  1007 ;; Auto vars:     Size  Location     Type
+  1008 ;;		None
+  1009 ;; Return value:  Size  Location     Type
+  1010 ;;                  1    wreg      void 
+  1011 ;; Registers used:
+  1012 ;;		None
+  1013 ;; Tracked objects:
+  1014 ;;		On entry : 0/0
+  1015 ;;		On exit  : 0/0
+  1016 ;;		Unchanged: 0/0
+  1017 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1018 ;;      Params:         0       0       0       0       0
+  1019 ;;      Locals:         0       0       0       0       0
+  1020 ;;      Temps:          0       0       0       0       0
+  1021 ;;      Totals:         0       0       0       0       0
+  1022 ;;Total ram usage:        0 bytes
+  1023 ;; Hardware stack levels used: 1
+  1024 ;; This function calls:
+  1025 ;;		Nothing
+  1026 ;; This function is called by:
+  1027 ;;		_main
+  1028 ;; This function uses a non-reentrant model
+  1029 ;;
+  1030                           
+  1031                           
+  1032                           ;psect for function _SPI_Init
+  1033  03CB                     _SPI_Init:
+  1034  03CB                     l1477:	
+  1035                           ;incstack = 0
+  1036                           ; Regs used in _SPI_Init: []
+  1037                           
+  1038                           
+  1039                           ;./rfid.h: 124:     TRISDbits.TRISD2 = 0;
+  1040  03CB  1683               	bsf	3,5	;RP0=1, select bank1
+  1041  03CC  1303               	bcf	3,6	;RP1=0, select bank1
+  1042  03CD  1108               	bcf	8,2	;volatile
+  1043                           
+  1044                           ;./rfid.h: 125:     TRISDbits.TRISD3 = 0;
+  1045  03CE  1188               	bcf	8,3	;volatile
+  1046                           
+  1047                           ;./rfid.h: 126:     PORTDbits.RD2 = 1;
+  1048  03CF  1283               	bcf	3,5	;RP0=0, select bank0
+  1049  03D0  1303               	bcf	3,6	;RP1=0, select bank0
+  1050  03D1  1508               	bsf	8,2	;volatile
+  1051                           
+  1052                           ;./rfid.h: 127:     PORTDbits.RD3 = 1;
+  1053  03D2  1588               	bsf	8,3	;volatile
+  1054                           
+  1055                           ;./rfid.h: 129:     TRISCbits.TRISC3 = 0;
+  1056  03D3  1683               	bsf	3,5	;RP0=1, select bank1
+  1057  03D4  1303               	bcf	3,6	;RP1=0, select bank1
+  1058  03D5  1187               	bcf	7,3	;volatile
+  1059                           
+  1060                           ;./rfid.h: 130:     TRISCbits.TRISC4 = 1;
+  1061  03D6  1607               	bsf	7,4	;volatile
+  1062                           
+  1063                           ;./rfid.h: 131:     TRISCbits.TRISC5 = 0;
+  1064  03D7  1287               	bcf	7,5	;volatile
+  1065                           
+  1066                           ;./rfid.h: 133:     SSPSTATbits.SMP = 0;
+  1067  03D8  1394               	bcf	20,7	;volatile
+  1068                           
+  1069                           ;./rfid.h: 134:     SSPSTATbits.CKE = 0;
+  1070  03D9  1314               	bcf	20,6	;volatile
+  1071                           
+  1072                           ;./rfid.h: 136:     SSPCONbits.WCOL = 0;
+  1073  03DA  1283               	bcf	3,5	;RP0=0, select bank0
+  1074  03DB  1303               	bcf	3,6	;RP1=0, select bank0
+  1075  03DC  1394               	bcf	20,7	;volatile
+  1076                           
+  1077                           ;./rfid.h: 137:     SSPCONbits.SSPOV = 0;
+  1078  03DD  1314               	bcf	20,6	;volatile
+  1079                           
+  1080                           ;./rfid.h: 138:     SSPCONbits.SSPEN = 1;
+  1081  03DE  1694               	bsf	20,5	;volatile
+  1082                           
+  1083                           ;./rfid.h: 139:     SSPCONbits.CKP = 0;
+  1084  03DF  1214               	bcf	20,4	;volatile
+  1085                           
+  1086                           ;./rfid.h: 140:     SSPCONbits.SSPM3 = 0;
+  1087  03E0  1194               	bcf	20,3	;volatile
+  1088                           
+  1089                           ;./rfid.h: 141:     SSPCONbits.SSPM2 = 0;
+  1090  03E1  1114               	bcf	20,2	;volatile
+  1091                           
+  1092                           ;./rfid.h: 142:     SSPCONbits.SSPM1 = 1;
+  1093  03E2  1494               	bsf	20,1	;volatile
+  1094                           
+  1095                           ;./rfid.h: 143:     SSPCONbits.SSPM0 = 0;
+  1096  03E3  1014               	bcf	20,0	;volatile
+  1097  03E4                     l47:
+  1098  03E4  0008               	return
+  1099  03E5                     __end_of_SPI_Init:
+  1100                           
+  1101                           	psect	text5
+  1102  039E                     __ptext5:	
+  1103 ;; *************** function _MFRC522_isCard *****************
+  1104 ;; Defined at:
+  1105 ;;		line 561 in file "./rfid.h"
+  1106 ;; Parameters:    Size  Location     Type
+  1107 ;;  TagType         1    wreg     PTR unsigned char 
+  1108 ;;		 -> main@TagType(1), 
+  1109 ;; Auto vars:     Size  Location     Type
+  1110 ;;  TagType         1   26[BANK0 ] PTR unsigned char 
+  1111 ;;		 -> main@TagType(1), 
+  1112 ;; Return value:  Size  Location     Type
+  1113 ;;                  1    wreg      unsigned char 
+  1114 ;; Registers used:
+  1115 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1116 ;; Tracked objects:
+  1117 ;;		On entry : 0/0
+  1118 ;;		On exit  : 0/0
+  1119 ;;		Unchanged: 0/0
+  1120 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1121 ;;      Params:         0       0       0       0       0
+  1122 ;;      Locals:         0       1       0       0       0
+  1123 ;;      Temps:          1       0       0       0       0
+  1124 ;;      Totals:         1       1       0       0       0
+  1125 ;;Total ram usage:        2 bytes
+  1126 ;; Hardware stack levels used: 1
+  1127 ;; Hardware stack levels required when called: 5
+  1128 ;; This function calls:
+  1129 ;;		_MFRC522_Request
+  1130 ;; This function is called by:
+  1131 ;;		_main
+  1132 ;; This function uses a non-reentrant model
+  1133 ;;
+  1134                           
+  1135                           
+  1136                           ;psect for function _MFRC522_isCard
+  1137  039E                     _MFRC522_isCard:
+  1138                           
+  1139                           ;incstack = 0
+  1140                           ; Regs used in _MFRC522_isCard: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1141                           ;MFRC522_isCard@TagType stored from wreg
+  1142  039E  1283               	bcf	3,5	;RP0=0, select bank0
+  1143  039F  1303               	bcf	3,6	;RP1=0, select bank0
+  1144  03A0  00BA               	movwf	MFRC522_isCard@TagType
+  1145  03A1                     l1493:
+  1146                           
+  1147                           ;./rfid.h: 561: char MFRC522_isCard( char *TagType );./rfid.h: 562: {;./rfid.h: 563:    
+      +                           if (MFRC522_Request( 0x26, TagType ) == 0)
+  1148  03A1  083A               	movf	MFRC522_isCard@TagType,w
+  1149  03A2  00FD               	movwf	??_MFRC522_isCard
+  1150  03A3  087D               	movf	??_MFRC522_isCard,w
+  1151  03A4  00FC               	movwf	MFRC522_Request@TagType
+  1152  03A5  3026               	movlw	38
+  1153  03A6  120A  118A  2447  120A  118A  	fcall	_MFRC522_Request
+  1154  03AB  3A00               	xorlw	0
+  1155  03AC  1D03               	skipz
+  1156  03AD  2BAF               	goto	u771
+  1157  03AE  2BB0               	goto	u770
+  1158  03AF                     u771:
+  1159  03AF  2BB2               	goto	l1501
+  1160  03B0                     u770:
+  1161  03B0                     l1495:
+  1162                           
+  1163                           ;./rfid.h: 564:         return 1;
+  1164  03B0  3001               	movlw	1
+  1165  03B1  2BB3               	goto	l177
+  1166  03B2                     l1501:
+  1167                           
+  1168                           ;./rfid.h: 566:         return 0;
+  1169  03B2  3000               	movlw	0
+  1170  03B3                     l177:
+  1171  03B3  0008               	return
+  1172  03B4                     __end_of_MFRC522_isCard:
+  1173                           
+  1174                           	psect	text6
+  1175  0447                     __ptext6:	
+  1176 ;; *************** function _MFRC522_Request *****************
+  1177 ;; Defined at:
+  1178 ;;		line 344 in file "./rfid.h"
+  1179 ;; Parameters:    Size  Location     Type
+  1180 ;;  reqMode         1    wreg     unsigned char 
+  1181 ;;  TagType         1   11[COMMON] PTR unsigned char 
+  1182 ;;		 -> main@TagType(1), 
+  1183 ;; Auto vars:     Size  Location     Type
+  1184 ;;  reqMode         1   22[BANK0 ] unsigned char 
+  1185 ;;  backBits        2   24[BANK0 ] unsigned int 
+  1186 ;;  _status         1   23[BANK0 ] unsigned char 
+  1187 ;; Return value:  Size  Location     Type
+  1188 ;;                  1    wreg      unsigned char 
+  1189 ;; Registers used:
+  1190 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1191 ;; Tracked objects:
+  1192 ;;		On entry : 0/0
+  1193 ;;		On exit  : 0/0
+  1194 ;;		Unchanged: 0/0
+  1195 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1196 ;;      Params:         1       0       0       0       0
+  1197 ;;      Locals:         0       4       0       0       0
+  1198 ;;      Temps:          0       4       0       0       0
+  1199 ;;      Totals:         1       8       0       0       0
+  1200 ;;Total ram usage:        9 bytes
+  1201 ;; Hardware stack levels used: 1
+  1202 ;; Hardware stack levels required when called: 4
+  1203 ;; This function calls:
+  1204 ;;		_MFRC522_ToCard
+  1205 ;;		_MFRC522_Wr
+  1206 ;; This function is called by:
+  1207 ;;		_MFRC522_isCard
+  1208 ;; This function uses a non-reentrant model
+  1209 ;;
+  1210                           
+  1211                           
+  1212                           ;psect for function _MFRC522_Request
+  1213  0447                     _MFRC522_Request:
+  1214                           
+  1215                           ;incstack = 0
+  1216                           ; Regs used in _MFRC522_Request: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1217                           ;MFRC522_Request@reqMode stored from wreg
+  1218  0447  1283               	bcf	3,5	;RP0=0, select bank0
+  1219  0448  1303               	bcf	3,6	;RP1=0, select bank0
+  1220  0449  00B6               	movwf	MFRC522_Request@reqMode
+  1221  044A                     l1401:
+  1222                           
+  1223                           ;./rfid.h: 344: char MFRC522_Request( char reqMode, char *TagType );./rfid.h: 345: {;./r
+      +                          fid.h: 346:   char _status;;./rfid.h: 347:   unsigned backBits;;./rfid.h: 349:   MFRC522
+      +                          _Wr( 0x0D, 0x07 );
+  1224  044A  3007               	movlw	7
+  1225  044B  00B2               	movwf	??_MFRC522_Request
+  1226  044C  0832               	movf	??_MFRC522_Request,w
+  1227  044D  00F5               	movwf	MFRC522_Wr@value
+  1228  044E  300D               	movlw	13
+  1229  044F  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1230  0454                     l1403:
+  1231                           
+  1232                           ;./rfid.h: 351:   TagType[0] = reqMode;
+  1233  0454  1283               	bcf	3,5	;RP0=0, select bank0
+  1234  0455  1303               	bcf	3,6	;RP1=0, select bank0
+  1235  0456  0836               	movf	MFRC522_Request@reqMode,w
+  1236  0457  00B2               	movwf	??_MFRC522_Request
+  1237  0458  087C               	movf	MFRC522_Request@TagType,w
+  1238  0459  0084               	movwf	4
+  1239  045A  0832               	movf	??_MFRC522_Request,w
+  1240  045B  1383               	bcf	3,7	;select IRP bank0
+  1241  045C  0080               	movwf	0
+  1242  045D                     l1405:
+  1243                           
+  1244                           ;./rfid.h: 352:   _status = MFRC522_ToCard( 0x0C, TagType, 1, TagType, &backBits );
+  1245  045D  087C               	movf	MFRC522_Request@TagType,w
+  1246  045E  00B2               	movwf	??_MFRC522_Request
+  1247  045F  0832               	movf	??_MFRC522_Request,w
+  1248  0460  00A0               	movwf	MFRC522_ToCard@sendData
+  1249  0461  01A1               	clrf	MFRC522_ToCard@sendLen
+  1250  0462  0AA1               	incf	MFRC522_ToCard@sendLen,f
+  1251  0463  087C               	movf	MFRC522_Request@TagType,w
+  1252  0464  00B3               	movwf	??_MFRC522_Request+1
+  1253  0465  0833               	movf	??_MFRC522_Request+1,w
+  1254  0466  00A2               	movwf	MFRC522_ToCard@backData
+  1255  0467  3038               	movlw	(low (MFRC522_Request@backBits| 0))& (0+255)
+  1256  0468  00B4               	movwf	??_MFRC522_Request+2
+  1257  0469  0834               	movf	??_MFRC522_Request+2,w
+  1258  046A  00A3               	movwf	MFRC522_ToCard@backLen
+  1259  046B  300C               	movlw	12
+  1260  046C  120A  118A  2662  120A  118A  	fcall	_MFRC522_ToCard
+  1261  0471  1283               	bcf	3,5	;RP0=0, select bank0
+  1262  0472  1303               	bcf	3,6	;RP1=0, select bank0
+  1263  0473  00B5               	movwf	??_MFRC522_Request+3
+  1264  0474  0835               	movf	??_MFRC522_Request+3,w
+  1265  0475  00B7               	movwf	MFRC522_Request@_status
+  1266  0476                     l1407:
+  1267                           
+  1268                           ;./rfid.h: 354:   if ( (_status != 0) || (backBits != 0x10) )
+  1269  0476  0837               	movf	MFRC522_Request@_status,w
+  1270  0477  1D03               	btfss	3,2
+  1271  0478  2C7A               	goto	u681
+  1272  0479  2C7B               	goto	u680
+  1273  047A                     u681:
+  1274  047A  2C82               	goto	l1411
+  1275  047B                     u680:
+  1276  047B                     l1409:
+  1277  047B  3010               	movlw	16
+  1278  047C  0638               	xorwf	MFRC522_Request@backBits,w
+  1279  047D  0439               	iorwf	MFRC522_Request@backBits+1,w
+  1280  047E  1903               	btfsc	3,2
+  1281  047F  2C81               	goto	u691
+  1282  0480  2C82               	goto	u690
+  1283  0481                     u691:
+  1284  0481  2C86               	goto	l115
+  1285  0482                     u690:
+  1286  0482                     l1411:
+  1287                           
+  1288                           ;./rfid.h: 355:   {;./rfid.h: 356:     _status = 2;
+  1289  0482  3002               	movlw	2
+  1290  0483  00B2               	movwf	??_MFRC522_Request
+  1291  0484  0832               	movf	??_MFRC522_Request,w
+  1292  0485  00B7               	movwf	MFRC522_Request@_status
+  1293  0486                     l115:	
+  1294                           ;./rfid.h: 357:   }
+  1295                           
+  1296                           
+  1297                           ;./rfid.h: 359:   return _status;
+  1298  0486  0837               	movf	MFRC522_Request@_status,w
+  1299  0487                     l118:
+  1300  0487  0008               	return
+  1301  0488                     __end_of_MFRC522_Request:
+  1302                           
+  1303                           	psect	text7
+  1304  0400                     __ptext7:	
+  1305 ;; *************** function _MFRC522_ReadCardSerial *****************
+  1306 ;; Defined at:
+  1307 ;;		line 569 in file "./rfid.h"
+  1308 ;; Parameters:    Size  Location     Type
+  1309 ;;  str             1    wreg     PTR unsigned char 
+  1310 ;;		 -> main@UID(6), 
+  1311 ;; Auto vars:     Size  Location     Type
+  1312 ;;  str             1   30[BANK0 ] PTR unsigned char 
+  1313 ;;		 -> main@UID(6), 
+  1314 ;;  _status         1   29[BANK0 ] unsigned char 
+  1315 ;; Return value:  Size  Location     Type
+  1316 ;;                  1    wreg      unsigned char 
+  1317 ;; Registers used:
+  1318 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1319 ;; Tracked objects:
+  1320 ;;		On entry : 0/0
+  1321 ;;		On exit  : 0/0
+  1322 ;;		Unchanged: 0/0
+  1323 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1324 ;;      Params:         0       0       0       0       0
+  1325 ;;      Locals:         0       2       0       0       0
+  1326 ;;      Temps:          1       0       0       0       0
+  1327 ;;      Totals:         1       2       0       0       0
+  1328 ;;Total ram usage:        3 bytes
+  1329 ;; Hardware stack levels used: 1
+  1330 ;; Hardware stack levels required when called: 5
+  1331 ;; This function calls:
+  1332 ;;		_MFRC522_AntiColl
+  1333 ;; This function is called by:
+  1334 ;;		_main
+  1335 ;; This function uses a non-reentrant model
+  1336 ;;
+  1337                           
+  1338                           
+  1339                           ;psect for function _MFRC522_ReadCardSerial
+  1340  0400                     _MFRC522_ReadCardSerial:
+  1341                           
+  1342                           ;incstack = 0
+  1343                           ; Regs used in _MFRC522_ReadCardSerial: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1344                           ;MFRC522_ReadCardSerial@str stored from wreg
+  1345  0400  1283               	bcf	3,5	;RP0=0, select bank0
+  1346  0401  1303               	bcf	3,6	;RP1=0, select bank0
+  1347  0402  00BE               	movwf	MFRC522_ReadCardSerial@str
+  1348  0403                     l1505:
+  1349                           
+  1350                           ;./rfid.h: 569: char MFRC522_ReadCardSerial( char *str );./rfid.h: 570: {;./rfid.h: 571:
+      +                           char _status;;./rfid.h: 572:  _status = MFRC522_AntiColl( str );
+  1351  0403  083E               	movf	MFRC522_ReadCardSerial@str,w
+  1352  0404  120A  118A  257B  120A  118A  	fcall	_MFRC522_AntiColl
+  1353  0409  00FC               	movwf	??_MFRC522_ReadCardSerial
+  1354  040A  087C               	movf	??_MFRC522_ReadCardSerial,w
+  1355  040B  1283               	bcf	3,5	;RP0=0, select bank0
+  1356  040C  1303               	bcf	3,6	;RP1=0, select bank0
+  1357  040D  00BD               	movwf	MFRC522_ReadCardSerial@_status
+  1358  040E                     l1507:
+  1359                           
+  1360                           ;./rfid.h: 573:  str[5] = 0;
+  1361  040E  083E               	movf	MFRC522_ReadCardSerial@str,w
+  1362  040F  3E05               	addlw	5
+  1363  0410  0084               	movwf	4
+  1364  0411  1383               	bcf	3,7	;select IRP bank0
+  1365  0412  0180               	clrf	0
+  1366  0413                     l1509:
+  1367                           
+  1368                           ;./rfid.h: 574:  if (_status == 0)
+  1369  0413  083D               	movf	MFRC522_ReadCardSerial@_status,w
+  1370  0414  1D03               	btfss	3,2
+  1371  0415  2C17               	goto	u781
+  1372  0416  2C18               	goto	u780
+  1373  0417                     u781:
+  1374  0417  2C1A               	goto	l1517
+  1375  0418                     u780:
+  1376  0418                     l1511:
+  1377                           
+  1378                           ;./rfid.h: 575:   return 1;
+  1379  0418  3001               	movlw	1
+  1380  0419  2C1B               	goto	l182
+  1381  041A                     l1517:
+  1382                           
+  1383                           ;./rfid.h: 577:   return 0;
+  1384  041A  3000               	movlw	0
+  1385  041B                     l182:
+  1386  041B  0008               	return
+  1387  041C                     __end_of_MFRC522_ReadCardSerial:
+  1388                           
+  1389                           	psect	text8
+  1390  057B                     __ptext8:	
+  1391 ;; *************** function _MFRC522_AntiColl *****************
+  1392 ;; Defined at:
+  1393 ;;		line 526 in file "./rfid.h"
+  1394 ;; Parameters:    Size  Location     Type
+  1395 ;;  serNum          1    wreg     PTR unsigned char 
+  1396 ;;		 -> main@UID(6), 
+  1397 ;; Auto vars:     Size  Location     Type
+  1398 ;;  serNum          1   28[BANK0 ] PTR unsigned char 
+  1399 ;;		 -> main@UID(6), 
+  1400 ;;  unLen           2   24[BANK0 ] unsigned int 
+  1401 ;;  i               1   27[BANK0 ] unsigned char 
+  1402 ;;  _status         1   26[BANK0 ] unsigned char 
+  1403 ;;  serNumCheck     1   23[BANK0 ] unsigned char 
+  1404 ;; Return value:  Size  Location     Type
+  1405 ;;                  1    wreg      unsigned char 
+  1406 ;; Registers used:
+  1407 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1408 ;; Tracked objects:
+  1409 ;;		On entry : 0/0
+  1410 ;;		On exit  : 0/0
+  1411 ;;		Unchanged: 0/0
+  1412 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1413 ;;      Params:         0       0       0       0       0
+  1414 ;;      Locals:         0       6       0       0       0
+  1415 ;;      Temps:          0       5       0       0       0
+  1416 ;;      Totals:         0      11       0       0       0
+  1417 ;;Total ram usage:       11 bytes
+  1418 ;; Hardware stack levels used: 1
+  1419 ;; Hardware stack levels required when called: 4
+  1420 ;; This function calls:
+  1421 ;;		_MFRC522_Clear_Bit
+  1422 ;;		_MFRC522_ToCard
+  1423 ;;		_MFRC522_Wr
+  1424 ;; This function is called by:
+  1425 ;;		_MFRC522_ReadCardSerial
+  1426 ;; This function uses a non-reentrant model
+  1427 ;;
+  1428                           
+  1429                           
+  1430                           ;psect for function _MFRC522_AntiColl
+  1431  057B                     _MFRC522_AntiColl:
+  1432                           
+  1433                           ;incstack = 0
+  1434                           ; Regs used in _MFRC522_AntiColl: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1435                           ;MFRC522_AntiColl@serNum stored from wreg
+  1436  057B  1283               	bcf	3,5	;RP0=0, select bank0
+  1437  057C  1303               	bcf	3,6	;RP1=0, select bank0
+  1438  057D  00BC               	movwf	MFRC522_AntiColl@serNum
+  1439  057E                     l1441:
+  1440                           
+  1441                           ;./rfid.h: 526: char MFRC522_AntiColl( char *serNum );./rfid.h: 527: {;./rfid.h: 528:   
+      +                          char _status;;./rfid.h: 529:   char i;;./rfid.h: 530:   char serNumCheck = 0;
+  1442  057E  01B7               	clrf	MFRC522_AntiColl@serNumCheck
+  1443  057F                     l1443:
+  1444                           
+  1445                           ;./rfid.h: 531:   unsigned unLen;;./rfid.h: 533:   MFRC522_Wr( 0x0D, 0x00 );
+  1446  057F  01F5               	clrf	MFRC522_Wr@value
+  1447  0580  300D               	movlw	13
+  1448  0581  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1449  0586                     l1445:
+  1450                           
+  1451                           ;./rfid.h: 535:   serNum[0] = 0x93;
+  1452  0586  3093               	movlw	147
+  1453  0587  1283               	bcf	3,5	;RP0=0, select bank0
+  1454  0588  1303               	bcf	3,6	;RP1=0, select bank0
+  1455  0589  00B2               	movwf	??_MFRC522_AntiColl
+  1456  058A  083C               	movf	MFRC522_AntiColl@serNum,w
+  1457  058B  0084               	movwf	4
+  1458  058C  0832               	movf	??_MFRC522_AntiColl,w
+  1459  058D  1383               	bcf	3,7	;select IRP bank0
+  1460  058E  0080               	movwf	0
+  1461  058F                     l1447:
+  1462                           
+  1463                           ;./rfid.h: 536:   serNum[1] = 0x20;
+  1464  058F  3020               	movlw	32
+  1465  0590  00B2               	movwf	??_MFRC522_AntiColl
+  1466  0591  0A3C               	incf	MFRC522_AntiColl@serNum,w
+  1467  0592  0084               	movwf	4
+  1468  0593  0832               	movf	??_MFRC522_AntiColl,w
+  1469  0594  0080               	movwf	0
+  1470  0595                     l1449:
+  1471                           
+  1472                           ;./rfid.h: 537:   MFRC522_Clear_Bit( 0x08, 0x08 );
+  1473  0595  3008               	movlw	8
+  1474  0596  00B2               	movwf	??_MFRC522_AntiColl
+  1475  0597  0832               	movf	??_MFRC522_AntiColl,w
+  1476  0598  00F8               	movwf	MFRC522_Clear_Bit@mask
+  1477  0599  3008               	movlw	8
+  1478  059A  120A  118A  238A  120A  118A  	fcall	_MFRC522_Clear_Bit
+  1479  059F                     l1451:
+  1480                           
+  1481                           ;./rfid.h: 538:   _status = MFRC522_ToCard( 0x0C, serNum, 2, serNum, &unLen );
+  1482  059F  1283               	bcf	3,5	;RP0=0, select bank0
+  1483  05A0  1303               	bcf	3,6	;RP1=0, select bank0
+  1484  05A1  083C               	movf	MFRC522_AntiColl@serNum,w
+  1485  05A2  00B2               	movwf	??_MFRC522_AntiColl
+  1486  05A3  0832               	movf	??_MFRC522_AntiColl,w
+  1487  05A4  00A0               	movwf	MFRC522_ToCard@sendData
+  1488  05A5  3002               	movlw	2
+  1489  05A6  00B3               	movwf	??_MFRC522_AntiColl+1
+  1490  05A7  0833               	movf	??_MFRC522_AntiColl+1,w
+  1491  05A8  00A1               	movwf	MFRC522_ToCard@sendLen
+  1492  05A9  083C               	movf	MFRC522_AntiColl@serNum,w
+  1493  05AA  00B4               	movwf	??_MFRC522_AntiColl+2
+  1494  05AB  0834               	movf	??_MFRC522_AntiColl+2,w
+  1495  05AC  00A2               	movwf	MFRC522_ToCard@backData
+  1496  05AD  3038               	movlw	(low (MFRC522_AntiColl@unLen| 0))& (0+255)
+  1497  05AE  00B5               	movwf	??_MFRC522_AntiColl+3
+  1498  05AF  0835               	movf	??_MFRC522_AntiColl+3,w
+  1499  05B0  00A3               	movwf	MFRC522_ToCard@backLen
+  1500  05B1  300C               	movlw	12
+  1501  05B2  120A  118A  2662  120A  118A  	fcall	_MFRC522_ToCard
+  1502  05B7  1283               	bcf	3,5	;RP0=0, select bank0
+  1503  05B8  1303               	bcf	3,6	;RP1=0, select bank0
+  1504  05B9  00B6               	movwf	??_MFRC522_AntiColl+4
+  1505  05BA  0836               	movf	??_MFRC522_AntiColl+4,w
+  1506  05BB  00BA               	movwf	MFRC522_AntiColl@_status
+  1507  05BC                     l1453:
+  1508                           
+  1509                           ;./rfid.h: 540:   if (_status == 0)
+  1510  05BC  083A               	movf	MFRC522_AntiColl@_status,w
+  1511  05BD  1D03               	btfss	3,2
+  1512  05BE  2DC0               	goto	u731
+  1513  05BF  2DC1               	goto	u730
+  1514  05C0                     u731:
+  1515  05C0  2DE3               	goto	l169
+  1516  05C1                     u730:
+  1517  05C1                     l1455:
+  1518                           
+  1519                           ;./rfid.h: 541:   {;./rfid.h: 542:     for ( i=0; i < 4; i++ )
+  1520  05C1  01BB               	clrf	MFRC522_AntiColl@i
+  1521  05C2                     l1461:
+  1522                           
+  1523                           ;./rfid.h: 543:     {;./rfid.h: 544:       serNumCheck ^= serNum[i];
+  1524  05C2  083B               	movf	MFRC522_AntiColl@i,w
+  1525  05C3  073C               	addwf	MFRC522_AntiColl@serNum,w
+  1526  05C4  00B2               	movwf	??_MFRC522_AntiColl
+  1527  05C5  0832               	movf	??_MFRC522_AntiColl,w
+  1528  05C6  0084               	movwf	4
+  1529  05C7  1383               	bcf	3,7	;select IRP bank0
+  1530  05C8  0800               	movf	0,w
+  1531  05C9  00B3               	movwf	??_MFRC522_AntiColl+1
+  1532  05CA  0833               	movf	??_MFRC522_AntiColl+1,w
+  1533  05CB  06B7               	xorwf	MFRC522_AntiColl@serNumCheck,f
+  1534  05CC                     l1463:
+  1535                           
+  1536                           ;./rfid.h: 545:     }
+  1537  05CC  3001               	movlw	1
+  1538  05CD  00B2               	movwf	??_MFRC522_AntiColl
+  1539  05CE  0832               	movf	??_MFRC522_AntiColl,w
+  1540  05CF  07BB               	addwf	MFRC522_AntiColl@i,f
+  1541  05D0                     l1465:
+  1542  05D0  3004               	movlw	4
+  1543  05D1  023B               	subwf	MFRC522_AntiColl@i,w
+  1544  05D2  1C03               	skipc
+  1545  05D3  2DD5               	goto	u741
+  1546  05D4  2DD6               	goto	u740
+  1547  05D5                     u741:
+  1548  05D5  2DC2               	goto	l1461
+  1549  05D6                     u740:
+  1550  05D6                     l1467:
+  1551                           
+  1552                           ;./rfid.h: 547:     if ( serNumCheck != serNum[4] )
+  1553  05D6  083C               	movf	MFRC522_AntiColl@serNum,w
+  1554  05D7  3E04               	addlw	4
+  1555  05D8  0084               	movwf	4
+  1556  05D9  0800               	movf	0,w
+  1557  05DA  0637               	xorwf	MFRC522_AntiColl@serNumCheck,w
+  1558  05DB  1903               	skipnz
+  1559  05DC  2DDE               	goto	u751
+  1560  05DD  2DDF               	goto	u750
+  1561  05DE                     u751:
+  1562  05DE  2DE3               	goto	l169
+  1563  05DF                     u750:
+  1564  05DF                     l1469:
+  1565                           
+  1566                           ;./rfid.h: 548:     {;./rfid.h: 549:       _status = 2;
+  1567  05DF  3002               	movlw	2
+  1568  05E0  00B2               	movwf	??_MFRC522_AntiColl
+  1569  05E1  0832               	movf	??_MFRC522_AntiColl,w
+  1570  05E2  00BA               	movwf	MFRC522_AntiColl@_status
+  1571  05E3                     l169:	
+  1572                           ;./rfid.h: 551:   }
+  1573                           
+  1574                           
+  1575                           ;./rfid.h: 553:   return _status;
+  1576  05E3  083A               	movf	MFRC522_AntiColl@_status,w
+  1577  05E4                     l173:
+  1578  05E4  0008               	return
+  1579  05E5                     __end_of_MFRC522_AntiColl:
+  1580                           
+  1581                           	psect	text9
+  1582  0488                     __ptext9:	
+  1583 ;; *************** function _MFRC522_Init *****************
+  1584 ;; Defined at:
+  1585 ;;		line 210 in file "./rfid.h"
+  1586 ;; Parameters:    Size  Location     Type
+  1587 ;;		None
+  1588 ;; Auto vars:     Size  Location     Type
+  1589 ;;		None
+  1590 ;; Return value:  Size  Location     Type
+  1591 ;;                  1    wreg      void 
+  1592 ;; Registers used:
+  1593 ;;		wreg, status,2, status,0, pclath, cstack
+  1594 ;; Tracked objects:
+  1595 ;;		On entry : 0/0
+  1596 ;;		On exit  : 0/0
+  1597 ;;		Unchanged: 0/0
+  1598 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1599 ;;      Params:         0       0       0       0       0
+  1600 ;;      Locals:         0       0       0       0       0
+  1601 ;;      Temps:          1       0       0       0       0
+  1602 ;;      Totals:         1       0       0       0       0
+  1603 ;;Total ram usage:        1 bytes
+  1604 ;; Hardware stack levels used: 1
+  1605 ;; Hardware stack levels required when called: 4
+  1606 ;; This function calls:
+  1607 ;;		_MFRC522_AntennaOn
+  1608 ;;		_MFRC522_Reset
+  1609 ;;		_MFRC522_Wr
+  1610 ;; This function is called by:
+  1611 ;;		_main
+  1612 ;; This function uses a non-reentrant model
+  1613 ;;
+  1614                           
+  1615                           
+  1616                           ;psect for function _MFRC522_Init
+  1617  0488                     _MFRC522_Init:
+  1618  0488                     l1479:	
+  1619                           ;incstack = 0
+  1620                           ; Regs used in _MFRC522_Init: [wreg+status,2+status,0+pclath+cstack]
+  1621                           
+  1622                           
+  1623                           ;./rfid.h: 212:      MFRC522_Reset();
+  1624  0488  120A  118A  232D  120A  118A  	fcall	_MFRC522_Reset
+  1625                           
+  1626                           ;./rfid.h: 214:      MFRC522_Wr( 0x2A, 0x8D );
+  1627  048D  308D               	movlw	141
+  1628  048E  00FC               	movwf	??_MFRC522_Init
+  1629  048F  087C               	movf	??_MFRC522_Init,w
+  1630  0490  00F5               	movwf	MFRC522_Wr@value
+  1631  0491  302A               	movlw	42
+  1632  0492  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1633                           
+  1634                           ;./rfid.h: 215:      MFRC522_Wr( 0x2B, 0x3E );
+  1635  0497  303E               	movlw	62
+  1636  0498  00FC               	movwf	??_MFRC522_Init
+  1637  0499  087C               	movf	??_MFRC522_Init,w
+  1638  049A  00F5               	movwf	MFRC522_Wr@value
+  1639  049B  302B               	movlw	43
+  1640  049C  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1641                           
+  1642                           ;./rfid.h: 216:      MFRC522_Wr( 0x2D, 30 );
+  1643  04A1  301E               	movlw	30
+  1644  04A2  00FC               	movwf	??_MFRC522_Init
+  1645  04A3  087C               	movf	??_MFRC522_Init,w
+  1646  04A4  00F5               	movwf	MFRC522_Wr@value
+  1647  04A5  302D               	movlw	45
+  1648  04A6  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1649                           
+  1650                           ;./rfid.h: 217:      MFRC522_Wr( 0x2C, 0 );
+  1651  04AB  01F5               	clrf	MFRC522_Wr@value
+  1652  04AC  302C               	movlw	44
+  1653  04AD  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1654                           
+  1655                           ;./rfid.h: 219:      MFRC522_Wr( 0x15, 0x40 );
+  1656  04B2  3040               	movlw	64
+  1657  04B3  00FC               	movwf	??_MFRC522_Init
+  1658  04B4  087C               	movf	??_MFRC522_Init,w
+  1659  04B5  00F5               	movwf	MFRC522_Wr@value
+  1660  04B6  3015               	movlw	21
+  1661  04B7  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1662                           
+  1663                           ;./rfid.h: 220:      MFRC522_Wr( 0x11, 0x3D );
+  1664  04BC  303D               	movlw	61
+  1665  04BD  00FC               	movwf	??_MFRC522_Init
+  1666  04BE  087C               	movf	??_MFRC522_Init,w
+  1667  04BF  00F5               	movwf	MFRC522_Wr@value
+  1668  04C0  3011               	movlw	17
+  1669  04C1  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1670                           
+  1671                           ;./rfid.h: 226:      MFRC522_AntennaOn();
+  1672  04C6  120A  118A  2322  120A  118A  	fcall	_MFRC522_AntennaOn
+  1673  04CB                     l84:
+  1674  04CB  0008               	return
+  1675  04CC                     __end_of_MFRC522_Init:
+  1676                           
+  1677                           	psect	text10
+  1678  032D                     __ptext10:	
+  1679 ;; *************** function _MFRC522_Reset *****************
+  1680 ;; Defined at:
+  1681 ;;		line 193 in file "./rfid.h"
+  1682 ;; Parameters:    Size  Location     Type
+  1683 ;;		None
+  1684 ;; Auto vars:     Size  Location     Type
+  1685 ;;		None
+  1686 ;; Return value:  Size  Location     Type
+  1687 ;;                  1    wreg      void 
+  1688 ;; Registers used:
+  1689 ;;		wreg, status,2, status,0, pclath, cstack
+  1690 ;; Tracked objects:
+  1691 ;;		On entry : 0/0
+  1692 ;;		On exit  : 0/0
+  1693 ;;		Unchanged: 0/0
+  1694 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1695 ;;      Params:         0       0       0       0       0
+  1696 ;;      Locals:         0       0       0       0       0
+  1697 ;;      Temps:          1       0       0       0       0
+  1698 ;;      Totals:         1       0       0       0       0
+  1699 ;;Total ram usage:        1 bytes
+  1700 ;; Hardware stack levels used: 1
+  1701 ;; Hardware stack levels required when called: 2
+  1702 ;; This function calls:
+  1703 ;;		_MFRC522_Wr
+  1704 ;; This function is called by:
+  1705 ;;		_MFRC522_Init
+  1706 ;; This function uses a non-reentrant model
+  1707 ;;
+  1708                           
+  1709                           
+  1710                           ;psect for function _MFRC522_Reset
+  1711  032D                     _MFRC522_Reset:
+  1712  032D                     l1397:	
+  1713                           ;incstack = 0
+  1714                           ; Regs used in _MFRC522_Reset: [wreg+status,2+status,0+pclath+cstack]
+  1715                           
+  1716                           
+  1717                           ;./rfid.h: 195:     MFRC522_Wr( 0x01, 0x0F );
+  1718  032D  300F               	movlw	15
+  1719  032E  00F8               	movwf	??_MFRC522_Reset
+  1720  032F  0878               	movf	??_MFRC522_Reset,w
+  1721  0330  00F5               	movwf	MFRC522_Wr@value
+  1722  0331  3001               	movlw	1
+  1723  0332  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  1724  0337                     l75:
+  1725  0337  0008               	return
+  1726  0338                     __end_of_MFRC522_Reset:
+  1727                           
+  1728                           	psect	text11
+  1729  0322                     __ptext11:	
+  1730 ;; *************** function _MFRC522_AntennaOn *****************
+  1731 ;; Defined at:
+  1732 ;;		line 198 in file "./rfid.h"
+  1733 ;; Parameters:    Size  Location     Type
+  1734 ;;		None
+  1735 ;; Auto vars:     Size  Location     Type
+  1736 ;;		None
+  1737 ;; Return value:  Size  Location     Type
+  1738 ;;                  1    wreg      void 
+  1739 ;; Registers used:
+  1740 ;;		wreg, status,2, status,0, pclath, cstack
+  1741 ;; Tracked objects:
+  1742 ;;		On entry : 0/0
+  1743 ;;		On exit  : 0/0
+  1744 ;;		Unchanged: 0/0
+  1745 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1746 ;;      Params:         0       0       0       0       0
+  1747 ;;      Locals:         0       0       0       0       0
+  1748 ;;      Temps:          1       0       0       0       0
+  1749 ;;      Totals:         1       0       0       0       0
+  1750 ;;Total ram usage:        1 bytes
+  1751 ;; Hardware stack levels used: 1
+  1752 ;; Hardware stack levels required when called: 3
+  1753 ;; This function calls:
+  1754 ;;		_MFRC522_Set_Bit
+  1755 ;; This function is called by:
+  1756 ;;		_MFRC522_Init
+  1757 ;; This function uses a non-reentrant model
+  1758 ;;
+  1759                           
+  1760                           
+  1761                           ;psect for function _MFRC522_AntennaOn
+  1762  0322                     _MFRC522_AntennaOn:
+  1763  0322                     l1399:	
+  1764                           ;incstack = 0
+  1765                           ; Regs used in _MFRC522_AntennaOn: [wreg+status,2+status,0+pclath+cstack]
+  1766                           
+  1767                           
+  1768                           ;./rfid.h: 200:  MFRC522_Set_Bit( 0x14, 0x03 );
+  1769  0322  3003               	movlw	3
+  1770  0323  00FB               	movwf	??_MFRC522_AntennaOn
+  1771  0324  087B               	movf	??_MFRC522_AntennaOn,w
+  1772  0325  00F8               	movwf	MFRC522_Set_Bit@mask
+  1773  0326  3014               	movlw	20
+  1774  0327  120A  118A  2351  120A  118A  	fcall	_MFRC522_Set_Bit
+  1775  032C                     l78:
+  1776  032C  0008               	return
+  1777  032D                     __end_of_MFRC522_AntennaOn:
+  1778                           
+  1779                           	psect	text12
+  1780  04CC                     __ptext12:	
+  1781 ;; *************** function _MFRC522_Halt *****************
+  1782 ;; Defined at:
+  1783 ;;		line 424 in file "./rfid.h"
+  1784 ;; Parameters:    Size  Location     Type
+  1785 ;;		None
+  1786 ;; Auto vars:     Size  Location     Type
+  1787 ;;  buff            4   22[BANK0 ] unsigned char [4]
+  1788 ;;  unLen           2   26[BANK0 ] unsigned int 
+  1789 ;; Return value:  Size  Location     Type
+  1790 ;;                  1    wreg      void 
+  1791 ;; Registers used:
+  1792 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1793 ;; Tracked objects:
+  1794 ;;		On entry : 0/0
+  1795 ;;		On exit  : 0/0
+  1796 ;;		Unchanged: 0/0
+  1797 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1798 ;;      Params:         0       0       0       0       0
+  1799 ;;      Locals:         0       6       0       0       0
+  1800 ;;      Temps:          0       4       0       0       0
+  1801 ;;      Totals:         0      10       0       0       0
+  1802 ;;Total ram usage:       10 bytes
+  1803 ;; Hardware stack levels used: 1
+  1804 ;; Hardware stack levels required when called: 4
+  1805 ;; This function calls:
+  1806 ;;		_MFRC522_CRC
+  1807 ;;		_MFRC522_Clear_Bit
+  1808 ;;		_MFRC522_ToCard
+  1809 ;; This function is called by:
+  1810 ;;		_main
+  1811 ;; This function uses a non-reentrant model
+  1812 ;;
+  1813                           
+  1814                           
+  1815                           ;psect for function _MFRC522_Halt
+  1816  04CC                     _MFRC522_Halt:
+  1817  04CC                     l1481:	
+  1818                           ;incstack = 0
+  1819                           ; Regs used in _MFRC522_Halt: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1820                           
+  1821                           
+  1822                           ;./rfid.h: 426:   unsigned unLen;;./rfid.h: 427:   char buff[4];;./rfid.h: 429:   buff[0
+      +                          ] = 0x50;
+  1823  04CC  3050               	movlw	80
+  1824  04CD  1283               	bcf	3,5	;RP0=0, select bank0
+  1825  04CE  1303               	bcf	3,6	;RP1=0, select bank0
+  1826  04CF  00B2               	movwf	??_MFRC522_Halt
+  1827  04D0  0832               	movf	??_MFRC522_Halt,w
+  1828  04D1  00B6               	movwf	MFRC522_Halt@buff
+  1829  04D2                     l1483:
+  1830                           
+  1831                           ;./rfid.h: 430:   buff[1] = 0;
+  1832  04D2  01B7               	clrf	MFRC522_Halt@buff+1
+  1833  04D3                     l1485:
+  1834                           
+  1835                           ;./rfid.h: 431:   MFRC522_CRC( buff, 2, &buff[2] );
+  1836  04D3  3002               	movlw	2
+  1837  04D4  00B2               	movwf	??_MFRC522_Halt
+  1838  04D5  0832               	movf	??_MFRC522_Halt,w
+  1839  04D6  00FC               	movwf	MFRC522_CRC@length
+  1840  04D7  3038               	movlw	(low ((MFRC522_Halt@buff| 0+2)))& (0+255)
+  1841  04D8  00B3               	movwf	??_MFRC522_Halt+1
+  1842  04D9  0833               	movf	??_MFRC522_Halt+1,w
+  1843  04DA  00FD               	movwf	MFRC522_CRC@dataOut
+  1844  04DB  3036               	movlw	(low (MFRC522_Halt@buff| 0))& (0+255)
+  1845  04DC  120A  118A  25E5  120A  118A  	fcall	_MFRC522_CRC
+  1846  04E1                     l1487:
+  1847                           
+  1848                           ;./rfid.h: 433:   MFRC522_Clear_Bit( 0x08, 0x80 );
+  1849  04E1  3080               	movlw	128
+  1850  04E2  1283               	bcf	3,5	;RP0=0, select bank0
+  1851  04E3  1303               	bcf	3,6	;RP1=0, select bank0
+  1852  04E4  00B2               	movwf	??_MFRC522_Halt
+  1853  04E5  0832               	movf	??_MFRC522_Halt,w
+  1854  04E6  00F8               	movwf	MFRC522_Clear_Bit@mask
+  1855  04E7  3008               	movlw	8
+  1856  04E8  120A  118A  238A  120A  118A  	fcall	_MFRC522_Clear_Bit
+  1857  04ED                     l1489:
+  1858                           
+  1859                           ;./rfid.h: 434:   MFRC522_ToCard( 0x0C, buff, 4, buff, &unLen );
+  1860  04ED  3036               	movlw	(low (MFRC522_Halt@buff| 0))& (0+255)
+  1861  04EE  1283               	bcf	3,5	;RP0=0, select bank0
+  1862  04EF  1303               	bcf	3,6	;RP1=0, select bank0
+  1863  04F0  00B2               	movwf	??_MFRC522_Halt
+  1864  04F1  0832               	movf	??_MFRC522_Halt,w
+  1865  04F2  00A0               	movwf	MFRC522_ToCard@sendData
+  1866  04F3  3004               	movlw	4
+  1867  04F4  00B3               	movwf	??_MFRC522_Halt+1
+  1868  04F5  0833               	movf	??_MFRC522_Halt+1,w
+  1869  04F6  00A1               	movwf	MFRC522_ToCard@sendLen
+  1870  04F7  3036               	movlw	(low (MFRC522_Halt@buff| 0))& (0+255)
+  1871  04F8  00B4               	movwf	??_MFRC522_Halt+2
+  1872  04F9  0834               	movf	??_MFRC522_Halt+2,w
+  1873  04FA  00A2               	movwf	MFRC522_ToCard@backData
+  1874  04FB  303A               	movlw	(low (MFRC522_Halt@unLen| 0))& (0+255)
+  1875  04FC  00B5               	movwf	??_MFRC522_Halt+3
+  1876  04FD  0835               	movf	??_MFRC522_Halt+3,w
+  1877  04FE  00A3               	movwf	MFRC522_ToCard@backLen
+  1878  04FF  300C               	movlw	12
+  1879  0500  120A  118A  2662  120A  118A  	fcall	_MFRC522_ToCard
+  1880  0505                     l1491:
+  1881                           
+  1882                           ;./rfid.h: 435:   MFRC522_Clear_Bit( 0x08, 0x08 );
+  1883  0505  3008               	movlw	8
+  1884  0506  1283               	bcf	3,5	;RP0=0, select bank0
+  1885  0507  1303               	bcf	3,6	;RP1=0, select bank0
+  1886  0508  00B2               	movwf	??_MFRC522_Halt
+  1887  0509  0832               	movf	??_MFRC522_Halt,w
+  1888  050A  00F8               	movwf	MFRC522_Clear_Bit@mask
+  1889  050B  3008               	movlw	8
+  1890  050C  120A  118A  238A  120A  118A  	fcall	_MFRC522_Clear_Bit
+  1891  0511                     l138:
+  1892  0511  0008               	return
+  1893  0512                     __end_of_MFRC522_Halt:
+  1894                           
+  1895                           	psect	text13
+  1896  0662                     __ptext13:	
+  1897 ;; *************** function _MFRC522_ToCard *****************
+  1898 ;; Defined at:
+  1899 ;;		line 229 in file "./rfid.h"
+  1900 ;; Parameters:    Size  Location     Type
+  1901 ;;  command         1    wreg     unsigned char 
+  1902 ;;  sendData        1    0[BANK0 ] PTR unsigned char 
+  1903 ;;		 -> main@UID(6), main@TagType(1), MFRC522_Write@buff(18), MFRC522_Auth@buff(12), 
+  1904 ;;		 -> MFRC522_Halt@buff(4), MFRC522_SelectTag@buffer(9), 
+  1905 ;;  sendLen         1    1[BANK0 ] unsigned char 
+  1906 ;;  backData        1    2[BANK0 ] PTR unsigned char 
+  1907 ;;		 -> main@UID(6), main@TagType(1), MFRC522_Write@buff(18), MFRC522_Auth@buff(12), 
+  1908 ;;		 -> MFRC522_Halt@buff(4), MFRC522_SelectTag@buffer(9), 
+  1909 ;;  backLen         1    3[BANK0 ] PTR unsigned int 
+  1910 ;;		 -> MFRC522_AntiColl@unLen(2), MFRC522_Read@unLen(2), MFRC522_Write@recvBits(2), MFRC522_Auth@recvBits(2), 
+  1911 ;;		 -> MFRC522_Halt@unLen(2), MFRC522_SelectTag@recvBits(2), MFRC522_Request@backBits(2), 
+  1912 ;; Auto vars:     Size  Location     Type
+  1913 ;;  command         1   14[BANK0 ] unsigned char 
+  1914 ;;  i               2   15[BANK0 ] unsigned int 
+  1915 ;;  n               1   17[BANK0 ] unsigned char 
+  1916 ;;  irqEn           1   13[BANK0 ] unsigned char 
+  1917 ;;  lastBits        1   12[BANK0 ] unsigned char 
+  1918 ;;  _status         1   11[BANK0 ] unsigned char 
+  1919 ;;  waitIRq         1   10[BANK0 ] unsigned char 
+  1920 ;; Return value:  Size  Location     Type
+  1921 ;;                  1    wreg      unsigned char 
+  1922 ;; Registers used:
+  1923 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1924 ;; Tracked objects:
+  1925 ;;		On entry : 0/0
+  1926 ;;		On exit  : 0/0
+  1927 ;;		Unchanged: 0/0
+  1928 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1929 ;;      Params:         0       4       0       0       0
+  1930 ;;      Locals:         0       8       0       0       0
+  1931 ;;      Temps:          0       6       0       0       0
+  1932 ;;      Totals:         0      18       0       0       0
+  1933 ;;Total ram usage:       18 bytes
+  1934 ;; Hardware stack levels used: 1
+  1935 ;; Hardware stack levels required when called: 3
+  1936 ;; This function calls:
+  1937 ;;		_MFRC522_Clear_Bit
+  1938 ;;		_MFRC522_Rd
+  1939 ;;		_MFRC522_Set_Bit
+  1940 ;;		_MFRC522_Wr
+  1941 ;; This function is called by:
+  1942 ;;		_MFRC522_Request
+  1943 ;;		_MFRC522_Halt
+  1944 ;;		_MFRC522_AntiColl
+  1945 ;;		_MFRC522_SelectTag
+  1946 ;;		_MFRC522_Auth
+  1947 ;;		_MFRC522_Write
+  1948 ;;		_MFRC522_Read
+  1949 ;; This function uses a non-reentrant model
+  1950 ;;
+  1951                           
+  1952                           
+  1953                           ;psect for function _MFRC522_ToCard
+  1954  0662                     _MFRC522_ToCard:
+  1955                           
+  1956                           ;incstack = 0
+  1957                           ; Regs used in _MFRC522_ToCard: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1958                           ;MFRC522_ToCard@command stored from wreg
+  1959  0662  1283               	bcf	3,5	;RP0=0, select bank0
+  1960  0663  1303               	bcf	3,6	;RP1=0, select bank0
+  1961  0664  00AE               	movwf	MFRC522_ToCard@command
+  1962  0665                     l1309:
+  1963                           
+  1964                           ;./rfid.h: 229: char MFRC522_ToCard( char command, char *sendData, char sendLen, char *b
+      +                          ackData, unsigned *backLen );./rfid.h: 230: {;./rfid.h: 231:   char _status = 2;
+  1965  0665  3002               	movlw	2
+  1966  0666  00A4               	movwf	??_MFRC522_ToCard
+  1967  0667  0824               	movf	??_MFRC522_ToCard,w
+  1968  0668  00AB               	movwf	MFRC522_ToCard@_status
+  1969  0669                     l1311:
+  1970                           
+  1971                           ;./rfid.h: 232:   char irqEn = 0x00;
+  1972  0669  01AD               	clrf	MFRC522_ToCard@irqEn
+  1973  066A                     l1313:
+  1974                           
+  1975                           ;./rfid.h: 233:   char waitIRq = 0x00;
+  1976  066A  01AA               	clrf	MFRC522_ToCard@waitIRq
+  1977                           
+  1978                           ;./rfid.h: 234:   char lastBits;;./rfid.h: 235:   char n;;./rfid.h: 236:   unsigned i;;.
+      +                          /rfid.h: 238:   switch (command)
+  1979  066B  2E7E               	goto	l1321
+  1980  066C                     l1315:
+  1981                           
+  1982                           ;./rfid.h: 241:     {;./rfid.h: 242:       irqEn = 0x12;
+  1983  066C  3012               	movlw	18
+  1984  066D  00A4               	movwf	??_MFRC522_ToCard
+  1985  066E  0824               	movf	??_MFRC522_ToCard,w
+  1986  066F  00AD               	movwf	MFRC522_ToCard@irqEn
+  1987                           
+  1988                           ;./rfid.h: 243:       waitIRq = 0x10;
+  1989  0670  3010               	movlw	16
+  1990  0671  00A4               	movwf	??_MFRC522_ToCard
+  1991  0672  0824               	movf	??_MFRC522_ToCard,w
+  1992  0673  00AA               	movwf	MFRC522_ToCard@waitIRq
+  1993                           
+  1994                           ;./rfid.h: 244:       break;
+  1995  0674  2E8E               	goto	l1323
+  1996  0675                     l1317:
+  1997                           
+  1998                           ;./rfid.h: 247:     {;./rfid.h: 248:       irqEn = 0x77;
+  1999  0675  3077               	movlw	119
+  2000  0676  00A4               	movwf	??_MFRC522_ToCard
+  2001  0677  0824               	movf	??_MFRC522_ToCard,w
+  2002  0678  00AD               	movwf	MFRC522_ToCard@irqEn
+  2003                           
+  2004                           ;./rfid.h: 249:       waitIRq = 0x30;
+  2005  0679  3030               	movlw	48
+  2006  067A  00A4               	movwf	??_MFRC522_ToCard
+  2007  067B  0824               	movf	??_MFRC522_ToCard,w
+  2008  067C  00AA               	movwf	MFRC522_ToCard@waitIRq
+  2009                           
+  2010                           ;./rfid.h: 250:       break;
+  2011  067D  2E8E               	goto	l1323
+  2012  067E                     l1321:
+  2013  067E  082E               	movf	MFRC522_ToCard@command,w
+  2014  067F  00A4               	movwf	??_MFRC522_ToCard
+  2015  0680  01A5               	clrf	??_MFRC522_ToCard+1
+  2016                           
+  2017                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  2018                           ; Switch size 1, requested type "simple"
+  2019                           ; Number of cases is 1, Range of values is 0 to 0
+  2020                           ; switch strategies available:
+  2021                           ; Name         Instructions Cycles
+  2022                           ; simple_byte            4     3 (average)
+  2023                           ; direct_byte           11     8 (fixed)
+  2024                           ; jumptable            260     6 (fixed)
+  2025                           ;	Chosen strategy is simple_byte
+  2026  0681  0825               	movf	??_MFRC522_ToCard+1,w
+  2027  0682  3A00               	xorlw	0	; case 0
+  2028  0683  1903               	skipnz
+  2029  0684  2E86               	goto	l1733
+  2030  0685  2E8E               	goto	l1323
+  2031  0686                     l1733:
+  2032                           
+  2033                           ; Switch size 1, requested type "simple"
+  2034                           ; Number of cases is 2, Range of values is 12 to 14
+  2035                           ; switch strategies available:
+  2036                           ; Name         Instructions Cycles
+  2037                           ; simple_byte            7     4 (average)
+  2038                           ; direct_byte           20    11 (fixed)
+  2039                           ; jumptable            263     9 (fixed)
+  2040                           ;	Chosen strategy is simple_byte
+  2041  0686  0824               	movf	??_MFRC522_ToCard,w
+  2042  0687  3A0C               	xorlw	12	; case 12
+  2043  0688  1903               	skipnz
+  2044  0689  2E75               	goto	l1317
+  2045  068A  3A02               	xorlw	2	; case 14
+  2046  068B  1903               	skipnz
+  2047  068C  2E6C               	goto	l1315
+  2048  068D  2E8E               	goto	l1323
+  2049  068E                     l1323:
+  2050                           
+  2051                           ;./rfid.h: 256:   MFRC522_Wr( 0x02, irqEn | 0x80 );
+  2052  068E  082D               	movf	MFRC522_ToCard@irqEn,w
+  2053  068F  3880               	iorlw	128
+  2054  0690  00A4               	movwf	??_MFRC522_ToCard
+  2055  0691  0824               	movf	??_MFRC522_ToCard,w
+  2056  0692  00F5               	movwf	MFRC522_Wr@value
+  2057  0693  3002               	movlw	2
+  2058  0694  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2059                           
+  2060                           ;./rfid.h: 257:   MFRC522_Clear_Bit( 0x04, 0x80 );
+  2061  0699  3080               	movlw	128
+  2062  069A  1283               	bcf	3,5	;RP0=0, select bank0
+  2063  069B  1303               	bcf	3,6	;RP1=0, select bank0
+  2064  069C  00A4               	movwf	??_MFRC522_ToCard
+  2065  069D  0824               	movf	??_MFRC522_ToCard,w
+  2066  069E  00F8               	movwf	MFRC522_Clear_Bit@mask
+  2067  069F  3004               	movlw	4
+  2068  06A0  120A  118A  238A  120A  118A  	fcall	_MFRC522_Clear_Bit
+  2069                           
+  2070                           ;./rfid.h: 258:   MFRC522_Set_Bit( 0x0A, 0x80 );
+  2071  06A5  3080               	movlw	128
+  2072  06A6  1283               	bcf	3,5	;RP0=0, select bank0
+  2073  06A7  1303               	bcf	3,6	;RP1=0, select bank0
+  2074  06A8  00A4               	movwf	??_MFRC522_ToCard
+  2075  06A9  0824               	movf	??_MFRC522_ToCard,w
+  2076  06AA  00F8               	movwf	MFRC522_Set_Bit@mask
+  2077  06AB  300A               	movlw	10
+  2078  06AC  120A  118A  2351  120A  118A  	fcall	_MFRC522_Set_Bit
+  2079                           
+  2080                           ;./rfid.h: 259:   MFRC522_Wr( 0x01, 0x00 );
+  2081  06B1  01F5               	clrf	MFRC522_Wr@value
+  2082  06B2  3001               	movlw	1
+  2083  06B3  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2084  06B8                     l1325:
+  2085                           
+  2086                           ;./rfid.h: 262:   for ( i=0; i < sendLen; i++ )
+  2087  06B8  1283               	bcf	3,5	;RP0=0, select bank0
+  2088  06B9  1303               	bcf	3,6	;RP1=0, select bank0
+  2089  06BA  01AF               	clrf	MFRC522_ToCard@i
+  2090  06BB  01B0               	clrf	MFRC522_ToCard@i+1
+  2091  06BC  2ED5               	goto	l1331
+  2092  06BD                     l1327:
+  2093                           
+  2094                           ;./rfid.h: 263:   {;./rfid.h: 264:     MFRC522_Wr( 0x09, sendData[i] );
+  2095  06BD  082F               	movf	MFRC522_ToCard@i,w
+  2096  06BE  0720               	addwf	MFRC522_ToCard@sendData,w
+  2097  06BF  00A4               	movwf	??_MFRC522_ToCard
+  2098  06C0  0824               	movf	??_MFRC522_ToCard,w
+  2099  06C1  0084               	movwf	4
+  2100  06C2  1383               	bcf	3,7	;select IRP bank0
+  2101  06C3  0800               	movf	0,w
+  2102  06C4  00A5               	movwf	??_MFRC522_ToCard+1
+  2103  06C5  0825               	movf	??_MFRC522_ToCard+1,w
+  2104  06C6  00F5               	movwf	MFRC522_Wr@value
+  2105  06C7  3009               	movlw	9
+  2106  06C8  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2107  06CD                     l1329:
+  2108                           
+  2109                           ;./rfid.h: 265:   }
+  2110  06CD  3001               	movlw	1
+  2111  06CE  1283               	bcf	3,5	;RP0=0, select bank0
+  2112  06CF  1303               	bcf	3,6	;RP1=0, select bank0
+  2113  06D0  07AF               	addwf	MFRC522_ToCard@i,f
+  2114  06D1  1803               	skipnc
+  2115  06D2  0AB0               	incf	MFRC522_ToCard@i+1,f
+  2116  06D3  3000               	movlw	0
+  2117  06D4  07B0               	addwf	MFRC522_ToCard@i+1,f
+  2118  06D5                     l1331:
+  2119  06D5  0821               	movf	MFRC522_ToCard@sendLen,w
+  2120  06D6  00A4               	movwf	??_MFRC522_ToCard
+  2121  06D7  01A5               	clrf	??_MFRC522_ToCard+1
+  2122  06D8  0825               	movf	??_MFRC522_ToCard+1,w
+  2123  06D9  0230               	subwf	MFRC522_ToCard@i+1,w
+  2124  06DA  1D03               	skipz
+  2125  06DB  2EDE               	goto	u555
+  2126  06DC  0824               	movf	??_MFRC522_ToCard,w
+  2127  06DD  022F               	subwf	MFRC522_ToCard@i,w
+  2128  06DE                     u555:
+  2129  06DE  1C03               	skipc
+  2130  06DF  2EE1               	goto	u551
+  2131  06E0  2EE2               	goto	u550
+  2132  06E1                     u551:
+  2133  06E1  2EBD               	goto	l1327
+  2134  06E2                     u550:
+  2135  06E2                     l1333:
+  2136                           
+  2137                           ;./rfid.h: 268:   MFRC522_Wr( 0x01, command );
+  2138  06E2  082E               	movf	MFRC522_ToCard@command,w
+  2139  06E3  00A4               	movwf	??_MFRC522_ToCard
+  2140  06E4  0824               	movf	??_MFRC522_ToCard,w
+  2141  06E5  00F5               	movwf	MFRC522_Wr@value
+  2142  06E6  3001               	movlw	1
+  2143  06E7  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2144  06EC                     l1335:
+  2145                           
+  2146                           ;./rfid.h: 270:   if (command == 0x0C )
+  2147  06EC  300C               	movlw	12
+  2148  06ED  1283               	bcf	3,5	;RP0=0, select bank0
+  2149  06EE  1303               	bcf	3,6	;RP1=0, select bank0
+  2150  06EF  062E               	xorwf	MFRC522_ToCard@command,w
+  2151  06F0  1D03               	btfss	3,2
+  2152  06F1  2EF3               	goto	u561
+  2153  06F2  2EF4               	goto	u560
+  2154  06F3                     u561:
+  2155  06F3  2EFE               	goto	l1339
+  2156  06F4                     u560:
+  2157  06F4                     l1337:
+  2158                           
+  2159                           ;./rfid.h: 271:   {;./rfid.h: 272:     MFRC522_Set_Bit( 0x0D, 0x80 );
+  2160  06F4  3080               	movlw	128
+  2161  06F5  00A4               	movwf	??_MFRC522_ToCard
+  2162  06F6  0824               	movf	??_MFRC522_ToCard,w
+  2163  06F7  00F8               	movwf	MFRC522_Set_Bit@mask
+  2164  06F8  300D               	movlw	13
+  2165  06F9  120A  118A  2351  120A  118A  	fcall	_MFRC522_Set_Bit
+  2166  06FE                     l1339:
+  2167                           
+  2168                           ;./rfid.h: 277:   i = 0xFFFF;
+  2169  06FE  30FF               	movlw	255
+  2170  06FF  1283               	bcf	3,5	;RP0=0, select bank0
+  2171  0700  1303               	bcf	3,6	;RP1=0, select bank0
+  2172  0701  00AF               	movwf	MFRC522_ToCard@i
+  2173  0702  30FF               	movlw	255
+  2174  0703  00B0               	movwf	MFRC522_ToCard@i+1
+  2175  0704                     l1341:
+  2176                           
+  2177                           ;./rfid.h: 279:   {;./rfid.h: 282:     n = MFRC522_Rd( 0x04 );
+  2178  0704  3004               	movlw	4
+  2179  0705  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2180  070A  1283               	bcf	3,5	;RP0=0, select bank0
+  2181  070B  1303               	bcf	3,6	;RP1=0, select bank0
+  2182  070C  00A4               	movwf	??_MFRC522_ToCard
+  2183  070D  0824               	movf	??_MFRC522_ToCard,w
+  2184  070E  00B1               	movwf	MFRC522_ToCard@n
+  2185                           
+  2186                           ;./rfid.h: 283:     i--;
+  2187  070F  3001               	movlw	1
+  2188  0710  02AF               	subwf	MFRC522_ToCard@i,f
+  2189  0711  3000               	movlw	0
+  2190  0712  1C03               	skipc
+  2191  0713  03B0               	decf	MFRC522_ToCard@i+1,f
+  2192  0714  02B0               	subwf	MFRC522_ToCard@i+1,f
+  2193  0715                     l1343:
+  2194                           
+  2195                           ;./rfid.h: 284:   }
+  2196  0715  082F               	movf	MFRC522_ToCard@i,w
+  2197  0716  0430               	iorwf	MFRC522_ToCard@i+1,w
+  2198  0717  1903               	btfsc	3,2
+  2199  0718  2F1A               	goto	u571
+  2200  0719  2F1B               	goto	u570
+  2201  071A                     u571:
+  2202  071A  2F25               	goto	l1349
+  2203  071B                     u570:
+  2204  071B                     l1345:
+  2205  071B  1831               	btfsc	MFRC522_ToCard@n,0
+  2206  071C  2F1E               	goto	u581
+  2207  071D  2F1F               	goto	u580
+  2208  071E                     u581:
+  2209  071E  2F25               	goto	l1349
+  2210  071F                     u580:
+  2211  071F                     l1347:
+  2212  071F  0831               	movf	MFRC522_ToCard@n,w
+  2213  0720  052A               	andwf	MFRC522_ToCard@waitIRq,w
+  2214  0721  1903               	btfsc	3,2
+  2215  0722  2F24               	goto	u591
+  2216  0723  2F25               	goto	u590
+  2217  0724                     u591:
+  2218  0724  2F04               	goto	l1341
+  2219  0725                     u590:
+  2220  0725                     l1349:
+  2221                           
+  2222                           ;./rfid.h: 287:   MFRC522_Clear_Bit( 0x0D, 0x80 );
+  2223  0725  3080               	movlw	128
+  2224  0726  00A4               	movwf	??_MFRC522_ToCard
+  2225  0727  0824               	movf	??_MFRC522_ToCard,w
+  2226  0728  00F8               	movwf	MFRC522_Clear_Bit@mask
+  2227  0729  300D               	movlw	13
+  2228  072A  120A  118A  238A  120A  118A  	fcall	_MFRC522_Clear_Bit
+  2229  072F                     l1351:
+  2230                           
+  2231                           ;./rfid.h: 289:   if (i != 0)
+  2232  072F  1283               	bcf	3,5	;RP0=0, select bank0
+  2233  0730  1303               	bcf	3,6	;RP1=0, select bank0
+  2234  0731  082F               	movf	MFRC522_ToCard@i,w
+  2235  0732  0430               	iorwf	MFRC522_ToCard@i+1,w
+  2236  0733  1903               	btfsc	3,2
+  2237  0734  2F36               	goto	u601
+  2238  0735  2F37               	goto	u600
+  2239  0736                     u601:
+  2240  0736  2FEE               	goto	l100
+  2241  0737                     u600:
+  2242  0737                     l1353:
+  2243                           
+  2244                           ;./rfid.h: 290:   {;./rfid.h: 291:     if( !( MFRC522_Rd( 0x06 ) & 0x1B ) )
+  2245  0737  3006               	movlw	6
+  2246  0738  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2247  073D  391B               	andlw	27
+  2248  073E  1D03               	btfss	3,2
+  2249  073F  2F41               	goto	u611
+  2250  0740  2F42               	goto	u610
+  2251  0741                     u611:
+  2252  0741  2FE8               	goto	l1389
+  2253  0742                     u610:
+  2254  0742                     l1355:
+  2255                           
+  2256                           ;./rfid.h: 292:     {;./rfid.h: 293:       _status = 0;
+  2257  0742  1283               	bcf	3,5	;RP0=0, select bank0
+  2258  0743  1303               	bcf	3,6	;RP1=0, select bank0
+  2259  0744  01AB               	clrf	MFRC522_ToCard@_status
+  2260  0745                     l1357:
+  2261                           
+  2262                           ;./rfid.h: 294:       if ( n & irqEn & 0x01 )
+  2263  0745  082D               	movf	MFRC522_ToCard@irqEn,w
+  2264  0746  0531               	andwf	MFRC522_ToCard@n,w
+  2265  0747  00A4               	movwf	??_MFRC522_ToCard
+  2266  0748  1C24               	btfss	??_MFRC522_ToCard,0
+  2267  0749  2F4B               	goto	u621
+  2268  074A  2F4C               	goto	u620
+  2269  074B                     u621:
+  2270  074B  2F4E               	goto	l1361
+  2271  074C                     u620:
+  2272  074C                     l1359:
+  2273                           
+  2274                           ;./rfid.h: 295:       {;./rfid.h: 296:         _status = 1;
+  2275  074C  01AB               	clrf	MFRC522_ToCard@_status
+  2276  074D  0AAB               	incf	MFRC522_ToCard@_status,f
+  2277  074E                     l1361:
+  2278                           
+  2279                           ;./rfid.h: 299:       if ( command == 0x0C )
+  2280  074E  300C               	movlw	12
+  2281  074F  062E               	xorwf	MFRC522_ToCard@command,w
+  2282  0750  1D03               	btfss	3,2
+  2283  0751  2F53               	goto	u631
+  2284  0752  2F54               	goto	u630
+  2285  0753                     u631:
+  2286  0753  2FEE               	goto	l100
+  2287  0754                     u630:
+  2288  0754                     l1363:
+  2289                           
+  2290                           ;./rfid.h: 300:       {;./rfid.h: 301:         n = MFRC522_Rd( 0x0A );
+  2291  0754  300A               	movlw	10
+  2292  0755  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2293  075A  1283               	bcf	3,5	;RP0=0, select bank0
+  2294  075B  1303               	bcf	3,6	;RP1=0, select bank0
+  2295  075C  00A4               	movwf	??_MFRC522_ToCard
+  2296  075D  0824               	movf	??_MFRC522_ToCard,w
+  2297  075E  00B1               	movwf	MFRC522_ToCard@n
+  2298                           
+  2299                           ;./rfid.h: 302:         lastBits = MFRC522_Rd( 0x0C ) & 0x07;
+  2300  075F  300C               	movlw	12
+  2301  0760  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2302  0765  3907               	andlw	7
+  2303  0766  1283               	bcf	3,5	;RP0=0, select bank0
+  2304  0767  1303               	bcf	3,6	;RP1=0, select bank0
+  2305  0768  00A4               	movwf	??_MFRC522_ToCard
+  2306  0769  0824               	movf	??_MFRC522_ToCard,w
+  2307  076A  00AC               	movwf	MFRC522_ToCard@lastBits
+  2308  076B                     l1365:
+  2309                           
+  2310                           ;./rfid.h: 303:         if (lastBits)
+  2311  076B  082C               	movf	MFRC522_ToCard@lastBits,w
+  2312  076C  1903               	btfsc	3,2
+  2313  076D  2F6F               	goto	u641
+  2314  076E  2F70               	goto	u640
+  2315  076F                     u641:
+  2316  076F  2F95               	goto	l1369
+  2317  0770                     u640:
+  2318  0770                     l1367:
+  2319                           
+  2320                           ;./rfid.h: 304:         {;./rfid.h: 305:           *backLen = (n-1) * 8 + lastBits;
+  2321  0770  0831               	movf	MFRC522_ToCard@n,w
+  2322  0771  00A4               	movwf	??_MFRC522_ToCard
+  2323  0772  01A5               	clrf	??_MFRC522_ToCard+1
+  2324  0773  1003               	clrc
+  2325  0774  0DA4               	rlf	??_MFRC522_ToCard,f
+  2326  0775  0DA5               	rlf	??_MFRC522_ToCard+1,f
+  2327  0776  1003               	clrc
+  2328  0777  0DA4               	rlf	??_MFRC522_ToCard,f
+  2329  0778  0DA5               	rlf	??_MFRC522_ToCard+1,f
+  2330  0779  1003               	clrc
+  2331  077A  0DA4               	rlf	??_MFRC522_ToCard,f
+  2332  077B  0DA5               	rlf	??_MFRC522_ToCard+1,f
+  2333  077C  082C               	movf	MFRC522_ToCard@lastBits,w
+  2334  077D  0724               	addwf	??_MFRC522_ToCard,w
+  2335  077E  00A6               	movwf	??_MFRC522_ToCard+2
+  2336  077F  3000               	movlw	0
+  2337  0780  1803               	skipnc
+  2338  0781  3001               	movlw	1
+  2339  0782  0725               	addwf	??_MFRC522_ToCard+1,w
+  2340  0783  00A7               	movwf	??_MFRC522_ToCard+3
+  2341  0784  0826               	movf	??_MFRC522_ToCard+2,w
+  2342  0785  3EF8               	addlw	248
+  2343  0786  00A8               	movwf	??_MFRC522_ToCard+4
+  2344  0787  0827               	movf	??_MFRC522_ToCard+3,w
+  2345  0788  1803               	skipnc
+  2346  0789  3E01               	addlw	1
+  2347  078A  3EFF               	addlw	255
+  2348  078B  00A9               	movwf	??_MFRC522_ToCard+5
+  2349  078C  0823               	movf	MFRC522_ToCard@backLen,w
+  2350  078D  0084               	movwf	4
+  2351  078E  0828               	movf	??_MFRC522_ToCard+4,w
+  2352  078F  1383               	bcf	3,7	;select IRP bank0
+  2353  0790  0080               	movwf	0
+  2354  0791  0A84               	incf	4,f
+  2355  0792  0829               	movf	??_MFRC522_ToCard+5,w
+  2356  0793  0080               	movwf	0
+  2357                           
+  2358                           ;./rfid.h: 306:         }
+  2359  0794  2FA9               	goto	l1371
+  2360  0795                     l1369:
+  2361                           
+  2362                           ;./rfid.h: 308:         {;./rfid.h: 309:           *backLen = n * 8;
+  2363  0795  0831               	movf	MFRC522_ToCard@n,w
+  2364  0796  00A4               	movwf	??_MFRC522_ToCard
+  2365  0797  01A5               	clrf	??_MFRC522_ToCard+1
+  2366  0798  1003               	clrc
+  2367  0799  0DA4               	rlf	??_MFRC522_ToCard,f
+  2368  079A  0DA5               	rlf	??_MFRC522_ToCard+1,f
+  2369  079B  1003               	clrc
+  2370  079C  0DA4               	rlf	??_MFRC522_ToCard,f
+  2371  079D  0DA5               	rlf	??_MFRC522_ToCard+1,f
+  2372  079E  1003               	clrc
+  2373  079F  0DA4               	rlf	??_MFRC522_ToCard,f
+  2374  07A0  0DA5               	rlf	??_MFRC522_ToCard+1,f
+  2375  07A1  0823               	movf	MFRC522_ToCard@backLen,w
+  2376  07A2  0084               	movwf	4
+  2377  07A3  0824               	movf	??_MFRC522_ToCard,w
+  2378  07A4  1383               	bcf	3,7	;select IRP bank0
+  2379  07A5  0080               	movwf	0
+  2380  07A6  0A84               	incf	4,f
+  2381  07A7  0825               	movf	??_MFRC522_ToCard+1,w
+  2382  07A8  0080               	movwf	0
+  2383  07A9                     l1371:
+  2384                           
+  2385                           ;./rfid.h: 312:         if (n == 0)
+  2386  07A9  0831               	movf	MFRC522_ToCard@n,w
+  2387  07AA  1D03               	btfss	3,2
+  2388  07AB  2FAD               	goto	u651
+  2389  07AC  2FAE               	goto	u650
+  2390  07AD                     u651:
+  2391  07AD  2FB0               	goto	l1375
+  2392  07AE                     u650:
+  2393  07AE                     l1373:
+  2394                           
+  2395                           ;./rfid.h: 313:         {;./rfid.h: 314:           n = 1;
+  2396  07AE  01B1               	clrf	MFRC522_ToCard@n
+  2397  07AF  0AB1               	incf	MFRC522_ToCard@n,f
+  2398  07B0                     l1375:
+  2399                           
+  2400                           ;./rfid.h: 317:         if (n > 16)
+  2401  07B0  3011               	movlw	17
+  2402  07B1  0231               	subwf	MFRC522_ToCard@n,w
+  2403  07B2  1C03               	skipc
+  2404  07B3  2FB5               	goto	u661
+  2405  07B4  2FB6               	goto	u660
+  2406  07B5                     u661:
+  2407  07B5  2FBA               	goto	l1379
+  2408  07B6                     u660:
+  2409  07B6                     l1377:
+  2410                           
+  2411                           ;./rfid.h: 318:         {;./rfid.h: 319:           n = 16;
+  2412  07B6  3010               	movlw	16
+  2413  07B7  00A4               	movwf	??_MFRC522_ToCard
+  2414  07B8  0824               	movf	??_MFRC522_ToCard,w
+  2415  07B9  00B1               	movwf	MFRC522_ToCard@n
+  2416  07BA                     l1379:
+  2417                           
+  2418                           ;./rfid.h: 323:         for (i=0; i < n; i++)
+  2419  07BA  01AF               	clrf	MFRC522_ToCard@i
+  2420  07BB  01B0               	clrf	MFRC522_ToCard@i+1
+  2421  07BC  2FD4               	goto	l1385
+  2422  07BD                     l1381:
+  2423                           
+  2424                           ;./rfid.h: 324:         {;./rfid.h: 325:           backData[i] = MFRC522_Rd( 0x09 );
+  2425  07BD  3009               	movlw	9
+  2426  07BE  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2427  07C3  1283               	bcf	3,5	;RP0=0, select bank0
+  2428  07C4  1303               	bcf	3,6	;RP1=0, select bank0
+  2429  07C5  00A4               	movwf	??_MFRC522_ToCard
+  2430  07C6  082F               	movf	MFRC522_ToCard@i,w
+  2431  07C7  0722               	addwf	MFRC522_ToCard@backData,w
+  2432  07C8  00A5               	movwf	??_MFRC522_ToCard+1
+  2433  07C9  0825               	movf	??_MFRC522_ToCard+1,w
+  2434  07CA  0084               	movwf	4
+  2435  07CB  0824               	movf	??_MFRC522_ToCard,w
+  2436  07CC  1383               	bcf	3,7	;select IRP bank0
+  2437  07CD  0080               	movwf	0
+  2438  07CE                     l1383:
+  2439                           
+  2440                           ;./rfid.h: 326:         }
+  2441  07CE  3001               	movlw	1
+  2442  07CF  07AF               	addwf	MFRC522_ToCard@i,f
+  2443  07D0  1803               	skipnc
+  2444  07D1  0AB0               	incf	MFRC522_ToCard@i+1,f
+  2445  07D2  3000               	movlw	0
+  2446  07D3  07B0               	addwf	MFRC522_ToCard@i+1,f
+  2447  07D4                     l1385:
+  2448  07D4  0831               	movf	MFRC522_ToCard@n,w
+  2449  07D5  00A4               	movwf	??_MFRC522_ToCard
+  2450  07D6  01A5               	clrf	??_MFRC522_ToCard+1
+  2451  07D7  0825               	movf	??_MFRC522_ToCard+1,w
+  2452  07D8  0230               	subwf	MFRC522_ToCard@i+1,w
+  2453  07D9  1D03               	skipz
+  2454  07DA  2FDD               	goto	u675
+  2455  07DB  0824               	movf	??_MFRC522_ToCard,w
+  2456  07DC  022F               	subwf	MFRC522_ToCard@i,w
+  2457  07DD                     u675:
+  2458  07DD  1C03               	skipc
+  2459  07DE  2FE0               	goto	u671
+  2460  07DF  2FE1               	goto	u670
+  2461  07E0                     u671:
+  2462  07E0  2FBD               	goto	l1381
+  2463  07E1                     u670:
+  2464  07E1                     l1387:
+  2465                           
+  2466                           ;./rfid.h: 328:   backData[i] = 0;
+  2467  07E1  082F               	movf	MFRC522_ToCard@i,w
+  2468  07E2  0722               	addwf	MFRC522_ToCard@backData,w
+  2469  07E3  00A4               	movwf	??_MFRC522_ToCard
+  2470  07E4  0824               	movf	??_MFRC522_ToCard,w
+  2471  07E5  0084               	movwf	4
+  2472  07E6  0180               	clrf	0
+  2473  07E7  2FEE               	goto	l100
+  2474  07E8                     l1389:
+  2475                           
+  2476                           ;./rfid.h: 332:     {;./rfid.h: 333:       _status = 2;
+  2477  07E8  3002               	movlw	2
+  2478  07E9  1283               	bcf	3,5	;RP0=0, select bank0
+  2479  07EA  1303               	bcf	3,6	;RP1=0, select bank0
+  2480  07EB  00A4               	movwf	??_MFRC522_ToCard
+  2481  07EC  0824               	movf	??_MFRC522_ToCard,w
+  2482  07ED  00AB               	movwf	MFRC522_ToCard@_status
+  2483  07EE                     l100:	
+  2484                           ;./rfid.h: 336:   }
+  2485                           
+  2486                           
+  2487                           ;./rfid.h: 341:   return _status;
+  2488  07EE  082B               	movf	MFRC522_ToCard@_status,w
+  2489  07EF                     l112:
+  2490  07EF  0008               	return
+  2491  07F0                     __end_of_MFRC522_ToCard:
+  2492                           
+  2493                           	psect	text14
+  2494  05E5                     __ptext14:	
+  2495 ;; *************** function _MFRC522_CRC *****************
+  2496 ;; Defined at:
+  2497 ;;		line 362 in file "./rfid.h"
+  2498 ;; Parameters:    Size  Location     Type
+  2499 ;;  dataIn          1    wreg     PTR unsigned char 
+  2500 ;;		 -> MFRC522_Write@buff(18), MFRC522_Halt@buff(4), MFRC522_SelectTag@buffer(9), 
+  2501 ;;  length          1   11[COMMON] unsigned char 
+  2502 ;;  dataOut         1   12[COMMON] PTR unsigned char 
+  2503 ;;		 -> MFRC522_Write@buff(18), MFRC522_Halt@buff(4), MFRC522_SelectTag@buffer(9), 
+  2504 ;; Auto vars:     Size  Location     Type
+  2505 ;;  dataIn          1    3[BANK0 ] PTR unsigned char 
+  2506 ;;		 -> MFRC522_Write@buff(18), MFRC522_Halt@buff(4), MFRC522_SelectTag@buffer(9), 
+  2507 ;;  i               1    2[BANK0 ] unsigned char 
+  2508 ;;  n               1    1[BANK0 ] unsigned char 
+  2509 ;; Return value:  Size  Location     Type
+  2510 ;;                  1    wreg      void 
+  2511 ;; Registers used:
+  2512 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2513 ;; Tracked objects:
+  2514 ;;		On entry : 0/0
+  2515 ;;		On exit  : 0/0
+  2516 ;;		Unchanged: 0/0
+  2517 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2518 ;;      Params:         2       0       0       0       0
+  2519 ;;      Locals:         0       3       0       0       0
+  2520 ;;      Temps:          0       1       0       0       0
+  2521 ;;      Totals:         2       4       0       0       0
+  2522 ;;Total ram usage:        6 bytes
+  2523 ;; Hardware stack levels used: 1
+  2524 ;; Hardware stack levels required when called: 3
+  2525 ;; This function calls:
+  2526 ;;		_MFRC522_Clear_Bit
+  2527 ;;		_MFRC522_Rd
+  2528 ;;		_MFRC522_Set_Bit
+  2529 ;;		_MFRC522_Wr
+  2530 ;; This function is called by:
+  2531 ;;		_MFRC522_Halt
+  2532 ;;		_MFRC522_SelectTag
+  2533 ;;		_MFRC522_Write
+  2534 ;;		_MFRC522_Read
+  2535 ;; This function uses a non-reentrant model
+  2536 ;;
+  2537                           
+  2538                           
+  2539                           ;psect for function _MFRC522_CRC
+  2540  05E5                     _MFRC522_CRC:
+  2541                           
+  2542                           ;incstack = 0
+  2543                           ; Regs used in _MFRC522_CRC: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2544                           ;MFRC522_CRC@dataIn stored from wreg
+  2545  05E5  1283               	bcf	3,5	;RP0=0, select bank0
+  2546  05E6  1303               	bcf	3,6	;RP1=0, select bank0
+  2547  05E7  00A3               	movwf	MFRC522_CRC@dataIn
+  2548  05E8                     l1415:
+  2549                           
+  2550                           ;./rfid.h: 362: void MFRC522_CRC( char *dataIn, char length, char *dataOut );./rfid.h: 3
+      +                          63: {;./rfid.h: 364: char i, n;;./rfid.h: 365:     MFRC522_Clear_Bit( 0x05, 0x04 );
+  2551  05E8  3004               	movlw	4
+  2552  05E9  00A0               	movwf	??_MFRC522_CRC
+  2553  05EA  0820               	movf	??_MFRC522_CRC,w
+  2554  05EB  00F8               	movwf	MFRC522_Clear_Bit@mask
+  2555  05EC  3005               	movlw	5
+  2556  05ED  120A  118A  238A  120A  118A  	fcall	_MFRC522_Clear_Bit
+  2557                           
+  2558                           ;./rfid.h: 366:     MFRC522_Set_Bit( 0x0A, 0x80 );
+  2559  05F2  3080               	movlw	128
+  2560  05F3  1283               	bcf	3,5	;RP0=0, select bank0
+  2561  05F4  1303               	bcf	3,6	;RP1=0, select bank0
+  2562  05F5  00A0               	movwf	??_MFRC522_CRC
+  2563  05F6  0820               	movf	??_MFRC522_CRC,w
+  2564  05F7  00F8               	movwf	MFRC522_Set_Bit@mask
+  2565  05F8  300A               	movlw	10
+  2566  05F9  120A  118A  2351  120A  118A  	fcall	_MFRC522_Set_Bit
+  2567  05FE                     l1417:
+  2568                           
+  2569                           ;./rfid.h: 369:     for ( i = 0; i < length; i++ )
+  2570  05FE  1283               	bcf	3,5	;RP0=0, select bank0
+  2571  05FF  1303               	bcf	3,6	;RP1=0, select bank0
+  2572  0600  01A2               	clrf	MFRC522_CRC@i
+  2573  0601  2E19               	goto	l1425
+  2574  0602                     l1419:
+  2575                           
+  2576                           ;./rfid.h: 370:     {;./rfid.h: 371:         MFRC522_Wr( 0x09, *dataIn++ );
+  2577  0602  0823               	movf	MFRC522_CRC@dataIn,w
+  2578  0603  0084               	movwf	4
+  2579  0604  1383               	bcf	3,7	;select IRP bank0
+  2580  0605  0800               	movf	0,w
+  2581  0606  00A0               	movwf	??_MFRC522_CRC
+  2582  0607  0820               	movf	??_MFRC522_CRC,w
+  2583  0608  00F5               	movwf	MFRC522_Wr@value
+  2584  0609  3009               	movlw	9
+  2585  060A  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2586  060F                     l1421:
+  2587  060F  3001               	movlw	1
+  2588  0610  1283               	bcf	3,5	;RP0=0, select bank0
+  2589  0611  1303               	bcf	3,6	;RP1=0, select bank0
+  2590  0612  00A0               	movwf	??_MFRC522_CRC
+  2591  0613  0820               	movf	??_MFRC522_CRC,w
+  2592  0614  07A3               	addwf	MFRC522_CRC@dataIn,f
+  2593  0615                     l1423:
+  2594                           
+  2595                           ;./rfid.h: 372:     }
+  2596  0615  3001               	movlw	1
+  2597  0616  00A0               	movwf	??_MFRC522_CRC
+  2598  0617  0820               	movf	??_MFRC522_CRC,w
+  2599  0618  07A2               	addwf	MFRC522_CRC@i,f
+  2600  0619                     l1425:
+  2601  0619  087C               	movf	MFRC522_CRC@length,w
+  2602  061A  0222               	subwf	MFRC522_CRC@i,w
+  2603  061B  1C03               	skipc
+  2604  061C  2E1E               	goto	u701
+  2605  061D  2E1F               	goto	u700
+  2606  061E                     u701:
+  2607  061E  2E02               	goto	l1419
+  2608  061F                     u700:
+  2609  061F                     l1427:
+  2610                           
+  2611                           ;./rfid.h: 374:     MFRC522_Wr( 0x01, 0x03 );
+  2612  061F  3003               	movlw	3
+  2613  0620  00A0               	movwf	??_MFRC522_CRC
+  2614  0621  0820               	movf	??_MFRC522_CRC,w
+  2615  0622  00F5               	movwf	MFRC522_Wr@value
+  2616  0623  3001               	movlw	1
+  2617  0624  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2618  0629                     l1429:
+  2619                           
+  2620                           ;./rfid.h: 376:     i = 0xFF;
+  2621  0629  30FF               	movlw	255
+  2622  062A  1283               	bcf	3,5	;RP0=0, select bank0
+  2623  062B  1303               	bcf	3,6	;RP1=0, select bank0
+  2624  062C  00A0               	movwf	??_MFRC522_CRC
+  2625  062D  0820               	movf	??_MFRC522_CRC,w
+  2626  062E  00A2               	movwf	MFRC522_CRC@i
+  2627  062F                     l1431:
+  2628                           
+  2629                           ;./rfid.h: 379:     {;./rfid.h: 380:         n = MFRC522_Rd( 0x05 );
+  2630  062F  3005               	movlw	5
+  2631  0630  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2632  0635  1283               	bcf	3,5	;RP0=0, select bank0
+  2633  0636  1303               	bcf	3,6	;RP1=0, select bank0
+  2634  0637  00A0               	movwf	??_MFRC522_CRC
+  2635  0638  0820               	movf	??_MFRC522_CRC,w
+  2636  0639  00A1               	movwf	MFRC522_CRC@n
+  2637  063A                     l1433:
+  2638                           
+  2639                           ;./rfid.h: 381:         i--;
+  2640  063A  3001               	movlw	1
+  2641  063B  02A2               	subwf	MFRC522_CRC@i,f
+  2642  063C                     l1435:
+  2643                           
+  2644                           ;./rfid.h: 382:     }
+  2645  063C  0822               	movf	MFRC522_CRC@i,w
+  2646  063D  1903               	btfsc	3,2
+  2647  063E  2E40               	goto	u711
+  2648  063F  2E41               	goto	u710
+  2649  0640                     u711:
+  2650  0640  2E45               	goto	l1439
+  2651  0641                     u710:
+  2652  0641                     l1437:
+  2653  0641  1D21               	btfss	MFRC522_CRC@n,2
+  2654  0642  2E44               	goto	u721
+  2655  0643  2E45               	goto	u720
+  2656  0644                     u721:
+  2657  0644  2E2F               	goto	l1431
+  2658  0645                     u720:
+  2659  0645                     l1439:
+  2660                           
+  2661                           ;./rfid.h: 385:     dataOut[0] = MFRC522_Rd( 0x22 );
+  2662  0645  3022               	movlw	34
+  2663  0646  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2664  064B  1283               	bcf	3,5	;RP0=0, select bank0
+  2665  064C  1303               	bcf	3,6	;RP1=0, select bank0
+  2666  064D  00A0               	movwf	??_MFRC522_CRC
+  2667  064E  087D               	movf	MFRC522_CRC@dataOut,w
+  2668  064F  0084               	movwf	4
+  2669  0650  0820               	movf	??_MFRC522_CRC,w
+  2670  0651  1383               	bcf	3,7	;select IRP bank0
+  2671  0652  0080               	movwf	0
+  2672                           
+  2673                           ;./rfid.h: 386:     dataOut[1] = MFRC522_Rd( 0x21 );
+  2674  0653  3021               	movlw	33
+  2675  0654  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2676  0659  1283               	bcf	3,5	;RP0=0, select bank0
+  2677  065A  1303               	bcf	3,6	;RP1=0, select bank0
+  2678  065B  00A0               	movwf	??_MFRC522_CRC
+  2679  065C  0A7D               	incf	MFRC522_CRC@dataOut,w
+  2680  065D  0084               	movwf	4
+  2681  065E  0820               	movf	??_MFRC522_CRC,w
+  2682  065F  1383               	bcf	3,7	;select IRP bank0
+  2683  0660  0080               	movwf	0
+  2684  0661                     l128:
+  2685  0661  0008               	return
+  2686  0662                     __end_of_MFRC522_CRC:
+  2687                           
+  2688                           	psect	text15
+  2689  0351                     __ptext15:	
+  2690 ;; *************** function _MFRC522_Set_Bit *****************
+  2691 ;; Defined at:
+  2692 ;;		line 188 in file "./rfid.h"
+  2693 ;; Parameters:    Size  Location     Type
+  2694 ;;  addr            1    wreg     unsigned char 
+  2695 ;;  mask            1    7[COMMON] unsigned char 
+  2696 ;; Auto vars:     Size  Location     Type
+  2697 ;;  addr            1    9[COMMON] unsigned char 
+  2698 ;; Return value:  Size  Location     Type
+  2699 ;;                  1    wreg      void 
+  2700 ;; Registers used:
+  2701 ;;		wreg, status,2, status,0, pclath, cstack
+  2702 ;; Tracked objects:
+  2703 ;;		On entry : 0/0
+  2704 ;;		On exit  : 0/0
+  2705 ;;		Unchanged: 0/0
+  2706 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2707 ;;      Params:         1       0       0       0       0
+  2708 ;;      Locals:         1       0       0       0       0
+  2709 ;;      Temps:          1       0       0       0       0
+  2710 ;;      Totals:         3       0       0       0       0
+  2711 ;;Total ram usage:        3 bytes
+  2712 ;; Hardware stack levels used: 1
+  2713 ;; Hardware stack levels required when called: 2
+  2714 ;; This function calls:
+  2715 ;;		_MFRC522_Rd
+  2716 ;;		_MFRC522_Wr
+  2717 ;; This function is called by:
+  2718 ;;		_MFRC522_AntennaOn
+  2719 ;;		_MFRC522_ToCard
+  2720 ;;		_MFRC522_CRC
+  2721 ;; This function uses a non-reentrant model
+  2722 ;;
+  2723                           
+  2724                           
+  2725                           ;psect for function _MFRC522_Set_Bit
+  2726  0351                     _MFRC522_Set_Bit:
+  2727                           
+  2728                           ;incstack = 0
+  2729                           ; Regs used in _MFRC522_Set_Bit: [wreg+status,2+status,0+pclath+cstack]
+  2730                           ;MFRC522_Set_Bit@addr stored from wreg
+  2731  0351  00FA               	movwf	MFRC522_Set_Bit@addr
+  2732  0352                     l1307:
+  2733                           
+  2734                           ;./rfid.h: 188: void MFRC522_Set_Bit( char addr, char mask );./rfid.h: 189: {;./rfid.h: 
+      +                          190:     MFRC522_Wr( addr, MFRC522_Rd( addr ) | mask );
+  2735  0352  087A               	movf	MFRC522_Set_Bit@addr,w
+  2736  0353  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2737  0358  0478               	iorwf	MFRC522_Set_Bit@mask,w
+  2738  0359  00F9               	movwf	??_MFRC522_Set_Bit
+  2739  035A  0879               	movf	??_MFRC522_Set_Bit,w
+  2740  035B  00F5               	movwf	MFRC522_Wr@value
+  2741  035C  087A               	movf	MFRC522_Set_Bit@addr,w
+  2742  035D  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2743  0362                     l72:
+  2744  0362  0008               	return
+  2745  0363                     __end_of_MFRC522_Set_Bit:
+  2746                           
+  2747                           	psect	text16
+  2748  038A                     __ptext16:	
+  2749 ;; *************** function _MFRC522_Clear_Bit *****************
+  2750 ;; Defined at:
+  2751 ;;		line 183 in file "./rfid.h"
+  2752 ;; Parameters:    Size  Location     Type
+  2753 ;;  addr            1    wreg     unsigned char 
+  2754 ;;  mask            1    7[COMMON] unsigned char 
+  2755 ;; Auto vars:     Size  Location     Type
+  2756 ;;  addr            1   10[COMMON] unsigned char 
+  2757 ;; Return value:  Size  Location     Type
+  2758 ;;                  1    wreg      void 
+  2759 ;; Registers used:
+  2760 ;;		wreg, status,2, status,0, pclath, cstack
+  2761 ;; Tracked objects:
+  2762 ;;		On entry : 0/0
+  2763 ;;		On exit  : 0/0
+  2764 ;;		Unchanged: 0/0
+  2765 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2766 ;;      Params:         1       0       0       0       0
+  2767 ;;      Locals:         1       0       0       0       0
+  2768 ;;      Temps:          2       0       0       0       0
+  2769 ;;      Totals:         4       0       0       0       0
+  2770 ;;Total ram usage:        4 bytes
+  2771 ;; Hardware stack levels used: 1
+  2772 ;; Hardware stack levels required when called: 2
+  2773 ;; This function calls:
+  2774 ;;		_MFRC522_Rd
+  2775 ;;		_MFRC522_Wr
+  2776 ;; This function is called by:
+  2777 ;;		_MFRC522_ToCard
+  2778 ;;		_MFRC522_CRC
+  2779 ;;		_MFRC522_Halt
+  2780 ;;		_MFRC522_AntiColl
+  2781 ;;		_MFRC522_AntennaOff
+  2782 ;; This function uses a non-reentrant model
+  2783 ;;
+  2784                           
+  2785                           
+  2786                           ;psect for function _MFRC522_Clear_Bit
+  2787  038A                     _MFRC522_Clear_Bit:
+  2788                           
+  2789                           ;incstack = 0
+  2790                           ; Regs used in _MFRC522_Clear_Bit: [wreg+status,2+status,0+pclath+cstack]
+  2791                           ;MFRC522_Clear_Bit@addr stored from wreg
+  2792  038A  00FB               	movwf	MFRC522_Clear_Bit@addr
+  2793  038B                     l1305:
+  2794                           
+  2795                           ;./rfid.h: 183: void MFRC522_Clear_Bit( char addr, char mask );./rfid.h: 184: {;./rfid.h
+      +                          : 185:     MFRC522_Wr( addr, MFRC522_Rd( addr ) & (~mask) );
+  2796  038B  0978               	comf	MFRC522_Clear_Bit@mask,w
+  2797  038C  00F9               	movwf	??_MFRC522_Clear_Bit
+  2798  038D  087B               	movf	MFRC522_Clear_Bit@addr,w
+  2799  038E  120A  118A  23E5  120A  118A  	fcall	_MFRC522_Rd
+  2800  0393  0579               	andwf	??_MFRC522_Clear_Bit,w
+  2801  0394  00FA               	movwf	??_MFRC522_Clear_Bit+1
+  2802  0395  087A               	movf	??_MFRC522_Clear_Bit+1,w
+  2803  0396  00F5               	movwf	MFRC522_Wr@value
+  2804  0397  087B               	movf	MFRC522_Clear_Bit@addr,w
+  2805  0398  120A  118A  23B4  120A  118A  	fcall	_MFRC522_Wr
+  2806  039D                     l69:
+  2807  039D  0008               	return
+  2808  039E                     __end_of_MFRC522_Clear_Bit:
+  2809                           
+  2810                           	psect	text17
+  2811  03B4                     __ptext17:	
+  2812 ;; *************** function _MFRC522_Wr *****************
+  2813 ;; Defined at:
+  2814 ;;		line 165 in file "./rfid.h"
+  2815 ;; Parameters:    Size  Location     Type
+  2816 ;;  addr            1    wreg     unsigned char 
+  2817 ;;  value           1    4[COMMON] unsigned char 
+  2818 ;; Auto vars:     Size  Location     Type
+  2819 ;;  addr            1    6[COMMON] unsigned char 
+  2820 ;; Return value:  Size  Location     Type
+  2821 ;;                  1    wreg      void 
+  2822 ;; Registers used:
+  2823 ;;		wreg, status,2, status,0, pclath, cstack
+  2824 ;; Tracked objects:
+  2825 ;;		On entry : 0/0
+  2826 ;;		On exit  : 0/0
+  2827 ;;		Unchanged: 0/0
+  2828 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2829 ;;      Params:         1       0       0       0       0
+  2830 ;;      Locals:         1       0       0       0       0
+  2831 ;;      Temps:          1       0       0       0       0
+  2832 ;;      Totals:         3       0       0       0       0
+  2833 ;;Total ram usage:        3 bytes
+  2834 ;; Hardware stack levels used: 1
+  2835 ;; Hardware stack levels required when called: 1
+  2836 ;; This function calls:
+  2837 ;;		_SPI_Write
+  2838 ;; This function is called by:
+  2839 ;;		_MFRC522_Clear_Bit
+  2840 ;;		_MFRC522_Set_Bit
+  2841 ;;		_MFRC522_Reset
+  2842 ;;		_MFRC522_Init
+  2843 ;;		_MFRC522_ToCard
+  2844 ;;		_MFRC522_Request
+  2845 ;;		_MFRC522_CRC
+  2846 ;;		_MFRC522_AntiColl
+  2847 ;; This function uses a non-reentrant model
+  2848 ;;
+  2849                           
+  2850                           
+  2851                           ;psect for function _MFRC522_Wr
+  2852  03B4                     _MFRC522_Wr:
+  2853                           
+  2854                           ;incstack = 0
+  2855                           ; Regs used in _MFRC522_Wr: [wreg+status,2+status,0+pclath+cstack]
+  2856                           ;MFRC522_Wr@addr stored from wreg
+  2857  03B4  00F7               	movwf	MFRC522_Wr@addr
+  2858  03B5                     l1287:
+  2859                           
+  2860                           ;./rfid.h: 165: void MFRC522_Wr(char addr, char value);./rfid.h: 166: {;./rfid.h: 167:  
+      +                             PORTDbits.RD2 = 0;
+  2861  03B5  1283               	bcf	3,5	;RP0=0, select bank0
+  2862  03B6  1303               	bcf	3,6	;RP1=0, select bank0
+  2863  03B7  1108               	bcf	8,2	;volatile
+  2864  03B8                     l1289:
+  2865                           
+  2866                           ;./rfid.h: 168:     SPI_Write( ( addr << 1 ) & 0x7E );
+  2867  03B8  0877               	movf	MFRC522_Wr@addr,w
+  2868  03B9  00F6               	movwf	??_MFRC522_Wr
+  2869  03BA  0776               	addwf	??_MFRC522_Wr,w
+  2870  03BB  397E               	andlw	126
+  2871  03BC  120A  118A  2376  120A  118A  	fcall	_SPI_Write
+  2872                           
+  2873                           ;./rfid.h: 169:     SPI_Write( value );
+  2874  03C1  0875               	movf	MFRC522_Wr@value,w
+  2875  03C2  120A  118A  2376  120A  118A  	fcall	_SPI_Write
+  2876  03C7                     l1291:
+  2877                           
+  2878                           ;./rfid.h: 170:     PORTDbits.RD2 = 1;
+  2879  03C7  1283               	bcf	3,5	;RP0=0, select bank0
+  2880  03C8  1303               	bcf	3,6	;RP1=0, select bank0
+  2881  03C9  1508               	bsf	8,2	;volatile
+  2882  03CA                     l63:
+  2883  03CA  0008               	return
+  2884  03CB                     __end_of_MFRC522_Wr:
+  2885                           
+  2886                           	psect	text18
+  2887  03E5                     __ptext18:	
+  2888 ;; *************** function _MFRC522_Rd *****************
+  2889 ;; Defined at:
+  2890 ;;		line 173 in file "./rfid.h"
+  2891 ;; Parameters:    Size  Location     Type
+  2892 ;;  addr            1    wreg     unsigned char 
+  2893 ;; Auto vars:     Size  Location     Type
+  2894 ;;  addr            1    2[COMMON] unsigned char 
+  2895 ;;  value           1    3[COMMON] unsigned char 
+  2896 ;; Return value:  Size  Location     Type
+  2897 ;;                  1    wreg      unsigned char 
+  2898 ;; Registers used:
+  2899 ;;		wreg, status,2, status,0, pclath, cstack
+  2900 ;; Tracked objects:
+  2901 ;;		On entry : 0/0
+  2902 ;;		On exit  : 0/0
+  2903 ;;		Unchanged: 0/0
+  2904 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2905 ;;      Params:         0       0       0       0       0
+  2906 ;;      Locals:         2       0       0       0       0
+  2907 ;;      Temps:          1       0       0       0       0
+  2908 ;;      Totals:         3       0       0       0       0
+  2909 ;;Total ram usage:        3 bytes
+  2910 ;; Hardware stack levels used: 1
+  2911 ;; Hardware stack levels required when called: 1
+  2912 ;; This function calls:
+  2913 ;;		_SPI_Read
+  2914 ;;		_SPI_Write
+  2915 ;; This function is called by:
+  2916 ;;		_MFRC522_Clear_Bit
+  2917 ;;		_MFRC522_Set_Bit
+  2918 ;;		_MFRC522_ToCard
+  2919 ;;		_MFRC522_CRC
+  2920 ;;		_MFRC522_Auth
+  2921 ;; This function uses a non-reentrant model
+  2922 ;;
+  2923                           
+  2924                           
+  2925                           ;psect for function _MFRC522_Rd
+  2926  03E5                     _MFRC522_Rd:
+  2927                           
+  2928                           ;incstack = 0
+  2929                           ; Regs used in _MFRC522_Rd: [wreg+status,2+status,0+pclath+cstack]
+  2930                           ;MFRC522_Rd@addr stored from wreg
+  2931  03E5  00F3               	movwf	MFRC522_Rd@addr
+  2932  03E6                     l1293:
+  2933                           
+  2934                           ;./rfid.h: 173: char MFRC522_Rd(char addr);./rfid.h: 174: {;./rfid.h: 175:     char valu
+      +                          e;;./rfid.h: 176:     PORTDbits.RD2 = 0;
+  2935  03E6  1283               	bcf	3,5	;RP0=0, select bank0
+  2936  03E7  1303               	bcf	3,6	;RP1=0, select bank0
+  2937  03E8  1108               	bcf	8,2	;volatile
+  2938  03E9                     l1295:
+  2939                           
+  2940                           ;./rfid.h: 177:     SPI_Write( (( addr << 1 ) & 0x7E) | 0x80 );
+  2941  03E9  0873               	movf	MFRC522_Rd@addr,w
+  2942  03EA  00F2               	movwf	??_MFRC522_Rd
+  2943  03EB  0772               	addwf	??_MFRC522_Rd,w
+  2944  03EC  397E               	andlw	126
+  2945  03ED  3880               	iorlw	128
+  2946  03EE  120A  118A  2376  120A  118A  	fcall	_SPI_Write
+  2947  03F3                     l1297:
+  2948                           
+  2949                           ;./rfid.h: 178:     value = SPI_Read();
+  2950  03F3  120A  118A  2344  120A  118A  	fcall	_SPI_Read
+  2951  03F8  00F2               	movwf	??_MFRC522_Rd
+  2952  03F9  0872               	movf	??_MFRC522_Rd,w
+  2953  03FA  00F4               	movwf	MFRC522_Rd@value
+  2954  03FB                     l1299:
+  2955                           
+  2956                           ;./rfid.h: 179:     PORTDbits.RD2 = 1;
+  2957  03FB  1283               	bcf	3,5	;RP0=0, select bank0
+  2958  03FC  1303               	bcf	3,6	;RP1=0, select bank0
+  2959  03FD  1508               	bsf	8,2	;volatile
+  2960  03FE                     l1301:
+  2961                           
+  2962                           ;./rfid.h: 180:     return value;
+  2963  03FE  0874               	movf	MFRC522_Rd@value,w
+  2964  03FF                     l66:
+  2965  03FF  0008               	return
+  2966  0400                     __end_of_MFRC522_Rd:
+  2967                           
+  2968                           	psect	text19
+  2969  0376                     __ptext19:	
+  2970 ;; *************** function _SPI_Write *****************
+  2971 ;; Defined at:
+  2972 ;;		line 146 in file "./rfid.h"
+  2973 ;; Parameters:    Size  Location     Type
+  2974 ;;  Tvalue          1    wreg     unsigned char 
+  2975 ;; Auto vars:     Size  Location     Type
+  2976 ;;  Tvalue          1    0[COMMON] unsigned char 
+  2977 ;;  xoaBF           1    0        unsigned char 
+  2978 ;; Return value:  Size  Location     Type
+  2979 ;;                  1    wreg      void 
+  2980 ;; Registers used:
+  2981 ;;		wreg
+  2982 ;; Tracked objects:
+  2983 ;;		On entry : 0/0
+  2984 ;;		On exit  : 0/0
+  2985 ;;		Unchanged: 0/0
+  2986 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2987 ;;      Params:         0       0       0       0       0
+  2988 ;;      Locals:         1       0       0       0       0
+  2989 ;;      Temps:          0       0       0       0       0
+  2990 ;;      Totals:         1       0       0       0       0
+  2991 ;;Total ram usage:        1 bytes
+  2992 ;; Hardware stack levels used: 1
+  2993 ;; This function calls:
+  2994 ;;		Nothing
+  2995 ;; This function is called by:
+  2996 ;;		_MFRC522_Wr
+  2997 ;;		_MFRC522_Rd
+  2998 ;; This function uses a non-reentrant model
+  2999 ;;
+  3000                           
+  3001                           
+  3002                           ;psect for function _SPI_Write
+  3003  0376                     _SPI_Write:
+  3004                           
+  3005                           ;incstack = 0
+  3006                           ; Regs used in _SPI_Write: [wreg]
+  3007                           ;SPI_Write@Tvalue stored from wreg
+  3008  0376  00F1               	movwf	SPI_Write@Tvalue
+  3009  0377                     l1277:
+  3010                           
+  3011                           ;./rfid.h: 146: void SPI_Write(unsigned char Tvalue);./rfid.h: 147: {;./rfid.h: 148:    
+      +                           unsigned char xoaBF;;./rfid.h: 149:     if(SSPSTATbits.BF == 1)
+  3012  0377  1683               	bsf	3,5	;RP0=1, select bank1
+  3013  0378  1303               	bcf	3,6	;RP1=0, select bank1
+  3014  0379  1C14               	btfss	20,0	;volatile
+  3015  037A  2B7C               	goto	u521
+  3016  037B  2B7D               	goto	u520
+  3017  037C                     u521:
+  3018  037C  2B80               	goto	l50
+  3019  037D                     u520:
+  3020  037D                     l1279:
+  3021  037D  1283               	bcf	3,5	;RP0=0, select bank0
+  3022  037E  1303               	bcf	3,6	;RP1=0, select bank0
+  3023  037F  0813               	movf	19,w	;volatile
+  3024  0380                     l50:
+  3025                           
+  3026                           ;./rfid.h: 151:     SSPBUF = Tvalue;
+  3027  0380  0871               	movf	SPI_Write@Tvalue,w
+  3028  0381  1283               	bcf	3,5	;RP0=0, select bank0
+  3029  0382  0093               	movwf	19	;volatile
+  3030  0383                     l51:	
+  3031                           ;./rfid.h: 152:     while(BF == 0);
+  3032                           
+  3033  0383  1683               	bsf	3,5	;RP0=1, select bank1
+  3034  0384  1303               	bcf	3,6	;RP1=0, select bank1
+  3035  0385  1C14               	btfss	20,0	;volatile
+  3036  0386  2B88               	goto	u531
+  3037  0387  2B89               	goto	u530
+  3038  0388                     u531:
+  3039  0388  2B83               	goto	l51
+  3040  0389                     u530:
+  3041  0389                     l54:
+  3042  0389  0008               	return
+  3043  038A                     __end_of_SPI_Write:
+  3044                           
+  3045                           	psect	text20
+  3046  0344                     __ptext20:	
+  3047 ;; *************** function _SPI_Read *****************
+  3048 ;; Defined at:
+  3049 ;;		line 156 in file "./rfid.h"
+  3050 ;; Parameters:    Size  Location     Type
+  3051 ;;		None
+  3052 ;; Auto vars:     Size  Location     Type
+  3053 ;;		None
+  3054 ;; Return value:  Size  Location     Type
+  3055 ;;                  1    wreg      unsigned char 
+  3056 ;; Registers used:
+  3057 ;;		wreg, status,2
+  3058 ;; Tracked objects:
+  3059 ;;		On entry : 0/0
+  3060 ;;		On exit  : 0/0
+  3061 ;;		Unchanged: 0/0
+  3062 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  3063 ;;      Params:         0       0       0       0       0
+  3064 ;;      Locals:         0       0       0       0       0
+  3065 ;;      Temps:          0       0       0       0       0
+  3066 ;;      Totals:         0       0       0       0       0
+  3067 ;;Total ram usage:        0 bytes
+  3068 ;; Hardware stack levels used: 1
+  3069 ;; This function calls:
+  3070 ;;		Nothing
+  3071 ;; This function is called by:
+  3072 ;;		_MFRC522_Rd
+  3073 ;; This function uses a non-reentrant model
+  3074 ;;
+  3075                           
+  3076                           
+  3077                           ;psect for function _SPI_Read
+  3078  0344                     _SPI_Read:
+  3079  0344                     l1281:	
+  3080                           ;incstack = 0
+  3081                           ; Regs used in _SPI_Read: [wreg+status,2]
+  3082                           
+  3083                           
+  3084                           ;./rfid.h: 158:     SSPBUF = 0x00;
+  3085  0344  1283               	bcf	3,5	;RP0=0, select bank0
+  3086  0345  1303               	bcf	3,6	;RP1=0, select bank0
+  3087  0346  0193               	clrf	19	;volatile
+  3088  0347                     l57:	
+  3089                           ;./rfid.h: 160:     while(BF == 0);
+  3090                           
+  3091  0347  1683               	bsf	3,5	;RP0=1, select bank1
+  3092  0348  1303               	bcf	3,6	;RP1=0, select bank1
+  3093  0349  1C14               	btfss	20,0	;volatile
+  3094  034A  2B4C               	goto	u541
+  3095  034B  2B4D               	goto	u540
+  3096  034C                     u541:
+  3097  034C  2B47               	goto	l57
+  3098  034D                     u540:
+  3099  034D                     l1283:
+  3100                           
+  3101                           ;./rfid.h: 161:     return SSPBUF;
+  3102  034D  1283               	bcf	3,5	;RP0=0, select bank0
+  3103  034E  1303               	bcf	3,6	;RP1=0, select bank0
+  3104  034F  0813               	movf	19,w	;volatile
+  3105  0350                     l60:
+  3106  0350  0008               	return
+  3107  0351                     __end_of_SPI_Read:
+  3108                           
+  3109                           	psect	text21
+  3110  0319                     __ptext21:	
+  3111 ;; *************** function _IO_Init *****************
+  3112 ;; Defined at:
+  3113 ;;		line 44 in file "newmain.c"
+  3114 ;; Parameters:    Size  Location     Type
+  3115 ;;		None
+  3116 ;; Auto vars:     Size  Location     Type
+  3117 ;;		None
+  3118 ;; Return value:  Size  Location     Type
+  3119 ;;                  1    wreg      void 
+  3120 ;; Registers used:
+  3121 ;;		status,2
+  3122 ;; Tracked objects:
+  3123 ;;		On entry : 0/0
+  3124 ;;		On exit  : 0/0
+  3125 ;;		Unchanged: 0/0
+  3126 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  3127 ;;      Params:         0       0       0       0       0
+  3128 ;;      Locals:         0       0       0       0       0
+  3129 ;;      Temps:          0       0       0       0       0
+  3130 ;;      Totals:         0       0       0       0       0
+  3131 ;;Total ram usage:        0 bytes
+  3132 ;; Hardware stack levels used: 1
+  3133 ;; This function calls:
+  3134 ;;		Nothing
+  3135 ;; This function is called by:
+  3136 ;;		_main
+  3137 ;; This function uses a non-reentrant model
+  3138 ;;
+  3139                           
+  3140                           
+  3141                           ;psect for function _IO_Init
+  3142  0319                     _IO_Init:
+  3143  0319                     l1521:	
+  3144                           ;incstack = 0
+  3145                           ; Regs used in _IO_Init: [status,2]
+  3146                           
+  3147                           
+  3148                           ;newmain.c: 46:     TRISCbits.TRISC6 = 0;
+  3149  0319  1683               	bsf	3,5	;RP0=1, select bank1
+  3150  031A  1303               	bcf	3,6	;RP1=0, select bank1
+  3151  031B  1307               	bcf	7,6	;volatile
+  3152                           
+  3153                           ;newmain.c: 47:     TRISCbits.TRISC7 = 1;
+  3154  031C  1787               	bsf	7,7	;volatile
+  3155  031D                     l1523:
+  3156                           
+  3157                           ;newmain.c: 48:     TRISB = 0;
+  3158  031D  0186               	clrf	6	;volatile
+  3159                           
+  3160                           ;newmain.c: 49:     PORTB = 0x00;
+  3161  031E  1283               	bcf	3,5	;RP0=0, select bank0
+  3162  031F  1303               	bcf	3,6	;RP1=0, select bank0
+  3163  0320  0186               	clrf	6	;volatile
+  3164  0321                     l190:
+  3165  0321  0008               	return
+  3166  0322                     __end_of_IO_Init:
+  3167  007E                     btemp	set	126	;btemp
+  3168  007E                     wtemp0	set	126
+  3169                           
+  3170                           	psect	config
+  3171                           
+  3172                           ;Config register CONFIG @ 0x2007
+  3173                           ;	Oscillator Selection bits
+  3174                           ;	FOSC = HS, HS oscillator
+  3175                           ;	Watchdog Timer Enable bit
+  3176                           ;	WDTE = OFF, WDT disabled
+  3177                           ;	Power-up Timer Enable bit
+  3178                           ;	PWRTE = OFF, PWRT disabled
+  3179                           ;	Brown-out Reset Enable bit
+  3180                           ;	BOREN = OFF, BOR disabled
+  3181                           ;	Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit
+  3182                           ;	LVP = OFF, RB3 is digital I/O, HV on MCLR must be used for programming
+  3183                           ;	Data EEPROM Memory Code Protection bit
+  3184                           ;	CPD = OFF, Data EEPROM code protection off
+  3185                           ;	Flash Program Memory Write Enable bits
+  3186                           ;	WRT = OFF, Write protection off; all program memory may be written to by EECON control
+  3187                           ;	In-Circuit Debugger Mode bit
+  3188                           ;	DEBUG = 0x1, unprogrammed default
+  3189                           ;	Flash Program Memory Code Protection bit
+  3190                           ;	CP = OFF, Code protection off
+  3191  2007                     	org	8199
+  3192  2007  3F3A               	dw	16186
+
+Data Sizes:
+    Strings     7
+    Constant    0
+    Data        0
+    BSS         51
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           13     13      13
+    BANK0            80     42      43
+    BANK1            80      0      50
+    BANK3            85      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    UART_Transmit_Text@str	PTR unsigned char  size(2) Largest target is 50
+		 -> STR_1(CODE[7]), RX_Buffer(BANK1[50]), 
+
+    MFRC522_ReadCardSerial@str	PTR unsigned char  size(1) Largest target is 6
+		 -> main@UID(BANK0[6]), 
+
+    MFRC522_isCard@TagType	PTR unsigned char  size(1) Largest target is 1
+		 -> main@TagType(BANK0[1]), 
+
+    MFRC522_AntiColl@serNum	PTR unsigned char  size(1) Largest target is 6
+		 -> main@UID(BANK0[6]), 
+
+    MFRC522_CRC@dataOut	PTR unsigned char  size(1) Largest target is 18
+		 -> MFRC522_Write@buff(BANK0[18]), MFRC522_Halt@buff(BANK0[4]), MFRC522_SelectTag@buffer(COMMON[9]), 
+
+    MFRC522_CRC@dataIn	PTR unsigned char  size(1) Largest target is 18
+		 -> MFRC522_Write@buff(BANK0[18]), MFRC522_Halt@buff(BANK0[4]), MFRC522_SelectTag@buffer(COMMON[9]), 
+
+    MFRC522_Request@TagType	PTR unsigned char  size(1) Largest target is 1
+		 -> main@TagType(BANK0[1]), 
+
+    MFRC522_ToCard@backData	PTR unsigned char  size(1) Largest target is 18
+		 -> main@UID(BANK0[6]), main@TagType(BANK0[1]), MFRC522_Write@buff(BANK0[18]), MFRC522_Auth@buff(COMMON[12]), 
+		 -> MFRC522_Halt@buff(BANK0[4]), MFRC522_SelectTag@buffer(COMMON[9]), 
+
+    MFRC522_ToCard@backLen	PTR unsigned int  size(1) Largest target is 2
+		 -> MFRC522_AntiColl@unLen(BANK0[2]), MFRC522_Read@unLen(COMMON[2]), MFRC522_Write@recvBits(COMMON[2]), MFRC522_Auth@recvBits(COMMON[2]), 
+		 -> MFRC522_Halt@unLen(BANK0[2]), MFRC522_SelectTag@recvBits(COMMON[2]), MFRC522_Request@backBits(BANK0[2]), 
+
+    MFRC522_ToCard@sendData	PTR unsigned char  size(1) Largest target is 18
+		 -> main@UID(BANK0[6]), main@TagType(BANK0[1]), MFRC522_Write@buff(BANK0[18]), MFRC522_Auth@buff(COMMON[12]), 
+		 -> MFRC522_Halt@buff(BANK0[4]), MFRC522_SelectTag@buffer(COMMON[9]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->_MFRC522_isCard
+    _UART_Transmit_Text->_UART_Transmit
+    _MFRC522_isCard->_MFRC522_Request
+    _MFRC522_AntiColl->_MFRC522_Clear_Bit
+    _MFRC522_Init->_MFRC522_AntennaOn
+    _MFRC522_Reset->_MFRC522_Wr
+    _MFRC522_AntennaOn->_MFRC522_Set_Bit
+    _MFRC522_Halt->_MFRC522_CRC
+    _MFRC522_ToCard->_MFRC522_Clear_Bit
+    _MFRC522_CRC->_MFRC522_Clear_Bit
+    _MFRC522_Set_Bit->_MFRC522_Wr
+    _MFRC522_Clear_Bit->_MFRC522_Wr
+    _MFRC522_Wr->_MFRC522_Rd
+    _MFRC522_Rd->_SPI_Write
+
+Critical Paths under _main in BANK0
+
+    _main->_MFRC522_ReadCardSerial
+    _MFRC522_isCard->_MFRC522_Request
+    _MFRC522_Request->_MFRC522_ToCard
+    _MFRC522_ReadCardSerial->_MFRC522_AntiColl
+    _MFRC522_AntiColl->_MFRC522_ToCard
+    _MFRC522_Halt->_MFRC522_ToCard
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                11    11      0   44101
+                                             31 BANK0     11    11      0
+                            _IO_Init
+                       _MFRC522_Halt
+                       _MFRC522_Init
+             _MFRC522_ReadCardSerial
+                     _MFRC522_isCard
+                           _SPI_Init
+                          _UART_Init
+                      _UART_Transmit
+                 _UART_Transmit_Text
+ ---------------------------------------------------------------------------------
+ (1) _UART_Transmit_Text                                   4     2      2     264
+                                              1 COMMON     4     2      2
+                      _UART_Transmit
+ ---------------------------------------------------------------------------------
+ (2) _UART_Transmit                                        1     1      0      22
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _UART_Init                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _SPI_Init                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _MFRC522_isCard                                       2     2      0   10056
+                                             12 COMMON     1     1      0
+                                             26 BANK0      1     1      0
+                    _MFRC522_Request
+ ---------------------------------------------------------------------------------
+ (2) _MFRC522_Request                                      9     8      1   10001
+                                             11 COMMON     1     0      1
+                                             18 BANK0      8     8      0
+                     _MFRC522_ToCard
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (1) _MFRC522_ReadCardSerial                               3     3      0   12197
+                                             11 COMMON     1     1      0
+                                             29 BANK0      2     2      0
+                   _MFRC522_AntiColl
+ ---------------------------------------------------------------------------------
+ (2) _MFRC522_AntiColl                                    11    11      0   12097
+                                             18 BANK0     11    11      0
+                  _MFRC522_Clear_Bit
+                     _MFRC522_ToCard
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (1) _MFRC522_Init                                         1     1      0    4515
+                                             11 COMMON     1     1      0
+                  _MFRC522_AntennaOn
+                      _MFRC522_Reset
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (2) _MFRC522_Reset                                        1     1      0    1359
+                                              7 COMMON     1     1      0
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (2) _MFRC522_AntennaOn                                    1     1      0    1797
+                                             10 COMMON     1     1      0
+                    _MFRC522_Set_Bit
+ ---------------------------------------------------------------------------------
+ (1) _MFRC522_Halt                                        10    10      0   16892
+                                             18 BANK0     10    10      0
+                        _MFRC522_CRC
+                  _MFRC522_Clear_Bit
+                     _MFRC522_ToCard
+ ---------------------------------------------------------------------------------
+ (3) _MFRC522_ToCard                                      18    14      4    8384
+                                              0 BANK0     18    14      4
+                  _MFRC522_Clear_Bit
+                         _MFRC522_Rd
+                    _MFRC522_Set_Bit
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (2) _MFRC522_CRC                                          6     4      2    6334
+                                             11 COMMON     2     0      2
+                                              0 BANK0      4     4      0
+                  _MFRC522_Clear_Bit
+                         _MFRC522_Rd
+                    _MFRC522_Set_Bit
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (4) _MFRC522_Set_Bit                                      3     2      1    1797
+                                              7 COMMON     3     2      1
+                         _MFRC522_Rd
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (4) _MFRC522_Clear_Bit                                    4     3      1    2025
+                                              7 COMMON     4     3      1
+                         _MFRC522_Rd
+                         _MFRC522_Wr
+ ---------------------------------------------------------------------------------
+ (3) _MFRC522_Wr                                           3     2      1    1359
+                                              4 COMMON     3     2      1
+                         _MFRC522_Rd (ARG)
+                          _SPI_Write
+ ---------------------------------------------------------------------------------
+ (5) _MFRC522_Rd                                           3     3      0      68
+                                              1 COMMON     3     3      0
+                           _SPI_Read
+                          _SPI_Write
+ ---------------------------------------------------------------------------------
+ (4) _SPI_Write                                            2     2      0      23
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (6) _SPI_Read                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _IO_Init                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 6
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _IO_Init
+   _MFRC522_Halt
+     _MFRC522_CRC
+       _MFRC522_Clear_Bit
+         _MFRC522_Rd
+           _SPI_Read
+           _SPI_Write
+         _MFRC522_Wr
+           _MFRC522_Rd (ARG)
+           _SPI_Write (ARG)
+       _MFRC522_Rd
+       _MFRC522_Set_Bit
+         _MFRC522_Rd
+         _MFRC522_Wr
+       _MFRC522_Wr
+     _MFRC522_Clear_Bit
+     _MFRC522_ToCard
+       _MFRC522_Clear_Bit
+       _MFRC522_Rd
+       _MFRC522_Set_Bit
+       _MFRC522_Wr
+   _MFRC522_Init
+     _MFRC522_AntennaOn
+       _MFRC522_Set_Bit
+     _MFRC522_Reset
+       _MFRC522_Wr
+     _MFRC522_Wr
+   _MFRC522_ReadCardSerial
+     _MFRC522_AntiColl
+       _MFRC522_Clear_Bit
+       _MFRC522_ToCard
+       _MFRC522_Wr
+   _MFRC522_isCard
+     _MFRC522_Request
+       _MFRC522_ToCard
+       _MFRC522_Wr
+   _SPI_Init
+   _UART_Init
+   _UART_Transmit
+   _UART_Transmit_Text
+     _UART_Transmit
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            D      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               D      D       D       1      100.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0      6A       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50     2A      2B       5       53.8%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0      32       7       62.5%
+BITBANK3            55      0       0       8        0.0%
+BANK3               55      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0      6A      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Tue Feb 08 08:56:47 2022
+
+                              pc 0002                     MFRC522_CRC@i 0022                     MFRC522_CRC@n 0021  
+                    _SSPSTATbits 0094                               _BF 04A0                               l50 0380  
+                             l51 0383                               l60 0350                               l54 0389  
+                             l63 03CA                               l47 03E4                               l72 0362  
+                             l57 0347                               l66 03FF                               l75 0337  
+                             l84 04CB                               l69 039D                               l78 032C  
+                             fsr 0004                      main@TagType 0048                              l100 07EE  
+                            l112 07EF                              l115 0486                              l205 0446  
+                            l118 0487                              l128 0661                              l138 0511  
+                            l173 05E4                              l190 0321                              l182 041B  
+                            l169 05E3                              l177 03B3                              l193 0375  
+                            l196 0339                              l199 0343                              u520 037D  
+                            u600 0737                              u521 037C                              u601 0736  
+                            u530 0389                              u610 0742                              u531 0388  
+                            u611 0741                              u540 034D                              u700 061F  
+                            u620 074C                              u541 034C                              u701 061E  
+                            u621 074B                              u710 0641                              u630 0754  
+                            u550 06E2                              u711 0640                              u631 0753  
+                            u551 06E1                              u720 0645                              u640 0770  
+                            u560 06F4                              u721 0644                              u641 076F  
+                            u561 06F3                              u650 07AE                              u570 071B  
+                            u730 05C1                              u651 07AD                              u571 071A  
+                            u555 06DE                              u731 05C0                              u660 07B6  
+                            u580 071F                              u740 05D6                              u661 07B5  
+                            u581 071E                              u741 05D5                              u670 07E1  
+                            u590 0725                              u750 05DF                              u671 07E0  
+                            u591 0724                              u751 05DE                              u680 047B  
+                            u760 033F                              u681 047A                              u761 033E  
+                            u690 0482                              u770 03B0                              u675 07DD  
+                            u691 0481                              u771 03AF                              u780 0418  
+                            u781 0417                              u790 0446                              u791 0445  
+                            fsr0 0004                              indf 0000                   ??_MFRC522_Halt 0032  
+                 ??_MFRC522_Init 007C                             l1301 03FE                             l1311 0669  
+                           l1305 038B                             l1321 067E                             l1313 066A  
+                           l1401 044A                             l1307 0352                             l1331 06D5  
+                           l1323 068E                             l1315 066C                             l1411 0482  
+                           l1403 0454                             l1421 060F                             l1341 0704  
+                           l1333 06E2                             l1325 06B8                             l1317 0675  
+                           l1309 0665                             l1405 045D                             l1501 03B2  
+                           l1431 062F                             l1423 0615                             l1415 05E8  
+                           l1351 072F                             l1343 0715                             l1335 06EC  
+                           l1327 06BD                             l1511 0418                             l1407 0476  
+                           l1521 0319                             l1281 0344                             l1433 063A  
+                           l1425 0619                             l1417 05FE                             l1361 074E  
+                           l1353 0737                             l1345 071B                             l1337 06F4  
+                           l1329 06CD                             l1441 057E                             l1505 0403  
+                           l1409 047B                             l1523 031D                             l1283 034D  
+                           l1291 03C7                             l1435 063C                             l1427 061F  
+                           l1419 0602                             l1371 07A9                             l1363 0754  
+                           l1355 0742                             l1347 071F                             l1339 06FE  
+                           l1451 059F                             l1443 057F                             l1507 040E  
+                           l1531 036D                             l1277 0377                             l1293 03E6  
+                           l1437 0641                             l1429 0629                             l1381 07BD  
+                           l1373 07AE                             l1365 076B                             l1357 0745  
+                           l1349 0725                             l1461 05C2                             l1453 05BC  
+                           l1445 0586                             l1517 041A                             l1509 0413  
+                           l1533 0370                             l1525 0363                             l1541 041E  
+                           l1701 0548                             l1279 037D                             l1295 03E9  
+                           l1287 03B5                             l1439 0645                             l1383 07CE  
+                           l1375 07B0                             l1367 0770                             l1359 074C  
+                           l1463 05CC                             l1455 05C1                             l1447 058F  
+                           l1535 0373                             l1527 0367                             l1543 042F  
+                           l1711 0569                             l1703 0552                             l1297 03F3  
+                           l1289 03B8                             l1385 07D4                             l1377 07B6  
+                           l1369 0795                             l1481 04CC                             l1465 05D0  
+                           l1449 0595                             l1537 0374                             l1529 036A  
+                           l1473 0339                             l1545 0433                             l1705 0558  
+                           l1299 03FB                             l1387 07E1                             l1379 07BA  
+                           l1491 0505                             l1483 04D2                             l1467 05D6  
+                           l1475 033F                             l1539 041C                             l1707 055E  
+                           l1389 07E8                             l1733 0686                             l1485 04D3  
+                           l1397 032D                             l1469 05DF                             l1493 03A1  
+                           l1477 03CB                             l1709 0564                             l1487 04E1  
+                           l1399 0322                             l1479 0488                             l1495 03B0  
+                           l1489 04ED                             l1691 052F                             l1683 0512  
+                           l1693 053A                             l1685 0517                             l1695 0545  
+                           l1687 051C                             l1689 0526                             STR_1 0014  
+                           u1000 053A                             _CREN 00C4                             u1001 0539  
+                           u1010 0545                             u1011 0544                             u1020 055E  
+                           u1021 055D                             u1037 0571                             _RCIE 0465  
+                           _RCIF 0065                             _SPEN 00C7                             _TRMT 04C1  
+                           _TXEN 04C5                  __end_of_IO_Init 0322                             _main 0512  
+          MFRC522_AntiColl@unLen 0038                             btemp 007E                             start 0001  
+               _MFRC522_AntiColl 057B                   MFRC522_Rd@addr 0073       __end_of_UART_Transmit_Text 0447  
+                ??_MFRC522_Reset 0078                   MFRC522_Wr@addr 0077                            ?_main 0071  
+        ?_MFRC522_ReadCardSerial 0071                            _RCREG 001A                            _SPBRG 0099  
+                          _PORTB 0006                            _TRISB 0086                            _TXREG 0019  
+            __size_of_MFRC522_Rd 001B              __size_of_MFRC522_Wr 0017               __size_of_UART_Init 0013  
+         MFRC522_AntiColl@serNum 003C                            main@i 0049                 __end_of_SPI_Init 03E5  
+               __end_of_SPI_Read 0351                            pclath 000A                _MFRC522_Clear_Bit 038A  
+                          status 0003                            wtemp0 007E               ?_MFRC522_Clear_Bit 0078  
+             __size_of_SPI_Write 0014                _MFRC522_AntennaOn 0322                  __initialization 07F0  
+                   __end_of_main 057B               ?_MFRC522_AntennaOn 0071              ??_MFRC522_Clear_Bit 0079  
+      MFRC522_ReadCardSerial@str 003E                  MFRC522_Rd@value 0074   __end_of_MFRC522_ReadCardSerial 041C  
+               ??_MFRC522_ToCard 0024         __size_of_MFRC522_Set_Bit 0012         __size_of_MFRC522_Request 0041  
+                         ??_main 003F              ??_MFRC522_AntennaOn 007B                  MFRC522_ToCard@i 002F  
+                MFRC522_ToCard@n 0031                 ??_MFRC522_isCard 007D            MFRC522_ToCard@backLen 0023  
+                      ??_IO_Init 0071                  MFRC522_Wr@value 0075        __end_of_MFRC522_Clear_Bit 039E  
+          MFRC522_ToCard@_status 002B            MFRC522_ToCard@command 002E            MFRC522_ToCard@sendLen 0021  
+          MFRC522_ToCard@waitIRq 002A                           _SSPBUF 0013        __end_of_MFRC522_AntennaOn 032D  
+           __size_of_MFRC522_CRC 007D                __end_of_UART_Init 0376             __end_of_MFRC522_Halt 0512  
+           __end_of_MFRC522_Init 04CC          MFRC522_AntiColl@_status 003A                __end_of_SPI_Write 038A  
+        __end_of__initialization 07FC           MFRC522_Request@TagType 007C                     ??_MFRC522_Rd 0072  
+          __end_of_UART_Transmit 0344                     ??_MFRC522_Wr 0076            MFRC522_isCard@TagType 003A  
+                 __pcstackCOMMON 0071                 MFRC522_Halt@buff 0036                        ?_SPI_Init 0071  
+                      ?_SPI_Read 0071           MFRC522_Request@_status 0037           MFRC522_Request@reqMode 0036  
+       __end_of_MFRC522_AntiColl 05E5                ??_MFRC522_Set_Bit 0079               __end_of_MFRC522_Rd 0400  
+             __end_of_MFRC522_Wr 03CB                ??_MFRC522_Request 0032       __size_of_MFRC522_Clear_Bit 0014  
+                     __pbssBANK0 004A                       __pbssBANK1 00A0           MFRC522_ToCard@backData 0022  
+     __size_of_MFRC522_AntennaOn 000B                MFRC522_CRC@dataIn 0023                       __pmaintext 0512  
+              MFRC522_CRC@length 007C                       ??_SPI_Init 0071                       ??_SPI_Read 0071  
+         MFRC522_ToCard@lastBits 002C               _UART_Transmit_Text 041C           MFRC522_ToCard@sendData 0020  
+                        _IO_Init 0319                       __stringtab 0004              ?_UART_Transmit_Text 0072  
+          __size_of_MFRC522_Halt 0046            __size_of_MFRC522_Init 0044             ??_UART_Transmit_Text 0074  
+          __end_of_MFRC522_Reset 0338                          __ptext1 041C                          __ptext2 0338  
+                        __ptext3 0363                          __ptext4 03CB                          __ptext5 039E  
+                        __ptext6 0447                          __ptext7 0400                          __ptext8 057B  
+                        __ptext9 0488                          main@UID 0042                          clrloop0 0312  
+                   _MFRC522_Halt 04CC                     _MFRC522_Init 0488             end_of_initialization 07FC  
+                 UART_Transmit@c 0071    MFRC522_ReadCardSerial@_status 003D                        _UART_Init 0363  
+                      _PORTDbits 0008                        _TRISCbits 0087                        _TRISDbits 0088  
+                      _SPI_Write 0376                    ??_MFRC522_CRC 0020                        _RX_Buffer 00A0  
+                _MFRC522_Set_Bit 0351          MFRC522_Request@backBits 0038              MFRC522_ToCard@irqEn 002D  
+                _MFRC522_Request 0447                       ?_UART_Init 0071                __size_of_SPI_Init 001A  
+              __size_of_SPI_Read 000D              start_initialization 07F0                MFRC522_Halt@unLen 003A  
+              ?_MFRC522_AntiColl 0071                MFRC522_AntiColl@i 003B                       ?_SPI_Write 0071  
+        __size_of_MFRC522_ToCard 018E               ??_MFRC522_AntiColl 0032                  SPI_Write@Tvalue 0071  
+        __size_of_MFRC522_isCard 0016         ??_MFRC522_ReadCardSerial 007C              __end_of_MFRC522_CRC 0662  
+                      ___latbits 0002           __size_of_UART_Transmit 000C                    __pcstackBANK0 0020  
+                       ?_IO_Init 0071          __end_of_MFRC522_Set_Bit 0363               MFRC522_CRC@dataOut 007D  
+        __end_of_MFRC522_Request 0488              MFRC522_Set_Bit@addr 007A              MFRC522_Set_Bit@mask 0078  
+                    ??_UART_Init 0071                        __pstrings 0004                      ??_SPI_Write 0071  
+                    _MFRC522_CRC 05E5                        clear_ram0 0311                    _UART_Transmit 0338  
+__size_of_MFRC522_ReadCardSerial 001C              UART_Transmit_Text@i 0075      __size_of_UART_Transmit_Text 002B  
+                       _SPI_Init 03CB                         _SPI_Read 0344                      __stringbase 0013  
+                 _MFRC522_ToCard 0662                 __size_of_IO_Init 0009                   _MFRC522_isCard 039E  
+         __size_of_MFRC522_Reset 000B                   ?_UART_Transmit 0071                 ?_MFRC522_Set_Bit 0078  
+          MFRC522_Clear_Bit@addr 007B                 ?_MFRC522_Request 007C            MFRC522_Clear_Bit@mask 0078  
+             __end_of__stringtab 0014           __end_of_MFRC522_ToCard 07F0           _MFRC522_ReadCardSerial 0400  
+                       __ptext10 032D                         __ptext11 0322                         __ptext20 0344  
+                       __ptext12 04CC                         __ptext21 0319                         __ptext13 0662  
+                       __ptext14 05E5                         __ptext15 0351                         __ptext16 038A  
+                       __ptext17 03B4                         __ptext18 03E5                         __ptext19 0376  
+         __end_of_MFRC522_isCard 03B4      MFRC522_AntiColl@serNumCheck 0037                    __size_of_main 0069  
+                     _MFRC522_Rd 03E5                       _MFRC522_Wr 03B4        __size_of_MFRC522_AntiColl 006A  
+                       _rx_index 004A                    _MFRC522_Reset 032D                       _INTCONbits 000B  
+                ?_MFRC522_ToCard 0020                  ?_MFRC522_isCard 0071                  ??_UART_Transmit 0071  
+                      stringcode 000E                   ?_MFRC522_Reset 0071            UART_Transmit_Text@str 0072  
+                       stringdir 000E                         stringtab 0004                    ?_MFRC522_Halt 0071  
+                  ?_MFRC522_Init 0071                     ?_MFRC522_CRC 007C                       _SSPCONbits 0014  
+                    ?_MFRC522_Rd 0071                      ?_MFRC522_Wr 0075  

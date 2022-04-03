@@ -1,0 +1,62 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.101
+Compiler=PCM
+CCSVersion=5.101
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\MOTOR_STEP_CCS\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=23-02-2022
+D1_L=10
+D1_L1=[32617]Project Opened.
+D1_L2=[32629]Started Editing.
+D1_L3=[33687]Stopped Editing.
+D1_L4=[33865]Started Editing.
+D1_L5=[34725]Stopped Editing.
+TotalEdit=79
+TotalDebug=0
+D1_E=79
+D1_D=0
+D1_L6=[34725]Project Closed.
+D1_L7=[41691]Project Opened.
+D1_L8=[41706]Started Editing.
+D1_L9=[44812]Stopped Editing.
+D1_L10=[44812]Project Closed.
+D2=24-02-2022
+D2_L=2
+D2_L1=[30273]Project Opened.
+D2_L2=[30363]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=75
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=108
+
+[Documentation]
+1=E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\MOTOR_STEP_CCS\main Notes.txt
+1T=main Notes.txt
+1E=
+1W=0
+Count=1
+[Units]
+Count=1
+1=main (main)
