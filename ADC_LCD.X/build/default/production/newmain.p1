@@ -47,8 +47,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2223
 [; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2223: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
-"2579
-[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2579: extern volatile __bit GO_nDONE __attribute__((address(0xFA)));
+"2583
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2583: extern volatile __bit GO_nDONE __attribute__((address(0xFA)));
 [v _GO_nDONE `Vb ~T0 @X0 0 e@250 ]
 "11 newmain.c
 [p x FOSC  =  HS         ]

@@ -19,17 +19,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2081
 [; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2081: extern volatile unsigned char SPBRG __attribute__((address(0x099)));
 [v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
-"2813
-[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2813: extern volatile __bit SPEN __attribute__((address(0xC7)));
+"2817
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2817: extern volatile __bit SPEN __attribute__((address(0xC7)));
 [v _SPEN `Vb ~T0 @X0 0 e@199 ]
-"3032
-[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 3032: extern volatile __bit TXEN __attribute__((address(0x4C5)));
+"3036
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 3036: extern volatile __bit TXEN __attribute__((address(0x4C5)));
 [v _TXEN `Vb ~T0 @X0 0 e@1221 ]
-"2516
-[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2516: extern volatile __bit CREN __attribute__((address(0xC4)));
+"2520
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2520: extern volatile __bit CREN __attribute__((address(0xC4)));
 [v _CREN `Vb ~T0 @X0 0 e@196 ]
-"2741
-[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2741: extern volatile __bit RCIE __attribute__((address(0x465)));
+"2745
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2745: extern volatile __bit RCIE __attribute__((address(0x465)));
 [v _RCIE `Vb ~T0 @X0 0 e@1125 ]
 "461
 [; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 461:     struct {
@@ -46,14 +46,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "478
 [; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 478: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS17 ~T0 @X0 0 e@11 ]
-"3017
-[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 3017: extern volatile __bit TRMT __attribute__((address(0x4C1)));
+"3021
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 3021: extern volatile __bit TRMT __attribute__((address(0x4C1)));
 [v _TRMT `Vb ~T0 @X0 0 e@1217 ]
 "1060
 [; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1060: extern volatile unsigned char TXREG __attribute__((address(0x019)));
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
-"2744
-[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2744: extern volatile __bit RCIF __attribute__((address(0x65)));
+"2748
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2748: extern volatile __bit RCIF __attribute__((address(0x65)));
 [v _RCIF `Vb ~T0 @X0 0 e@101 ]
 "1067
 [; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1067: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
@@ -65,12 +65,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;newmain.c: 41: void ClearRX_Buffer(void);
 [v _ClearRX_Buffer `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"194 D:\File Install MBLAB IDE\XC8\pic\include\c90\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"1326 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1326: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"2230
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2230: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"1160
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1160: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
+"1153
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 1153: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2223
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2223: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
 [v F36 `(v ~T0 @X0 1 tf1`ul ]
 "12 D:\File Install MBLAB IDE\XC8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
+"2583 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[; ;D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h: 2583: extern volatile __bit GO_nDONE __attribute__((address(0xFA)));
+[v _GO_nDONE `Vb ~T0 @X0 0 e@250 ]
+"194 D:\File Install MBLAB IDE\XC8\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "12 newmain.c
@@ -534,105 +552,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 "108
 [; ;newmain.c: 108:     UART_Init();
 [e ( _UART_Init ..  ]
-"109
-[; ;newmain.c: 109:     unsigned int i = 0;
-[v _i `ui ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `ui ]
 "110
-[; ;newmain.c: 110:     char text[20];
-[v _text `uc ~T0 @X0 -> 20 `i a ]
+[; ;newmain.c: 110:     TRISA = 0xFF;
+[e = _TRISA -> -> 255 `i `uc ]
 "111
-[; ;newmain.c: 111:     while(1)
-[e :U 121 ]
+[; ;newmain.c: 111:     ADCON1 = 0b11000000;
+[e = _ADCON1 -> -> 192 `i `uc ]
 "112
-[; ;newmain.c: 112:     {
-{
+[; ;newmain.c: 112:     ADCON0 = 0b00000001;
+[e = _ADCON0 -> -> 1 `i `uc ]
+"113
+[; ;newmain.c: 113:     ADRESH = 0;
+[e = _ADRESH -> -> 0 `i `uc ]
 "114
-[; ;newmain.c: 114:         sprintf(text, "Hello World %d\r\n", i++);
-[e ( _sprintf (1 , (. , &U _text :s 1C ++ _i -> -> 1 `i `ui ]
+[; ;newmain.c: 114:     ADRESL = 0;
+[e = _ADRESL -> -> 0 `i `uc ]
 "115
-[; ;newmain.c: 115:         UART_Transmit_Text(text);
-[e ( _UART_Transmit_Text (1 &U _text ]
+[; ;newmain.c: 115:     int adc = 0;
+[v _adc `i ~T0 @X0 1 a ]
+[e = _adc -> 0 `i ]
 "116
-[; ;newmain.c: 116:         _delay((unsigned long)((1000)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"117
-[; ;newmain.c: 117:     }
+[; ;newmain.c: 116:     int channel = 7;
+[v _channel `i ~T0 @X0 1 a ]
+[e = _channel -> 7 `i ]
+"118
+[; ;newmain.c: 118:     char text[20];
+[v _text `uc ~T0 @X0 -> 20 `i a ]
+"119
+[; ;newmain.c: 119:     while(1)
+[e :U 121 ]
+"120
+[; ;newmain.c: 120:     {
+{
+"121
+[; ;newmain.c: 121:         ADCON0 |= channel << 3;
+[e =| _ADCON0 -> << _channel -> 3 `i `Vuc ]
+"122
+[; ;newmain.c: 122:         _delay((unsigned long)((20)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"123
+[; ;newmain.c: 123:         GO_nDONE = 1;
+[e = _GO_nDONE -> -> 1 `i `b ]
+"124
+[; ;newmain.c: 124:         while(GO_nDONE);
+[e $U 123  ]
+[e :U 124 ]
+[e :U 123 ]
+[e $ _GO_nDONE 124  ]
+[e :U 125 ]
+"125
+[; ;newmain.c: 125:         adc = ((ADRESH<< 8)+ADRESL);
+[e = _adc + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
+"127
+[; ;newmain.c: 127:         sprintf(text, "Hello World %d\r\n", adc);
+[e ( _sprintf (1 , (. , &U _text :s 1C _adc ]
+"128
+[; ;newmain.c: 128:         UART_Transmit_Text(text);
+[e ( _UART_Transmit_Text (1 &U _text ]
+"129
+[; ;newmain.c: 129:         _delay((unsigned long)((200)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"130
+[; ;newmain.c: 130:     }
 }
 [e :U 120 ]
 [e $U 121  ]
 [e :U 122 ]
-"118
-[; ;newmain.c: 118: }
+"131
+[; ;newmain.c: 131: }
 [e :UE 119 ]
 }
 [v $root$_isr1 `(v ~T0 @X0 0 e ]
-"119
-[; ;newmain.c: 119: void __attribute__((picinterrupt(("")))) isr1()
+"132
+[; ;newmain.c: 132: void __attribute__((picinterrupt(("")))) isr1()
 [v _isr1 `(v ~T1 @X0 1 ef ]
-"120
-[; ;newmain.c: 120: {
+"133
+[; ;newmain.c: 133: {
 {
 [e :U _isr1 ]
 [f ]
-"121
-[; ;newmain.c: 121:     if(RCIE)
-[e $ ! _RCIE 124  ]
-"122
-[; ;newmain.c: 122:     {
-{
-"123
-[; ;newmain.c: 123:         if(RCIF)
-[e $ ! _RCIF 125  ]
-"124
-[; ;newmain.c: 124:         {
-{
-"125
-[; ;newmain.c: 125:             char ReceivedData;
-[v _ReceivedData `uc ~T0 @X0 1 a ]
-"126
-[; ;newmain.c: 126:             ReceivedData = RCREG;
-[e = _ReceivedData -> _RCREG `uc ]
-"127
-[; ;newmain.c: 127:             if(ReceivedData != '\n')
-[e $ ! != -> _ReceivedData `ui -> 10 `ui 126  ]
-"128
-[; ;newmain.c: 128:             {
-{
-"129
-[; ;newmain.c: 129:                 RX_Buffer[rx_index++] = RCREG;
-[e = *U + &U _RX_Buffer * -> ++ _rx_index -> -> 1 `i `uc `ux -> -> # *U &U _RX_Buffer `ui `ux -> _RCREG `uc ]
-"130
-[; ;newmain.c: 130:             }
-}
-[e $U 127  ]
-"131
-[; ;newmain.c: 131:             else
-[e :U 126 ]
-"132
-[; ;newmain.c: 132:             {
-{
-"133
-[; ;newmain.c: 133:                 HandleData(RX_Buffer);
-[e ( _HandleData (1 &U _RX_Buffer ]
 "134
-[; ;newmain.c: 134:                 ClearRX_Buffer();
-[e ( _ClearRX_Buffer ..  ]
+[; ;newmain.c: 134:     if(RCIE)
+[e $ ! _RCIE 127  ]
 "135
-[; ;newmain.c: 135:             }
+[; ;newmain.c: 135:     {
+{
+"136
+[; ;newmain.c: 136:         if(RCIF)
+[e $ ! _RCIF 128  ]
+"137
+[; ;newmain.c: 137:         {
+{
+"138
+[; ;newmain.c: 138:             char ReceivedData;
+[v _ReceivedData `uc ~T0 @X0 1 a ]
+"139
+[; ;newmain.c: 139:             ReceivedData = RCREG;
+[e = _ReceivedData -> _RCREG `uc ]
+"140
+[; ;newmain.c: 140:             if(ReceivedData != '\n')
+[e $ ! != -> _ReceivedData `ui -> 10 `ui 129  ]
+"141
+[; ;newmain.c: 141:             {
+{
+"142
+[; ;newmain.c: 142:                 RX_Buffer[rx_index++] = RCREG;
+[e = *U + &U _RX_Buffer * -> ++ _rx_index -> -> 1 `i `uc `ux -> -> # *U &U _RX_Buffer `ui `ux -> _RCREG `uc ]
+"143
+[; ;newmain.c: 143:             }
+}
+[e $U 130  ]
+"144
+[; ;newmain.c: 144:             else
+[e :U 129 ]
+"145
+[; ;newmain.c: 145:             {
+{
+"146
+[; ;newmain.c: 146:                 HandleData(RX_Buffer);
+[e ( _HandleData (1 &U _RX_Buffer ]
+"147
+[; ;newmain.c: 147:                 ClearRX_Buffer();
+[e ( _ClearRX_Buffer ..  ]
+"148
+[; ;newmain.c: 148:             }
+}
+[e :U 130 ]
+"149
+[; ;newmain.c: 149:         }
+}
+[e :U 128 ]
+"150
+[; ;newmain.c: 150:     }
 }
 [e :U 127 ]
-"136
-[; ;newmain.c: 136:         }
-}
-[e :U 125 ]
-"137
-[; ;newmain.c: 137:     }
-}
-[e :U 124 ]
-"138
-[; ;newmain.c: 138: }
-[e :UE 123 ]
+"151
+[; ;newmain.c: 151: }
+[e :UE 126 ]
 }
 [p f _sprintf 8388736 ]
 [a 1C 72 101 108 108 111 32 87 111 114 108 100 32 37 100 13 10 0 ]

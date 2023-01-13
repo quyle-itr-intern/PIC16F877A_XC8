@@ -1,0 +1,110 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 D:\File Install MBLAB IDE\XC8\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"27 E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\COUNTER.X\newmain.c
+[v _main main `(v  1 e 1 0 ]
+"217 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"341
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S85 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"358
+[u S94 . 1 `S85 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES94  1 e 1 @8 ]
+"642
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"649
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+[s S48 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+]
+"681
+[s S54 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S60 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1INSYNC 1 0 :1:2 
+]
+[u S63 . 1 `S48 1 . 1 0 `S54 1 . 1 0 `S60 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES63  1 e 1 @16 ]
+"1376
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S23 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1455
+[u S32 . 1 `S23 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES32  1 e 1 @135 ]
+"1500
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"2230
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"24 E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\COUNTER.X\newmain.c
+[v _Code7Seg Code7Seg `DC[10]uc  1 e 10 0 ]
+"25
+[v _count count `ui  1 e 2 0 ]
+[v _nghin nghin `ui  1 e 2 0 ]
+[v _tram tram `ui  1 e 2 0 ]
+[v _chuc chuc `ui  1 e 2 0 ]
+[v _donvi donvi `ui  1 e 2 0 ]
+"27
+[v _main main `(v  1 e 1 0 ]
+{
+"74
+} 0
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"5 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 11 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 6 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 8 ]
+"30
+} 0

@@ -7,26 +7,26 @@
 # Each line that follows describes a psect in that object file, until
 # the next object file.  The lines that describe a psect have the
 # format:
-#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\ADC_LCD.X.production.o
-cinit CODE 0 7FC 7FC 4 2
-text1 CODE 0 66D 66D 5B 2
-text2 CODE 0 6C8 6C8 67 2
-text3 CODE 0 62C 62C 41 2
-text4 CODE 0 5B6 5B6 E 2
-text5 CODE 0 5C4 5C4 1C 2
-text6 CODE 0 5FE 5FE 2E 2
-text7 CODE 0 5E0 5E0 1E 2
-maintext CODE 0 72F 72F CD 2
-cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 20 20 9 1
-config CONFIG 4 2007 2007 1 2
-$C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-end_init CODE 0 0 0 3 2
-config CONFIG 4 2007 2007 1 2
+cinit CODE 0 7FC 7FC 4 2 1
+text1 CODE 0 66D 66D 5B 2 1
+text2 CODE 0 6C8 6C8 67 2 1
+text3 CODE 0 62C 62C 41 2 1
+text4 CODE 0 5B8 5B8 E 2 1
+text5 CODE 0 5C6 5C6 1A 2 1
+text6 CODE 0 5FE 5FE 2E 2 1
+text7 CODE 0 5E0 5E0 1E 2 1
+maintext CODE 0 72F 72F CD 2 1
+cstackCOMMON COMMON 1 70 70 E 1 1
+cstackBANK0 BANK0 1 20 20 9 1 1
+config CONFIG 4 2007 2007 1 2 1
+$C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
+end_init CODE 0 0 0 3 2 1
+config CONFIG 4 2007 2007 1 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -41,22 +41,21 @@ BANK0 29-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-5B5 2
+CONST 3-5B7 2
 CONST 800-1FFF 2
-ENTRY 3-5B5 2
+ENTRY 3-5B7 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
-STACK 110-16F 1
-CODE 3-5B5 2
+CODE 3-5B7 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
-STRCODE 3-5B5 2
+STRCODE 3-5B7 2
 STRCODE 800-1FFF 2
-STRING 3-5B5 2
+STRING 3-5B7 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -72,66 +71,66 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\ADC_LCD.X.production.o
-7FC cinit CODE >376:C:\Users\levan\AppData\Local\Temp\xcAs8qc.s
-7FC cinit CODE >379:C:\Users\levan\AppData\Local\Temp\xcAs8qc.s
-7FC cinit CODE >385:C:\Users\levan\AppData\Local\Temp\xcAs8qc.s
-7FC cinit CODE >387:C:\Users\levan\AppData\Local\Temp\xcAs8qc.s
-7FD cinit CODE >388:C:\Users\levan\AppData\Local\Temp\xcAs8qc.s
-5E0 text7 CODE >96:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5E1 text7 CODE >98:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5E4 text7 CODE >99:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5E6 text7 CODE >100:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5E7 text7 CODE >101:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5E8 text7 CODE >102:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5EB text7 CODE >102:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5EE text7 CODE >102:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5F0 text7 CODE >102:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5F3 text7 CODE >103:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5F4 text7 CODE >104:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5F5 text7 CODE >105:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5FD text7 CODE >106:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5FE text6 CODE >33:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5FF text6 CODE >35:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-602 text6 CODE >36:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-604 text6 CODE >37:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-605 text6 CODE >38:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-606 text6 CODE >39:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-609 text6 CODE >39:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-60C text6 CODE >39:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-60E text6 CODE >39:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-611 text6 CODE >40:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-612 text6 CODE >41:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-613 text6 CODE >42:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-615 text6 CODE >42:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-619 text6 CODE >44:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-622 text6 CODE >45:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-623 text6 CODE >48:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-62B text6 CODE >50:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5C4 text5 CODE >116:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5C5 text5 CODE >119:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5D9 text5 CODE >120:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5DF text5 CODE >121:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5B6 text4 CODE >51:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5B7 text4 CODE >53:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5BA text4 CODE >54:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5BC text4 CODE >55:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5BD text4 CODE >56:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5BE text4 CODE >57:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-5C3 text4 CODE >58:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-62C text3 CODE >59:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-62C text3 CODE >61:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-62F text3 CODE >62:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-630 text3 CODE >63:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-631 text3 CODE >66:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-637 text3 CODE >67:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-640 text3 CODE >68:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-646 text3 CODE >69:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-64E text3 CODE >70:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-654 text3 CODE >74:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-65A text3 CODE >77:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-660 text3 CODE >88:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-666 text3 CODE >94:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-66C text3 CODE >95:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
+7FC cinit CODE >376:C:\Users\levan\AppData\Local\Temp\xcAsdj4.s
+7FC cinit CODE >379:C:\Users\levan\AppData\Local\Temp\xcAsdj4.s
+7FC cinit CODE >385:C:\Users\levan\AppData\Local\Temp\xcAsdj4.s
+7FC cinit CODE >387:C:\Users\levan\AppData\Local\Temp\xcAsdj4.s
+7FD cinit CODE >388:C:\Users\levan\AppData\Local\Temp\xcAsdj4.s
+5E0 text7 CODE >96:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5E1 text7 CODE >98:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5E4 text7 CODE >99:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5E6 text7 CODE >100:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5E7 text7 CODE >101:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5E8 text7 CODE >102:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5EB text7 CODE >102:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5EE text7 CODE >102:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5F0 text7 CODE >102:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5F3 text7 CODE >103:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5F4 text7 CODE >104:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5F5 text7 CODE >105:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5FD text7 CODE >106:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5FE text6 CODE >33:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5FF text6 CODE >35:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+602 text6 CODE >36:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+604 text6 CODE >37:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+605 text6 CODE >38:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+606 text6 CODE >39:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+609 text6 CODE >39:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+60C text6 CODE >39:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+60E text6 CODE >39:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+611 text6 CODE >40:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+612 text6 CODE >41:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+613 text6 CODE >42:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+615 text6 CODE >42:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+619 text6 CODE >44:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+622 text6 CODE >45:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+623 text6 CODE >48:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+62B text6 CODE >50:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5C6 text5 CODE >116:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5C7 text5 CODE >119:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5D9 text5 CODE >120:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5DF text5 CODE >121:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5B8 text4 CODE >51:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5B9 text4 CODE >53:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5BC text4 CODE >54:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5BE text4 CODE >55:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5BF text4 CODE >56:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5C0 text4 CODE >57:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+5C5 text4 CODE >58:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+62C text3 CODE >59:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+62C text3 CODE >61:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+62F text3 CODE >62:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+630 text3 CODE >63:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+631 text3 CODE >66:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+637 text3 CODE >67:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+640 text3 CODE >68:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+646 text3 CODE >69:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+64E text3 CODE >70:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+654 text3 CODE >74:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+65A text3 CODE >77:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+660 text3 CODE >88:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+666 text3 CODE >94:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+66C text3 CODE >95:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
 6C8 text2 CODE >5:D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\awdiv.c
 6C8 text2 CODE >13:D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\awdiv.c
 6C9 text2 CODE >14:D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\awdiv.c
@@ -200,29 +199,29 @@ $dist/default/production\ADC_LCD.X.production.o
 6C1 text1 CODE >32:D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\awmod.c
 6C3 text1 CODE >33:D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\awmod.c
 6C7 text1 CODE >34:D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\awmod.c
-72F maintext CODE >138:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-72F maintext CODE >140:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-734 maintext CODE >141:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-738 maintext CODE >142:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-73A maintext CODE >143:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-73E maintext CODE >144:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-73F maintext CODE >145:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-742 maintext CODE >146:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-742 maintext CODE >147:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-748 maintext CODE >150:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-74D maintext CODE >150:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-750 maintext CODE >150:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-752 maintext CODE >150:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-757 maintext CODE >151:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-761 maintext CODE >152:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-764 maintext CODE >153:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-768 maintext CODE >154:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-770 maintext CODE >155:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-778 maintext CODE >156:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-78E maintext CODE >157:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-7B1 maintext CODE >158:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-7D4 maintext CODE >159:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
-7EA maintext CODE >160:E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\ADC_LCD.X\newmain.c
+72F maintext CODE >138:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+72F maintext CODE >140:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+734 maintext CODE >141:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+738 maintext CODE >142:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+73A maintext CODE >143:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+73E maintext CODE >144:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+73F maintext CODE >145:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+742 maintext CODE >146:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+742 maintext CODE >147:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+748 maintext CODE >150:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+74D maintext CODE >150:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+750 maintext CODE >150:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+752 maintext CODE >150:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+757 maintext CODE >151:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+761 maintext CODE >152:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+764 maintext CODE >153:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+768 maintext CODE >154:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+770 maintext CODE >155:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+778 maintext CODE >156:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+78E maintext CODE >157:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+7B1 maintext CODE >158:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+7D4 maintext CODE >159:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
+7EA maintext CODE >160:E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\ADC_LCD.X\newmain.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -244,14 +243,10 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 400F 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
+___sp 0 0 STACK 2 stack C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
 _main E5E 0 CODE 0 maintext dist/default/production\ADC_LCD.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
-start 0 0 CODE 0 init C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-__size_of___awdiv 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
-__size_of___awmod 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
-__size_of_main 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
-__size_of_LCD_Cmd 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
+start 0 0 CODE 0 init C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
 _LCD_Char BC0 0 CODE 0 text7 dist/default/production\ADC_LCD.X.production.o
 _LCD_Init C58 0 CODE 0 text3 dist/default/production\ADC_LCD.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
@@ -259,15 +254,15 @@ ___awmod@sign 21 0 BANK0 1 cstackBANK0 dist/default/production\ADC_LCD.X.product
 LCD_Cmd_Init@cmd 71 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 __end_of_LCD_Char BFC 0 CODE 0 text7 dist/default/production\ADC_LCD.X.production.o
 __end_of_LCD_Init CDA 0 CODE 0 text3 dist/default/production\ADC_LCD.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
 wtemp0 7E 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_LCD_Cmd_Init B6C 0 CODE 0 text4 dist/default/production\ADC_LCD.X.production.o
+_LCD_Cmd_Init B70 0 CODE 0 text4 dist/default/production\ADC_LCD.X.production.o
 ___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 _ADCON0 1F 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
@@ -281,21 +276,19 @@ __Lmaintext 0 0 ABS 0 maintext -
 ___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 __end_of___awdiv E5E 0 CODE 0 text2 dist/default/production\ADC_LCD.X.production.o
 __end_of___awmod D90 0 CODE 0 text1 dist/default/production\ADC_LCD.X.production.o
-__size_of_LCD_Cmd_Init 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
-___stacklo 0 0 ABS 0 - C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
+___stackhi 0 0 ABS 0 - C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
+___stacklo 0 0 ABS 0 - C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
 __end_of_LCD_Cmd C58 0 CODE 0 text6 dist/default/production\ADC_LCD.X.production.o
-__size_of_LCD_GotoCursor 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
-LCD_GotoCursor@cmd 78 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
+LCD_GotoCursor@cmd 77 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 LCD_GotoCursor@col 73 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
-LCD_GotoCursor@row 75 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
+LCD_GotoCursor@row 74 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\ADC_LCD.X.production.o
-__end_of_LCD_Cmd_Init B88 0 CODE 0 text4 dist/default/production\ADC_LCD.X.production.o
+__end_of_LCD_Cmd_Init B8C 0 CODE 0 text4 dist/default/production\ADC_LCD.X.production.o
 _TRISBbits 86 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
 _GO_nDONE FA 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
 LCD_Cmd@cmd 72 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\ADC_LCD.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
+___int_sp 0 0 STACK 2 stack C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -332,10 +325,9 @@ __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
-__S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
 ___awmod@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\ADC_LCD.X.production.o
 ___awdiv D90 0 CODE 0 text2 dist/default/production\ADC_LCD.X.production.o
 ___awmod CDA 0 CODE 0 text1 dist/default/production\ADC_LCD.X.production.o
@@ -357,15 +349,15 @@ __Lstrings 0 0 ABS 0 strings -
 ___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 ?___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 ?___awmod 79 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
-_LCD_GotoCursor B88 0 CODE 0 text5 dist/default/production\ADC_LCD.X.production.o
+_LCD_GotoCursor B8C 0 CODE 0 text5 dist/default/production\ADC_LCD.X.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec -
-_LCD_GotoCursor$111 76 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
+_LCD_GotoCursor$111 75 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 ___awmod@dividend 7B 0 COMMON 1 cstackCOMMON dist/default/production\ADC_LCD.X.production.o
 __ptext1 CDA 0 CODE 0 text1 dist/default/production\ADC_LCD.X.production.o
 __ptext2 D90 0 CODE 0 text2 dist/default/production\ADC_LCD.X.production.o
 __ptext3 C58 0 CODE 0 text3 dist/default/production\ADC_LCD.X.production.o
-__ptext4 B6C 0 CODE 0 text4 dist/default/production\ADC_LCD.X.production.o
-__ptext5 B88 0 CODE 0 text5 dist/default/production\ADC_LCD.X.production.o
+__ptext4 B70 0 CODE 0 text4 dist/default/production\ADC_LCD.X.production.o
+__ptext5 B8C 0 CODE 0 text5 dist/default/production\ADC_LCD.X.production.o
 __ptext6 BFC 0 CODE 0 text6 dist/default/production\ADC_LCD.X.production.o
 __ptext7 BC0 0 CODE 0 text7 dist/default/production\ADC_LCD.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
@@ -386,8 +378,6 @@ _TRISC 87 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __initialization FF8 0 CODE 0 cinit dist/default/production\ADC_LCD.X.production.o
-__size_of_LCD_Char 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
-__size_of_LCD_Init 0 0 ABS 0 - dist/default/production\ADC_LCD.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -417,8 +407,8 @@ cinit 0 7FC FF8 4 2
 text1 0 66D CDA 5B 2
 text2 0 6C8 D90 67 2
 text3 0 62C C58 41 2
-text4 0 5B6 B6C E 2
-text5 0 5C4 B88 1C 2
+text4 0 5B8 B70 E 2
+text5 0 5C6 B8C 1A 2
 text6 0 5FE BFC 2E 2
 text7 0 5E0 BC0 1E 2
 maintext 0 72F E5E CD 2

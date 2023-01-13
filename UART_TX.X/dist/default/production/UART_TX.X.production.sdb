@@ -17,7 +17,7 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"43 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\UART_TX.X\newmain.c
+"43 E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\UART_TX.X\newmain.c
 [v _IO_Init IO_Init `(v  1 e 1 0 ]
 "50
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
@@ -33,7 +33,7 @@
 [v _ClearRX_Buffer ClearRX_Buffer `(v  1 e 1 0 ]
 "105
 [v _main main `(v  1 e 1 0 ]
-"119
+"132
 [v _isr1 isr1 `II(v  1 e 1 0 ]
 "217 D:\File Install MBLAB IDE\XC8\pic\include\proc\pic16f877a.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
@@ -58,6 +58,12 @@
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1067
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1153
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1160
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1326
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1376
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 [s S22 . 1 `uc 1 TRISC0 1 0 :1:0 
@@ -74,32 +80,40 @@
 [v _TRISCbits TRISCbits `VES31  1 e 1 @135 ]
 "2081
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
-"2516
+"2223
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2230
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2520
 [v _CREN CREN `VEb  1 e 0 @196 ]
-"2741
+"2583
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @250 ]
+"2745
 [v _RCIE RCIE `VEb  1 e 0 @1125 ]
-"2744
+"2748
 [v _RCIF RCIF `VEb  1 e 0 @101 ]
-"2813
+"2817
 [v _SPEN SPEN `VEb  1 e 0 @199 ]
-"3017
+"3021
 [v _TRMT TRMT `VEb  1 e 0 @1217 ]
-"3032
+"3036
 [v _TXEN TXEN `VEb  1 e 0 @1221 ]
 "358 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"32 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\UART_TX.X\newmain.c
+"32 E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\UART_TX.X\newmain.c
 [v _RX_Buffer RX_Buffer `[50]uc  1 e 50 0 ]
 "33
 [v _rx_index rx_index `uc  1 e 1 0 ]
 "105
 [v _main main `(v  1 e 1 0 ]
 {
-"110
-[v main@text text `[20]uc  1 a 20 30 ]
-"109
-[v main@i i `ui  1 a 2 50 ]
 "118
+[v main@text text `[20]uc  1 a 20 30 ]
+"115
+[v main@adc adc `i  1 a 2 52 ]
+"116
+[v main@channel channel `i  1 a 2 50 ]
+"131
 } 0
 "505 D:\File Install MBLAB IDE\XC8\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -144,7 +158,7 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"66 E:\Downloads\PIC16F877A\Projecct MPLAB X IDE v5.2\UART_TX.X\newmain.c
+"66 E:\Downloads\PIC16F877A\Project_MPLAB_X_IDE_v5.2\UART_TX.X\newmain.c
 [v _UART_Transmit_Text UART_Transmit_Text `(v  1 e 1 0 ]
 {
 [v UART_Transmit_Text@str str `*.4uc  1 a 1 wreg ]
@@ -174,12 +188,12 @@
 {
 "49
 } 0
-"119
+"132
 [v _isr1 isr1 `II(v  1 e 1 0 ]
 {
-"125
-[v isr1@ReceivedData ReceivedData `uc  1 a 1 9 ]
 "138
+[v isr1@ReceivedData ReceivedData `uc  1 a 1 9 ]
+"151
 } 0
 "92
 [v _HandleData HandleData `(v  1 e 1 0 ]

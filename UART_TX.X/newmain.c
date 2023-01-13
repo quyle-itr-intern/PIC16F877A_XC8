@@ -106,14 +106,27 @@ void main(void)
 {   
     IO_Init();
     UART_Init();
-    unsigned int i = 0;
+    
+    TRISA = 0xFF;
+    ADCON1 = 0b11000000;
+    ADCON0 = 0b00000001;
+    ADRESH = 0;
+    ADRESL = 0;
+    int adc = 0;
+    int channel = 7;
+   
     char text[20];
     while(1)
     {
-        //UART_Receive();
-        sprintf(text, "Hello World %d\r\n", i++);
+        ADCON0 |= channel << 3;
+        __delay_ms(20);
+        GO_nDONE = 1; //Initializes A/D Conversion
+        while(GO_nDONE); //Wait for A/D Conversion to complete
+        adc = ((ADRESH<< 8)+ADRESL); //Returns Result
+        
+        sprintf(text, "Hello World %d\r\n", adc);
         UART_Transmit_Text(text);
-        __delay_ms(1000);
+        __delay_ms(200);
     }
 }
 void __interrupt() isr1() 

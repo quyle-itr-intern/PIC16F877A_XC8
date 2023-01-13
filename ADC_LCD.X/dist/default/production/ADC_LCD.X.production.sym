@@ -1,9 +1,7 @@
 ___awdiv@counter 75 0 COMMON 1
 __S0 800 0 ABS 0
 __S1 7E 0 ABS 0
-__S2 0 0 ABS 0
 __S3 0 0 ABS 0
-__size_of_LCD_Cmd_Init 0 0 ABS 0
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
 __end_of___awdiv 72F 0 CODE 0
@@ -36,7 +34,7 @@ __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 ___int_sp 0 0 STACK 2
 ?___awdiv 70 0 COMMON 1
-LCD_GotoCursor@row 75 0 COMMON 1
+LCD_GotoCursor@row 74 0 COMMON 1
 _ADRESH 1E 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
@@ -50,10 +48,9 @@ __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
 __Lsfr3 0 0 ABS 0
 __end_of_LCD_Cmd 62C 0 CODE 0
-__size_of_LCD_GotoCursor 0 0 ABS 0
 ___stackhi 0 0 ABS 0
 __end_of___awmod 6C8 0 CODE 0
-_LCD_GotoCursor$111 76 0 COMMON 1
+_LCD_GotoCursor$111 75 0 COMMON 1
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 LCD_Cmd@cmd 72 0 COMMON 1
@@ -66,7 +63,7 @@ __Linit 0 0 CODE 0
 __end_of_main 7FC 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-__end_of_LCD_Cmd_Init 5C4 0 CODE 0
+__end_of_LCD_Cmd_Init 5C6 0 CODE 0
 end_of_initialization 7FC 0 CODE 0
 ___awdiv@sign 76 0 COMMON 1
 ___stacklo 0 0 ABS 0
@@ -88,15 +85,14 @@ __Lpowerup 0 0 CODE 0
 __ptext1 66D 0 CODE 0
 __ptext2 6C8 0 CODE 0
 __ptext3 62C 0 CODE 0
-__size_of_LCD_Char 0 0 ABS 0
-__ptext4 5B6 0 CODE 0
-__ptext5 5C4 0 CODE 0
+__ptext4 5B8 0 CODE 0
+__ptext5 5C6 0 CODE 0
 __ptext6 5FE 0 CODE 0
 __end_of_LCD_Char 5FE 0 CODE 0
 __ptext7 5E0 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-_LCD_GotoCursor 5C4 0 CODE 0
+_LCD_GotoCursor 5C6 0 CODE 0
 __end_of__initialization 7FC 0 CODE 0
 _LCD_Cmd 5FE 0 CODE 0
 main@adc 27 0 BANK0 1
@@ -114,12 +110,9 @@ __Lcinit 7FC 0 CODE 0
 ___awdiv 6C8 0 CODE 0
 __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
-__size_of_main 0 0 ABS 0
 __Hspace_4 400F 0 ABS 0
 __Lspace_4 0 0 ABS 0
-__size_of_LCD_Init 0 0 ABS 0
-_LCD_Cmd_Init 5B6 0 CODE 0
-__size_of___awdiv 0 0 ABS 0
+_LCD_Cmd_Init 5B8 0 CODE 0
 ___awmod@divisor 79 0 COMMON 1
 __Hend_init 3 0 CODE 0
 __Lend_init 0 0 CODE 0
@@ -133,9 +126,8 @@ intlevel2 0 0 ENTRY 0
 intlevel3 0 0 ENTRY 0
 intlevel4 0 0 ENTRY 0
 intlevel5 0 0 ENTRY 0
-LCD_GotoCursor@cmd 78 0 COMMON 1
+LCD_GotoCursor@cmd 77 0 COMMON 1
 LCD_GotoCursor@col 73 0 COMMON 1
-__size_of_LCD_Cmd 0 0 ABS 0
 __HcstackCOMMON 0 0 ABS 0
 __LcstackCOMMON 0 0 ABS 0
 __pcstackCOMMON 70 0 COMMON 1
@@ -145,7 +137,6 @@ __end_of_LCD_GotoCursor 5E0 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __pmaintext 72F 0 CODE 0
-__size_of___awmod 0 0 ABS 0
 __initialization 7FC 0 CODE 0
 LCD_Char@c 72 0 COMMON 1
 ___awmod@dividend 7B 0 COMMON 1
@@ -162,11 +153,11 @@ text1 CDA D8F CODE CDA 0
 text3 C58 CD9 CODE C58 0
 text6 BFC C57 CODE BFC 0
 text7 BC0 BFB CODE BC0 0
-text5 B88 BBF CODE B88 0
-text4 B6C B87 CODE B6C 0
+text5 B8C BBF CODE B8C 0
+text4 B70 B8B CODE B70 0
 %locals
 dist/default/production\ADC_LCD.X.production.o
-C:\Users\levan\AppData\Local\Temp\xcAs8qc.s
+C:\Users\levan\AppData\Local\Temp\xcAsdj4.s
 376 7FC 0 CODE 0
 379 7FC 0 CODE 0
 385 7FC 0 CODE 0
@@ -281,15 +272,15 @@ newmain.c
 88 660 0 CODE 0
 94 666 0 CODE 0
 95 66C 0 CODE 0
-51 5B6 0 CODE 0
-53 5B7 0 CODE 0
-54 5BA 0 CODE 0
-55 5BC 0 CODE 0
-56 5BD 0 CODE 0
-57 5BE 0 CODE 0
-58 5C3 0 CODE 0
-116 5C4 0 CODE 0
-119 5C5 0 CODE 0
+51 5B8 0 CODE 0
+53 5B9 0 CODE 0
+54 5BC 0 CODE 0
+55 5BE 0 CODE 0
+56 5BF 0 CODE 0
+57 5C0 0 CODE 0
+58 5C5 0 CODE 0
+116 5C6 0 CODE 0
+119 5C7 0 CODE 0
 120 5D9 0 CODE 0
 121 5DF 0 CODE 0
 33 5FE 0 CODE 0

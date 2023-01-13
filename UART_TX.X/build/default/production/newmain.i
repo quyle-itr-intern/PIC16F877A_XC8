@@ -210,7 +210,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
 
 
 # 1 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic_chip_select.h" 1 3
-# 2684 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic_chip_select.h" 3
+# 2854 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic_chip_select.h" 3
 # 1 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\proc\\pic16f877a.h" 1 3
 # 45 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\proc\\pic16f877a.h" 3
 # 1 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\__at.h" 1 3
@@ -1126,7 +1126,7 @@ extern volatile EECON1bits_t EECON1bits __attribute__((address(0x18C)));
 extern volatile unsigned char EECON2 __attribute__((address(0x18D)));
 
 __asm("EECON2 equ 018Dh");
-# 2375 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\proc\\pic16f877a.h" 3
+# 2379 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\proc\\pic16f877a.h" 3
 extern volatile __bit ACKDT __attribute__((address(0x48D)));
 
 
@@ -1851,7 +1851,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 2684 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic_chip_select.h" 2 3
+# 2854 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic_chip_select.h" 2 3
 # 13 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic.h" 2 3
 # 76 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic.h" 3
 __attribute__((__unsupported__("The " "FLASH_READ" " macro function is no longer supported. Please use the MPLAB X MCC."))) unsigned char __flash_read(unsigned short addr);
@@ -1867,7 +1867,7 @@ __attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longe
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 # 83 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic.h" 2 3
-# 127 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic.h" 3
+# 118 "D:\\File Install MBLAB IDE\\XC8\\pic\\include\\pic.h" 3
 extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
@@ -2140,14 +2140,27 @@ void main(void)
 {
     IO_Init();
     UART_Init();
-    unsigned int i = 0;
+
+    TRISA = 0xFF;
+    ADCON1 = 0b11000000;
+    ADCON0 = 0b00000001;
+    ADRESH = 0;
+    ADRESL = 0;
+    int adc = 0;
+    int channel = 7;
+
     char text[20];
     while(1)
     {
+        ADCON0 |= channel << 3;
+        _delay((unsigned long)((20)*(20000000/4000.0)));
+        GO_nDONE = 1;
+        while(GO_nDONE);
+        adc = ((ADRESH<< 8)+ADRESL);
 
-        sprintf(text, "Hello World %d\r\n", i++);
+        sprintf(text, "Hello World %d\r\n", adc);
         UART_Transmit_Text(text);
-        _delay((unsigned long)((1000)*(20000000/4000.0)));
+        _delay((unsigned long)((200)*(20000000/4000.0)));
     }
 }
 void __attribute__((picinterrupt(("")))) isr1()

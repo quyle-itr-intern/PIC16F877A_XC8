@@ -1,24 +1,24 @@
-Microchip MPLAB XC8 Compiler V2.32
+Microchip MPLAB XC8 Compiler V2.40
 
 Linker command line:
 
--W-3 --edf=D:\File Install MBLAB IDE\XC8\pic\dat\en_msgs.txt -cn \
+-W-3 --edf=D:\File Install MBLAB IDE\XC8\pic\dat\20220703182018_en.msgs -cn \
   -h+dist/default/production\ADC_LCD.X.production.sym \
   --cmf=dist/default/production\ADC_LCD.X.production.cmf -z -Q16F877A \
-  -oC:\Users\levan\AppData\Local\Temp\xcAs8qc.4 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/ADC_LCD.X.production.map -E1 -ver=XC8 Compiler \
-  --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
-  -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
-  -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
-  -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh -ABANK3=0190h-01EFh \
-  -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
+  -oC:\Users\levan\AppData\Local\Temp\xcAsdj4.4 --defsym=__MPLAB_BUILD=1 \
+  --fixupoverflow=error -Mdist/default/production/ADC_LCD.X.production.map \
+  --md=C:\Users\levan\AppData\Local\Temp\xcAsdj4.dat -E1 -ver=XC8 Compiler \
+  --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
+  -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
+  -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh \
+  -ABANK3=0190h-01EFh -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
   -AABS1=020h-07Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh -ASFR0=00h-01Fh \
   -ASFR1=080h-09Fh -ASFR2=0100h-010Fh -ASFR3=0180h-018Fh \
   -ACONFIG=02007h-02007h -DCONFIG=2 -AIDLOC=02000h-02003h -DIDLOC=2 \
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\levan\AppData\Local\Temp\xcAs8qc.o \
+  -pfunctab=ENTRY -k C:\Users\levan\AppData\Local\Temp\xcAsdj4.o \
   dist/default/production\ADC_LCD.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F877A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\levan\AppData\Local\Temp\xcAs8qc.o
+C:\Users\levan\AppData\Local\Temp\xcAsdj4.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        1        0       4
 dist/default/production\ADC_LCD.X.production.o
@@ -36,8 +36,8 @@ dist/default/production\ADC_LCD.X.production.o
                 config                             2007     2007        1        0       4
                 text7                               5E0      5E0       1E      BC0       0
                 text6                               5FE      5FE       2E      BFC       0
-                text5                               5C4      5C4       1C      B88       0
-                text4                               5B6      5B6        E      B6C       0
+                text5                               5C6      5C6       1A      B8C       0
+                text4                               5B8      5B8        E      B70       0
                 text3                               62C      62C       41      C58       0
                 text2                               6C8      6C8       67      D90       0
                 text1                               66D      66D       5B      CDA       0
@@ -46,15 +46,13 @@ dist/default/production\ADC_LCD.X.production.o
                 cstackCOMMON                         70       70        E       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
-        CLASS   STACK          
-
         CLASS   CODE           
                 end_init                              0        0        3         0
                 cinit                               7FC      7FC        4         0
                 text7                               5E0      5E0       1E         0
                 text6                               5FE      5FE       2E         0
-                text5                               5C4      5C4       1C         0
-                text4                               5B6      5B6        E         0
+                text5                               5C6      5C6       1A         0
+                text4                               5B8      5B8        E         0
                 text3                               62C      62C       41         0
                 text2                               6C8      6C8       67         0
                 text1                               66D      66D       5B         0
@@ -100,6 +98,8 @@ TOTAL           Name                               Link     Load   Length     Sp
 
         CLASS   EEDATA         
 
+        CLASS   STACK          
+
 
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
@@ -107,8 +107,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 cstackBANK0                    000020  000009  000029        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
-                text4                          0005B6  00000E  0005C4       B6C       0  CODE        2
-                text5                          0005C4  00001C  0005E0       B88       0  CODE        2
+                text4                          0005B8  00000E  0005C6       B70       0  CODE        2
+                text5                          0005C6  00001A  0005E0       B8C       0  CODE        2
                 text7                          0005E0  00001E  0005FE       BC0       0  CODE        2
                 text6                          0005FE  00002E  00062C       BFC       0  CODE        2
                 text3                          00062C  000041  00066D       C58       0  CODE        2
@@ -125,12 +125,12 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-05B5            5B3           2
+        CODE             0003-05B7            5B5           2
                          0800-1FFF            800
-        CONST            0003-05B5            100           2
+        CONST            0003-05B7            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-05B5            100           2
+        ENTRY            0003-05B7            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0029-006F             47           1
@@ -141,10 +141,9 @@ UNUSED ADDRESS RANGES
         SFR1             0080-009F             20           1
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
-        STACK            0110-016F             60           1
-        STRCODE          0003-05B5            5B3           2
+        STRCODE          0003-05B7            5B5           2
                          0800-1FFF           1800
-        STRING           0003-05B5            100           2
+        STRING           0003-05B7            100           2
                          0800-1FFF            100
 
                                   Symbol Table
@@ -154,9 +153,9 @@ UNUSED ADDRESS RANGES
 LCD_Char@c               cstackCOMMON 0072
 LCD_Cmd@cmd              cstackCOMMON 0072
 LCD_Cmd_Init@cmd         cstackCOMMON 0071
-LCD_GotoCursor@cmd       cstackCOMMON 0078
+LCD_GotoCursor@cmd       cstackCOMMON 0077
 LCD_GotoCursor@col       cstackCOMMON 0073
-LCD_GotoCursor@row       cstackCOMMON 0075
+LCD_GotoCursor@row       cstackCOMMON 0074
 _ADCON0                  (abs)        001F
 _ADCON1                  (abs)        009F
 _ADRESH                  (abs)        001E
@@ -164,9 +163,9 @@ _ADRESL                  (abs)        009E
 _GO_nDONE                (abs)        00FA
 _LCD_Char                text7        05E0
 _LCD_Cmd                 text6        05FE
-_LCD_Cmd_Init            text4        05B6
-_LCD_GotoCursor          text5        05C4
-_LCD_GotoCursor$111      cstackCOMMON 0076
+_LCD_Cmd_Init            text4        05B8
+_LCD_GotoCursor          text5        05C6
+_LCD_GotoCursor$111      cstackCOMMON 0075
 _LCD_Init                text3        062C
 _PORTBbits               (abs)        0006
 _PORTC                   (abs)        0007
@@ -241,7 +240,6 @@ __Lstrings               strings      0000
 __Ltext                  text         0000
 __S0                     (abs)        0800
 __S1                     (abs)        007E
-__S2                     (abs)        0000
 __S3                     (abs)        0000
 ___awdiv                 text2        06C8
 ___awdiv@counter         cstackCOMMON 0075
@@ -261,7 +259,7 @@ ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
 __end_of_LCD_Char        text7        05FE
 __end_of_LCD_Cmd         text6        062C
-__end_of_LCD_Cmd_Init    text4        05C4
+__end_of_LCD_Cmd_Init    text4        05C6
 __end_of_LCD_GotoCursor  text5        05E0
 __end_of_LCD_Init        text3        066D
 __end_of___awdiv         text2        072F
@@ -275,18 +273,10 @@ __pmaintext              maintext     072F
 __ptext1                 text1        066D
 __ptext2                 text2        06C8
 __ptext3                 text3        062C
-__ptext4                 text4        05B6
-__ptext5                 text5        05C4
+__ptext4                 text4        05B8
+__ptext5                 text5        05C6
 __ptext6                 text6        05FE
 __ptext7                 text7        05E0
-__size_of_LCD_Char       (abs)        0000
-__size_of_LCD_Cmd        (abs)        0000
-__size_of_LCD_Cmd_Init   (abs)        0000
-__size_of_LCD_GotoCursor (abs)        0000
-__size_of_LCD_Init       (abs)        0000
-__size_of___awdiv        (abs)        0000
-__size_of___awmod        (abs)        0000
-__size_of_main           (abs)        0000
 _main                    maintext     072F
 btemp                    (abs)        007E
 end_of_initialization    cinit        07FC
@@ -316,11 +306,11 @@ newmain.c
 		_LCD_Init      		CODE           	062C	0000	65
 		_LCD_Cmd       		CODE           	05FE	0000	46
 		_main          		CODE           	072F	0000	205
-		_LCD_Cmd_Init  		CODE           	05B6	0000	14
+		_LCD_Cmd_Init  		CODE           	05B8	0000	14
 		_LCD_Char      		CODE           	05E0	0000	30
-		_LCD_GotoCursor		CODE           	05C4	0000	28
+		_LCD_GotoCursor		CODE           	05C6	0000	26
 
-newmain.c estimated size: 388
+newmain.c estimated size: 386
 
 shared
 		__initialization		CODE           	07FC	0000	1
